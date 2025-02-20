@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
+using System.Linq;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -164,7 +165,7 @@ public class DialogueManager : MonoBehaviour
         SetCurrentAudioInfo(defaultAudioInfo.id);
     }
 
-    private void ContinueStory() 
+    public void ContinueStory() 
     {
         if (currentStory.canContinue) 
         {
@@ -193,8 +194,14 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    private IEnumerator DisplayLine(string line) 
+    private IEnumerator DisplayLine(string text) 
     {
+        var parts = text.Trim().Split(':');
+        if (parts.Length < 2) yield break;
+
+        string characterName = parts[0];
+        string line = string.Join(':', parts.Skip(1));
+        Debug.Log(characterName);
         // set the text to the full line, but set the visible characters to 0
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;

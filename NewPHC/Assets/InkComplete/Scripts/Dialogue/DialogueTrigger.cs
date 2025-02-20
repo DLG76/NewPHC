@@ -52,4 +52,10 @@ public class DialogueTrigger : MonoBehaviour
             playerInRange = false;
         }
     }
+
+    public void TestPlay()
+    {
+        DialogueManager.GetInstance().EnterDialogueMode(inkJSON, emoteAnimator);
+        Debug.Log("testplay");
+    }
 }
