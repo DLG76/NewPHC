@@ -27,7 +27,7 @@ public class InputManager : MonoBehaviour
         instance = this;
     }
 
-    public static InputManager GetInstance() 
+    public static InputManager GetInstance()
     {
         return instance;
     }
@@ -41,7 +41,7 @@ public class InputManager : MonoBehaviour
         else if (context.canceled)
         {
             moveDirection = context.ReadValue<Vector2>();
-        } 
+        }
     }
 
     public void JumpPressed(InputAction.CallbackContext context)
@@ -65,7 +65,7 @@ public class InputManager : MonoBehaviour
         else if (context.canceled)
         {
             interactPressed = false;
-        } 
+        }
     }
 
     public void SubmitPressed(InputAction.CallbackContext context)
@@ -77,10 +77,10 @@ public class InputManager : MonoBehaviour
         else if (context.canceled)
         {
             submitPressed = false;
-        } 
+        }
     }
 
-    public Vector2 GetMoveDirection() 
+    public Vector2 GetMoveDirection()
     {
         return moveDirection;
     }
@@ -89,28 +89,28 @@ public class InputManager : MonoBehaviour
     // which means we should set it to false so that it can't be used again until actually
     // pressed again.
 
-    public bool GetJumpPressed() 
+    public bool GetJumpPressed()
     {
         bool result = jumpPressed;
         jumpPressed = false;
         return result;
     }
 
-    public bool GetInteractPressed() 
+    public bool GetInteractPressed()
     {
         bool result = interactPressed;
         interactPressed = false;
         return result;
     }
 
-    public bool GetSubmitPressed() 
+    public bool GetSubmitPressed()
     {
         bool result = submitPressed;
         submitPressed = false;
         return result;
     }
 
-    public void RegisterSubmitPressed() 
+    public void RegisterSubmitPressed()
     {
         submitPressed = false;
     }
