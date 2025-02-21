@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea47e7999fecae54d8434b063d5b71c9, type: 3}
+  m_Name: VoidBird
+  m_EditorClassIdentifier: 
+  id: bird
+  Name: Bird
+  Icon: {fileID: 1512608464, guid: 06231fa454a0c0f4ead4d5343cc5fa08, type: 3}
+  Description: 
+  CanStack: 0
+  MaxQuantity: 0
+  CanBuy: 0
+  PriceBuy: 0
+  PriceSell: 0
+  voidPrefab: {fileID: 6627117130111052742, guid: e0af069992902e7449a5ba97116775be, type: 3}
+  MaxSkillEquipment: 2
+  SkillItems:
+  - {fileID: 11400000, guid: 7265b1144d8ae684b979fd89b80fee18, type: 2}
+  - {fileID: 11400000, guid: 593a2b3c013b1ee4aa68210ecd80afdf, type: 2}
+  Offset: {x: 0, y: 2}
+  MinDamage: 3
+  MaxDamage: 100000
+  MinSpeed: 0.3
+  MaxSpeed: 1
+  ChargeTime: 1
+  ForcePower: 1
+  LifeTime: 5
+  IsRealInstance: 1

@@ -3,18 +3,41 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - NPC
+  - Main Canva
+  - Time
+  - MaskPos
+  - Structure
+  - grass
+  - wood
+  - TimeLight
+  - Object
+  - ParticleCursor
+  - Ground
+  - Enemy
+  - Drone
+  - Weppon
+  - Ring
+  - Head
+  - Boot
+  - Body
+  - Username
+  - TimeLine
+  - Switchscene
+  - Wall
+  - Void
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Void
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Wall
+  - Enemy
+  - Object
   - 
   - 
   - 
@@ -40,4 +63,13 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Effect
+    uniqueID: 636605103
+    locked: 0
+  - name: GuideLine
+    uniqueID: 3477705085
+    locked: 0
+  - name: UI
+    uniqueID: 2280231099
     locked: 0

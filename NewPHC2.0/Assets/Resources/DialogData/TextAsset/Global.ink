@@ -1,0 +1,7 @@
+﻿EXTERNAL PlayTimeline(nameTimeline)
+EXTERNAL PlayTimelineWithOutDialog(nameTimeline,nameDialog)
+EXTERNAL AddQuest(questId)
+EXTERNAL AddItem(itemId)
+EXTERNAL KillPlayer()
+EXTERNAL RequirementCheck(className, requiredId)
+EXTERNAL Teleport(sceneName)

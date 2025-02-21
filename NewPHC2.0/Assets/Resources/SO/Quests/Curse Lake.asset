@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9d5afc3325703144b8ed045fe429dc2, type: 3}
+  m_Name: Curse Lake
+  m_EditorClassIdentifier: 
+  id: curselake_quest_id
+  name: curse lake
+  shortDetail: short
+  fullDetail: full
+  questText: {fileID: 4900000, guid: cce9174bb85dd434c959c1f375140852, type: 3}
+  objectives:
+  - rid: 7108268626854019072
+  npcDialogs:
+  - Fairy_Id
+  OnStart:
+    m_PersistentCalls:
+      m_Calls: []
+  OnComplete:
+    m_PersistentCalls:
+      m_Calls: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 7108268626854019072
+      type: {class: CollectItemObjective, ns: , asm: Assembly-CSharp}
+      data:
+        name: CollectItemObjective
+        targetQuest: {fileID: 0}
+        id: fghjk
+        targetIds:
+        - fghjkasd
+        maxAmount: 1
+        nextQuest: {fileID: 0}
+        reward: {fileID: 0}
+        itemRequirements:
+        - itemId: ghjk
+          requiredAmount: 25

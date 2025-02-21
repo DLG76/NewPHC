@@ -17,14 +17,14 @@ public class DialogueManager : MonoBehaviour
     [Header("Dialogue UI")]
     [SerializeField] private GameObject dialoguePanel;
     [SerializeField] private GameObject continueIcon;
-    [SerializeField] private TextMeshProUGUI dialogueText;
-    [SerializeField] private TextMeshProUGUI displayNameText;
+    [SerializeField] private TMP_Text dialogueText;
+    [SerializeField] private TMP_Text displayNameText;
     [SerializeField] private Animator portraitAnimator;
     private Animator layoutAnimator;
 
     [Header("Choices UI")]
     [SerializeField] private GameObject[] choices;
-    private TextMeshProUGUI[] choicesText;
+    private TMP_Text[] choicesText;
 
     [Header("Audio")]
     [SerializeField] private DialogueAudioInfoSO defaultAudioInfo;
@@ -80,11 +80,11 @@ public class DialogueManager : MonoBehaviour
         layoutAnimator = dialoguePanel.GetComponent<Animator>();
 
         // get all of the choices text 
-        choicesText = new TextMeshProUGUI[choices.Length];
+        choicesText = new TMP_Text[choices.Length];
         int index = 0;
         foreach (GameObject choice in choices) 
         {
-            choicesText[index] = choice.GetComponentInChildren<TextMeshProUGUI>();
+            choicesText[index] = choice.GetComponentInChildren<TMP_Text>();
             index++;
         }
 

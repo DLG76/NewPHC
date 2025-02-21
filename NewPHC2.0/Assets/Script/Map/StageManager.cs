@@ -1,24 +1,54 @@
 using DG.Tweening;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class StageManager : Singleton<StageManager>
 {
+    public static string successStage;
+    public static List<string> unlockStages = new List<string>();
+    private static List<string> successStages = new List<string>();
+
     [SerializeField] private Stage[] allStages;
     [SerializeField] private Transform landmark;
     [SerializeField] private float landmarkMoveTime = 0.75f;
+    [SerializeField] private FadeCanvas fadeCanvas;
 
     private void Awake()
     {
         LoadStages();
+
+        if (!string.IsNullOrEmpty(Stage.currentStage))
+        {
+            Stage stage = allStages.FirstOrDefault(s => s.stageName == Stage.currentStage);
+
+            if (stage != null)
+            {
+                LandmarkMoveTo(stage, 0);
+            }
+        }
+
+        StartCoroutine(fadeCanvas.EnterFade());
     }
 
     private void LoadStages()
     {
         // ªÑéèÇ¤ÃÒÇ
+
+        if (!string.IsNullOrEmpty(successStage))
+        {
+            successStages.Add(successStage);
+            var stage = allStages.FirstOrDefault(s => s.stageName == successStage);
+            if (stage)
+                stage.Success();
+        }
+
         foreach (var stage in allStages)
         {
-            stage.Lock();
-            stage.Setup(false);
+            stage.Setup(
+                unlockStages.Find(s => stage.stageName == s) == null,
+                successStages.Find(s => stage.stageName == s) != null
+            );
         }
     }
 
@@ -27,26 +57,16 @@ public class StageManager : Singleton<StageManager>
 
     }
 
-    public void MoveTo(Stage stage)
+    public void LandmarkMoveTo(Stage stage) => LandmarkMoveTo(stage, landmarkMoveTime);
+
+    public void LandmarkMoveTo(Stage stage, float time)
     {
-        landmark.DOMove(stage.transform.position, landmarkMoveTime);
+        landmark.DOMove(stage.transform.position, time);
     }
 
-    private void Update()
+    public void PlayCombat(Dungeon dungeon)
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            var rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-
-            var ray = Physics2D.CircleCast(rayPos, 0.15f, Vector2.zero, Mathf.Infinity, LayerMask.GetMask("Stage"));
-
-            if (ray.collider != null)
-            {
-                if (ray.transform.TryGetComponent(out Stage stage))
-                {
-                    stage.Select();
-                }
-            }
-        }
+        DungeonManager.dungeon = dungeon;
+        StartCoroutine(fadeCanvas.ExitFade("Dungeon"));
     }
 }

@@ -2,18 +2,15 @@ using UnityEngine;
 
 public class CodeStage : Stage
 {
+    [SerializeField] private Quest quest;
+
     public override void Enter()
     {
-        Debug.Log("Go To Code");
+        CodeUI.Instance.Show(this, quest);
     }
 
     protected override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.E) && currentStage == stageName)
-        {
-            Success();
-        }
     }
 }
