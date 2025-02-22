@@ -5,6 +5,8 @@ using TMPro;
 using Ink.Runtime;
 using UnityEngine.EventSystems;
 using System.Linq;
+using UnityEngine.UI;
+using UnityEngine.Events;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class DialogueManager : MonoBehaviour
 
     private Story currentStory;
     public bool dialogueIsPlaying { get; private set; }
+    public UnityAction<string> onCharacterTalk;
 
     private bool canContinueToNextLine = false;
 
@@ -133,8 +136,16 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    public void PlaySeceneDialogue(SeceneDialogue seceneDialogue)
+    {
+
+    }
+
     public void EnterDialogueMode(TextAsset inkJSON, Animator emoteAnimator) 
     {
+        if (emoteAnimator == null)
+            emoteAnimator = portraitAnimator;
+
         currentStory = new Story(inkJSON.text);
         dialogueIsPlaying = true;
         dialoguePanel.SetActive(true);
@@ -204,7 +215,10 @@ public class DialogueManager : MonoBehaviour
         string line = string.Join(':', parts.Skip(1)).Trim();
         Debug.Log(characterName + " " + characterName.Length);
 
+        onCharacterTalk?.Invoke(characterName);
+
         // set the text to the full line, but set the visible characters to 0
+        displayNameText.text = characterName;
         dialogueText.text = line;
         dialogueText.maxVisibleCharacters = 0;
         // hide items while text is typing
@@ -331,7 +345,7 @@ public class DialogueManager : MonoBehaviour
             switch (tagKey) 
             {
                 case SPEAKER_TAG:
-                    displayNameText.text = tagValue;
+                    //displayNameText.text = tagValue;
                     break;
                 case PORTRAIT_TAG:
                     portraitAnimator.Play(tagValue);
@@ -414,5 +428,20 @@ public class DialogueManager : MonoBehaviour
     {
         dialogueVariables.SaveVariables();
     }
+}
 
+[System.Serializable]
+public class SeceneDialogue
+{
+    public Sprite bg;
+    public TextAsset inkJSON;
+    public CharacterDialogue characterDialogueA;
+    public CharacterDialogue characterDialogueB;
+}
+
+[System.Serializable]
+public class CharacterDialogue
+{
+    public Sprite img;
+    public string name;
 }

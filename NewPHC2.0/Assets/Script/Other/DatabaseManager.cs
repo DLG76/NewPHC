@@ -20,6 +20,10 @@ public class DatabaseManager : Singleton<DatabaseManager>
 
     public IEnumerator SendCode(Stage stage, string code)
     {
+        stage.Success();
+        StageManager.unlockStages.Add(stage.stageName);
+        StageManager.unlockStages.Add(stage.stageName);
+        unlockStages.Add(stage.stageName);
         yield break;
     }
 }

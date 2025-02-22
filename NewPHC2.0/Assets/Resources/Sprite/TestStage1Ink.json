@@ -2,9 +2,9 @@
     "inkVersion": 21,
     "root": [
         [
-            "^This is a test!",
+            "^A:This is a test!",
             "\n",
-            "^Here's another line!",
+            "^B:Here's another line!",
             "\n",
             [
                 "done",
