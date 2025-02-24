@@ -22,6 +22,13 @@ public abstract class Stage : MonoBehaviour
         {
             Unlock();
         }
+        
+        if (isSuccess) {
+            foreach (var stage in nextStages)
+            {
+                stage.Unlock();
+            }
+        }
     }
 
     protected virtual void Update()
