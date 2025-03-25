@@ -27,6 +27,8 @@ public class DungeonManager : Singleton<DungeonManager>
     private bool _isStartingWave = false;
     private bool isFadeingWave = false;
 
+    private double startTime;
+
     private void Awake()
     {
         if (dungeon == null)
@@ -37,6 +39,7 @@ public class DungeonManager : Singleton<DungeonManager>
 
         _isEndDungeon = false;
 
+        startTime = Time.time;
         startWave = Mathf.Max(startWave, 1);
 
         EnterDungeon();
@@ -52,9 +55,9 @@ public class DungeonManager : Singleton<DungeonManager>
 
         if (!_isStartingWave)
             StartCoroutine(FadeNextWave());
+
         else if (ServerManager.Characters.Length == 0)
         {
-            StageManager.successStage = null;
             ExitDungeon();
         }
     }
@@ -93,8 +96,11 @@ public class DungeonManager : Singleton<DungeonManager>
 
             yield return new WaitForSeconds(1);
 
-            StageManager.successStage = dungeon.Stage;
-            ExitDungeon();
+            yield return DatabaseManager.Instance.FinishedDungeon(dungeon.StageData["_id"]?.ToString(), true, Time.time - startTime, (success) =>
+            {
+                ExitDungeon();
+            });
+
             yield break;
         }
 

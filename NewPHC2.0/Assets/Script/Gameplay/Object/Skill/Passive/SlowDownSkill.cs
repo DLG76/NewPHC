@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
-[CreateAssetMenu(fileName = "NewSlowDownSkill", menuName = "Inventory/SkillItem/New Slow Down Skill")]
+[CreateAssetMenu(fileName = "NewSlowDownSkill", menuName = "InventoryUI/SkillItem/New Slow Down Skill")]
 public class SlowDownSkill : SkillItem
 {
     [SerializeField] private float slowTime = 1.5f;

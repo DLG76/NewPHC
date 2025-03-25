@@ -59,7 +59,6 @@ public abstract class EnemyCombat : CharacterCombat
     [Header("Die Data")]
     [SerializeField] private EnemyEffectData hitEffectData;
     [SerializeField] private EnemyEffectData dieEffectData;
-    [SerializeField] private Reward reward;
 
     public enum ChaseType
     {

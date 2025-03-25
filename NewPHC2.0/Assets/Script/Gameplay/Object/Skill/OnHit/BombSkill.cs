@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewBombSkill", menuName = "Inventory/SkillItem/New Bomb Skill")]
+[CreateAssetMenu(fileName = "NewBombSkill", menuName = "InventoryUI/SkillItem/New Bomb Skill")]
 public class BombSkill : SkillItem
 {
     [SerializeField] private float bombSize = 1;

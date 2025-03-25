@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewFuseData", menuName = "Inventory/New Fuse Data")]
+[CreateAssetMenu(fileName = "NewFuseData", menuName = "InventoryUI/New Fuse Data")]
 public class FuseData : ScriptableObject
 {
     [SerializeField] private VoidItem fuseItem1;

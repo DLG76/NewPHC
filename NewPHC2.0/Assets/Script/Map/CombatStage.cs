@@ -1,37 +1,37 @@
+using Newtonsoft.Json.Linq;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CombatStage : Stage
 {
-    [SerializeField] private Dungeon dungeon;
-    [SerializeField] private Reward reward;
+    private Dungeon dungeon;
 
     protected override void Awake()
     {
         base.Awake();
     }
 
+    public override void Setup(JObject stageData, JObject myClearedStage)
+    {
+        base.Setup(stageData, myClearedStage);
+
+        if (stageData != null)
+            dungeon = Dungeon.Parse(_stageData["dungeon"]?.ToObject<JObject>());
+    }
+
     public override void Success()
     {
-        if (isSuccess) return;
 
-        RewardManager.Instance.ClameReward(reward);
-
-        base.Success();
     }
 
     public override void Enter()
     {
-        dungeon.Stage = stageName;
         StageManager.Instance.PlayCombat(dungeon);
     }
 
     protected override void Update()
     {
         base.Update();
-
-        if (Input.GetKeyDown(KeyCode.E) && currentStage == stageName)
-        {
-            Success();
-        }
     }
 }

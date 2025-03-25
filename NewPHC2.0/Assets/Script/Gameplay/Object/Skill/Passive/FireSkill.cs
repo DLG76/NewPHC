@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewFireSkill", menuName = "Inventory/SkillItem/New Fire Skill")]
+[CreateAssetMenu(fileName = "NewFireSkill", menuName = "InventoryUI/SkillItem/New Fire Skill")]
 public class FireSkill : SkillItem
 {
     [SerializeField] private float tickTime = 0.5f;

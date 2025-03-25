@@ -95,6 +95,8 @@ public class PlayerCombat : CharacterCombat
 
         trail.widthMultiplier = 0;
 
+        VoidHotbarUI.Instance.Setup(this);
+
         base.Awake();
     }
 
@@ -106,8 +108,7 @@ public class PlayerCombat : CharacterCombat
             _health = _maxHealth;
 
         if (Input.GetMouseButtonDown(0) &&
-            ((dungeon != null && dungeon.IsStartingWave) || dungeon == null) &&
-            (VoidInventoryUI.Instance == null || !VoidInventoryUI.Instance.InventoryUI.activeSelf))
+            ((dungeon != null && dungeon.IsStartingWave) || dungeon == null))
         {
             if (voidSelected != null)
                 Attack();
@@ -212,7 +213,7 @@ public class PlayerCombat : CharacterCombat
             yield break;
         }
 
-        VoidInventoryUI.Instance?.RemoveItem(voidSelected, false);
+        VoidHotbarUI.Instance.RemoveItem(voidSelected);
         voidSelected = null;
 
         CameraController.Instance.StopLerpCameraSize();

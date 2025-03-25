@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -38,6 +39,8 @@ public class Dungeon
     [System.Serializable]
     public class BossWave : Wave
     {
+        public BossCombat BossModel { get => bossModel; set => bossModel = value; }
+        public Vector3 BossPos { get => bossPos; set => bossPos = value; }
         [SerializeField] private BossCombat bossModel;
         [SerializeField] private Vector3 bossPos;
 
@@ -67,6 +70,8 @@ public class Dungeon
     [System.Serializable]
     public class EnemySpawnData
     {
+        public EnemyCombat EnemyModel { get => enemyModel; set => enemyModel = value; }
+        public int Count { get => count; set => count = value; }
         [SerializeField] private EnemyCombat enemyModel;
         [SerializeField] private int count = 1;
         private PolygonCollider2D spawnCollider;
@@ -141,9 +146,87 @@ public class Dungeon
 
             return inside;
         }
+
     }
 
     public Wave[] Waves { get => _waves; }
     [SerializeReference] private Wave[] _waves;
-    public string Stage { get; set; }
+    public JObject StageData { get; private set; }
+
+    private static Vector3 ParseVector3(JToken positionJson)
+    {
+        if (positionJson == null || positionJson.Type == JTokenType.Null)
+            return Vector3.zero;
+
+        return new Vector3(
+            positionJson["x"]?.ToObject<float>() ?? 0f,
+            positionJson["y"]?.ToObject<float>() ?? 0f,
+            0f
+        );
+    }
+
+    private static BossCombat GetBossModel(string bossPrefabName)
+    {
+        return Resources.Load<BossCombat>($"Dungeon/Enemy/Boss/{bossPrefabName}");
+    }
+
+    private static EnemyCombat GetEnemyModel(string enemyPrefabName)
+    {
+        return Resources.Load<EnemyCombat>($"Dungeon/Enemy/{enemyPrefabName}");
+    }
+
+    private static EnemySpawnData[] ParseEnemySpawnDatas(JToken enemySpawnDatasJson)
+    {
+        var enemySpawnDatas = new List<EnemySpawnData>();
+
+        foreach (var enemyJson in enemySpawnDatasJson)
+        {
+            var enemySpawnData = new EnemySpawnData
+            {
+                EnemyModel = GetEnemyModel(enemyJson["enemyPrefabName"].ToString()),
+                Count = enemyJson["count"]?.ToObject<int>() ?? 1
+            };
+            enemySpawnDatas.Add(enemySpawnData);
+        }
+
+        return enemySpawnDatas.ToArray();
+    }
+
+    public static Dungeon Parse(JObject dungeonJson)
+    {
+        var dungeon = new Dungeon();
+        dungeon.StageData = dungeonJson;
+
+        var waves = new List<Wave>();
+
+        foreach (var waveJson in dungeonJson["waves"])
+        {
+            bool isBossWave = waveJson["bossPrefabName"] != null && waveJson["bossPrefabName"].Type != JTokenType.Null;
+
+            Wave wave;
+            if (isBossWave)
+            {
+                var bossWave = new BossWave
+                {
+                    enemySpawnDatas = ParseEnemySpawnDatas(waveJson["enemySpawnDatas"]),
+                    BossModel = GetBossModel(waveJson["bossPrefabName"].ToString()),
+                    BossPos = ParseVector3(waveJson["bossPosition"])
+                };
+                wave = bossWave;
+            }
+            else
+            {
+                wave = new Wave
+                {
+                    enemySpawnDatas = ParseEnemySpawnDatas(waveJson["enemySpawnDatas"])
+                };
+            }
+
+            waves.Add(wave);
+        }
+
+        dungeon._waves = waves.ToArray();
+        return dungeon;
+    }
+
 }

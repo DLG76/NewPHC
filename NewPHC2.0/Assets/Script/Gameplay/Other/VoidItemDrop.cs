@@ -89,10 +89,10 @@ public class VoidItemDrop : MonoBehaviour, ICollectable
 
         collected = true;
 
-        AudioManager.Instance?.PlaySound($"CollectItem", 0.1f, 0.7f);
+        AudioManager.Instance?.PlaySound("CollectItem", 0.1f, 0.7f);
 
         onItemCollected?.Invoke(_item.Owner.Character);
-        VoidInventoryUI.Instance?.AddItem(_item);
+        VoidHotbarUI.Instance.AddItem(_item);
 
         var player = _item.Owner.Character;
 

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewBreakableSkill", menuName = "Inventory/SkillItem/New Breakable Skill")]
+[CreateAssetMenu(fileName = "NewBreakableSkill", menuName = "InventoryUI/SkillItem/New Breakable Skill")]
 public class BreakableSkill : SkillItem
 {
     private bool hitted = false;

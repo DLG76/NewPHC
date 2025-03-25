@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "NewChangePowerSkill", menuName = "Inventory/SkillItem/New Change Power Skill")]
+[CreateAssetMenu(fileName = "NewChangePowerSkill", menuName = "InventoryUI/SkillItem/New Change Power Skill")]
 public class ChangePowerSkill : SkillItem
 {
     [SerializeField] private float speedMultiply = 1;

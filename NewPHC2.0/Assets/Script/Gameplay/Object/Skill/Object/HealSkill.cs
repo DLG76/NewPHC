@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-[CreateAssetMenu(fileName = "NewHealSkill", menuName = "Inventory/SkillItem/New Heal Skill")]
+[CreateAssetMenu(fileName = "NewHealSkill", menuName = "InventoryUI/SkillItem/New Heal Skill")]
 public class HealSkill : SkillItem
 {
     [SerializeField] private GameObject healItemModel;

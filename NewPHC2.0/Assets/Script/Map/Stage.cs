@@ -1,65 +1,68 @@
+using Newtonsoft.Json.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
 public abstract class Stage : MonoBehaviour
 {
     public static string currentStage;
+
     [SerializeField] private bool isStartStage = false;
-    public string stageName;
-    [SerializeField] protected bool isLock = false;
-    [SerializeField] protected bool isSuccess = false;
-    [SerializeField] private Stage[] nextStages;
-    //[SerializeField] private Reward reward;
+    public string stageId;
+    public Stage[] NextStages { get => _nextStages; }
+    [SerializeField] protected Stage[] _nextStages;
+
+    public JObject StageData { get => _stageData; }
+    protected JObject _stageData;
+
+    public JObject MyClearedStage { get => _myClearedStage; }
+    protected JObject _myClearedStage;
+
+    protected bool isLock = false;
 
     protected virtual void Awake()
     {
         if (string.IsNullOrEmpty(currentStage) && isStartStage)
-        {
-            currentStage = stageName;
-            Unlock();
-        }
-        else if (!string.IsNullOrEmpty(currentStage) && currentStage == stageName)
-        {
-            Unlock();
-        }
+            currentStage = stageId;
     }
 
     protected virtual void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && currentStage == stageName)
+        if (Input.GetKeyDown(KeyCode.Space) && currentStage == stageId)
             Enter();
     }
 
     private void OnMouseDown() => Select();
 
-    public void Setup(bool isLock, bool isSuccess)
+    public virtual void Setup(JObject stageData, JObject myClearedStage)
     {
-        this.isLock = isLock;
-        this.isSuccess = isSuccess;
+        _stageData = stageData;
+        _myClearedStage = myClearedStage;
 
-        if (isSuccess)
+        if (isStartStage)
         {
-            foreach (var stage in nextStages)
-            {
-                stage.Unlock();
-            }
+            Unlock();
+        }
+        else
+        {
+            Lock();
         }
     }
 
     public void Select()
     {
+        if (_stageData == null) return;
         if (isLock) return;
 
-        if (currentStage == stageName)
+        if (currentStage == stageId)
         {
             Enter();
         }
         else
         {
-            currentStage = stageName;
-            StageManager.Instance.LandmarkMoveTo(this);
+            currentStage = stageId;
+            StageManager.Instance.PlayerMoveTo(this);
 
-            Debug.Log($"currentStage: {currentStage}");
+            //Debug.Log($"currentStage: {currentStage}");
         }
     }
 
@@ -67,32 +70,16 @@ public abstract class Stage : MonoBehaviour
 
     public virtual void Success()
     {
-        if (isSuccess) return;
-
         Debug.Log("Success");
-
-        isSuccess = true;
-
-        DatabaseManager.Instance.SuccessStage(this);
-        // get reward
-        foreach (var stage in nextStages)
-        {
-            stage.Unlock();
-        }
     }
 
     public void Unlock()
     {
         isLock = false;
-        StageManager.unlockStages.Add(stageName);
     }
 
     public void Lock()
     {
-        if (!isStartStage)
-        {
-            isLock = true;
-            StageManager.unlockStages.Remove(stageName);
-        }
+        isLock = true;
     }
 }
