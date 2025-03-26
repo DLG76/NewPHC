@@ -46,6 +46,9 @@ public abstract class Stage : MonoBehaviour
         {
             Lock();
         }
+
+        if (_myClearedStage != null)
+            Success();
     }
 
     public void Select()
@@ -70,9 +73,7 @@ public abstract class Stage : MonoBehaviour
 
     public virtual void Success()
     {
-        Debug.Log("Success");
-
-        GetComponent<SpriteRenderer>().color = Color.green;
+        GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/SuccessStageIcon");
     }
 
     public void Unlock()

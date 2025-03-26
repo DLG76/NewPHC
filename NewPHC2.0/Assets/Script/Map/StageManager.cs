@@ -17,17 +17,18 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
-        LoadStages();
-
-        if (!string.IsNullOrEmpty(Stage.currentStage))
+        LoadStages(() =>
         {
-            Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage);
-
-            if (stage != null)
+            if (!string.IsNullOrEmpty(Stage.currentStage))
             {
-                PlayerMoveTo(stage, 0);
+                Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage);
+
+                if (stage != null)
+                {
+                    player.position = stage.transform.position;
+                }
             }
-        }
+        });
 
         StartCoroutine(fadeCanvas.EnterFade());
     }
@@ -37,7 +38,9 @@ public class StageManager : Singleton<StageManager>
 
     }
 
-    public void LoadStages()
+    public void LoadStages() => LoadStages(null);
+
+    public void LoadStages(System.Action onStagesLoaded)
     {
         if (stagesParent == null)
         {
@@ -93,6 +96,8 @@ public class StageManager : Singleton<StageManager>
 
                 foreach (var stageObj in clearedStageObjs)
                     UnlockNextStages(stageObj);
+
+                onStagesLoaded?.Invoke();
             }));
         }));
     }
@@ -107,6 +112,14 @@ public class StageManager : Singleton<StageManager>
 
     public void PlayerMoveTo(Stage stage, float time)
     {
+        var direction = stage.transform.position - player.position;
+        direction.Normalize();
+
+        if (direction.x > 0)
+            player.GetComponent<SpriteRenderer>().flipX = true;
+        else if (direction.x < 0)
+            player.GetComponent<SpriteRenderer>().flipX = false;
+
         player.DOMove(stage.transform.position, time);
     }
 

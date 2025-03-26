@@ -228,7 +228,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     public void GoToLoginScene()
     {
-        SceneManager.LoadScene(loginScene);
+        //SceneManager.LoadScene(loginScene);
     }
 }
 
