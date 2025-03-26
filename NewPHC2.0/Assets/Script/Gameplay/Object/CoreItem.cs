@@ -8,8 +8,9 @@ public class CoreItem : Item
     public float health { get; set; }
     public float armor { get; set; }
 
-    public CoreItem(JObject itemJson, int count) : base(itemJson, count)
+    public CoreItem(JObject itemJson) : base(itemJson)
     {
-        // ยังไม่เสร็จ
+        health = itemJson["health"]?.Value<float>() ?? 0;
+        armor = itemJson["armor"]?.Value<float>() ?? 0;
     }
 }

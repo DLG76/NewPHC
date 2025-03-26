@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class CombatStage : Stage
 {
-    private Dungeon dungeon;
+    [SerializeField] private Dungeon dungeon;
 
     protected override void Awake()
     {

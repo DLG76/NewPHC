@@ -8,15 +8,13 @@ public class Item
     public Sprite Icon;
     public string Description;
     public bool CanStack;
-    public int Count;
 
-    public Item(JObject itemJson, int count)
+    public Item(JObject itemJson)
     {
         id = itemJson["_id"].ToString();
         Name = itemJson["name"].ToString();
-        //Icon = Resources.Load<Sprite>("ItemIcons/" + itemJson["icon"].ToString());
+        Icon = Resources.Load<Sprite>("ItemIcons/" + itemJson["name"].ToString());
         Description = itemJson["description"].ToString();
         CanStack = itemJson["canStack"].ToObject<bool>();
-        Count = count;
     }
 }

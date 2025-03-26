@@ -11,27 +11,27 @@ public class InventorySlot : MonoBehaviour
     public Button OpenButton { get => openButton; }
     [SerializeField] private Button openButton;
 
-    private Item item;
+    private InventoryItem inventoryItem;
 
-    public void SetItem(Item item)
+    public void SetItem(InventoryItem inventoryItem)
     {
-        this.item = item;
+        this.inventoryItem = inventoryItem;
         LoadUI();
     }
 
     public void LoadUI()
     {
-        if (item == null)
+        if (inventoryItem == null)
         {
             iconImage.sprite = null;
             countText.gameObject.SetActive(false);
             return;
         }
 
-        iconImage.sprite = item.Icon;
-        if (item.CanStack)
+        iconImage.sprite = inventoryItem.item?.Icon;
+        if (inventoryItem.item != null && inventoryItem.item.CanStack)
         {
-            countText.text = $"x{item.Count}";
+            countText.text = $"x{inventoryItem.count}";
             countText.gameObject.SetActive(true);
         }
         else countText.gameObject.SetActive(false);

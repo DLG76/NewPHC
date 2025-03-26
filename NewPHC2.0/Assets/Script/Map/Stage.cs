@@ -71,6 +71,8 @@ public abstract class Stage : MonoBehaviour
     public virtual void Success()
     {
         Debug.Log("Success");
+
+        GetComponent<SpriteRenderer>().color = Color.green;
     }
 
     public void Unlock()

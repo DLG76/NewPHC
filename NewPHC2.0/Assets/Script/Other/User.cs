@@ -23,19 +23,19 @@ public class Equipment
         }
 
         if (equipmentJson["weapon1"] != null && equipmentJson["weapon1"]?.Type != JTokenType.Null)
-            weapon1 = new VoidItem(equipmentJson["weapon1"]?.ToObject<JObject>(), 1);
+            weapon1 = new VoidItem(equipmentJson["weapon1"]?.ToObject<JObject>());
         if (equipmentJson["weapon2"] != null && equipmentJson["weapon2"]?.Type != JTokenType.Null)
-            weapon2 = new VoidItem(equipmentJson["weapon2"]?.ToObject<JObject>(), 1);
+            weapon2 = new VoidItem(equipmentJson["weapon2"]?.ToObject<JObject>());
         if (equipmentJson["weapon3"] != null && equipmentJson["weapon3"]?.Type != JTokenType.Null)
-            weapon3 = new VoidItem(equipmentJson["weapon3"]?.ToObject<JObject>(), 1);
+            weapon3 = new VoidItem(equipmentJson["weapon3"]?.ToObject<JObject>());
         if (equipmentJson["core"] != null && equipmentJson["core"]?.Type != JTokenType.Null)
-            core = new CoreItem(equipmentJson["core"]?.ToObject<JObject>(), 1);
+            core = new CoreItem(equipmentJson["core"]?.ToObject<JObject>());
     }
 }
 
 public class InventoryItem
 {
-    public string itemId { get; set; }
+    public Item item { get; set; }
     public int count { get; set; }
 }
 
@@ -70,7 +70,7 @@ public class User
     public List<ClearedStage> clearedStages = new List<ClearedStage>();
 
     public Equipment equipment = new Equipment();
-    public List<Item> inventory = new List<Item>();
+    public List<InventoryItem> inventory = new List<InventoryItem>();
     public List<Answer> answers = new List<Answer>();
 
     public void UpdateProfile(JObject user)
@@ -94,6 +94,8 @@ public class User
         equipment = new Equipment(stats["equipment"]?.ToObject<JObject>());
 
         if (stats["inventory"] != null && stats["inventory"]?.Type != JTokenType.Null)
+        {
+            inventory.Clear();
             foreach (JObject inventorySlotJson in stats["inventory"]?.ToObject<List<JObject>>())
             {
                 int count = inventorySlotJson["count"].ToObject<int>();
@@ -101,15 +103,32 @@ public class User
 
                 if (itemJson != null)
                 {
-                    inventory.Clear();
                     if (itemJson["type"].ToString() == "VoidItem")
-                        inventory.Add(new VoidItem(itemJson, count));
+                        inventory.Add(new InventoryItem
+                        {
+                            item = new VoidItem(itemJson),
+                            count = count
+                        });
                     else if (itemJson["type"].ToString() == "CoreItem")
-                        inventory.Add(new CoreItem(itemJson, count));
+                        inventory.Add(new InventoryItem
+                        {
+                            item = new CoreItem(itemJson),
+                            count = count
+                        });
                     else if (itemJson["type"].ToString() == "NormalItem")
-                        inventory.Add(new Item(itemJson, count));
+                        inventory.Add(new InventoryItem
+                        {
+                            item = new Item(itemJson),
+                            count = count
+                        });
                 }
             }
+
+            if (this == me)
+            {
+                InventoryUI.Instance?.LoadInventory();
+            }
+        }
 
         answers = ConvertTextToClass<List<Answer>>(stats["answers"]?.ToString());
 

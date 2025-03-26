@@ -28,9 +28,21 @@ public class VoidHotbarUI : Singleton<VoidHotbarUI>
             core = User.me?.equipment?.core
         };
 
-        weapon1UI.SetItem(equipment.weapon1);
-        weapon2UI.SetItem(equipment.weapon2);
-        weapon3UI.SetItem(equipment.weapon3);
+        weapon1UI.SetItem(new InventoryItem
+        {
+            item = equipment.weapon1,
+            count = 1
+        });
+        weapon2UI.SetItem(new InventoryItem
+        {
+            item = equipment.weapon2,
+            count = 1
+        });
+        weapon3UI.SetItem(new InventoryItem
+        {
+            item = equipment.weapon3,
+            count = 1
+        });
     }
 
     private void Update()
@@ -104,17 +116,29 @@ public class VoidHotbarUI : Singleton<VoidHotbarUI>
         if (equipment.weapon1 == null)
         {
             equipment.weapon1 = item;
-            weapon1UI.SetItem(item);
+            weapon1UI.SetItem(new InventoryItem
+            {
+                item = equipment.weapon1,
+                count = 1
+            });
         }
         else if (equipment.weapon2 == null)
         {
             equipment.weapon2 = item;
-            weapon2UI.SetItem(item);
+            weapon2UI.SetItem(new InventoryItem
+            {
+                item = equipment.weapon2,
+                count = 1
+            });
         }
         else if (equipment.weapon3 == null)
         {
             equipment.weapon3 = item;
-            weapon3UI.SetItem(item);
+            weapon3UI.SetItem(new InventoryItem
+            {
+                item = equipment.weapon3,
+                count = 1
+            });
         }
     }
 

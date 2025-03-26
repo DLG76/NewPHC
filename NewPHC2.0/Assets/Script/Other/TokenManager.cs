@@ -60,6 +60,7 @@ public class TokenManager : SingletonPersistent<TokenManager>
             PlayerPrefs.DeleteKey("accessToken");
             PlayerPrefs.DeleteKey("refreshToken");
             PlayerPrefs.Save();
+
             callback?.Invoke(false, request.responseCode, request.error);
         }
 	}
@@ -99,6 +100,7 @@ public class TokenManager : SingletonPersistent<TokenManager>
             }
             else
             {
+                Debug.Log("To Login Scene");
                 DatabaseManager.Instance.GoToLoginScene();
             }
         }

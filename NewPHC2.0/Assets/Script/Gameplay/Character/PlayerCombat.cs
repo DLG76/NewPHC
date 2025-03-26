@@ -56,6 +56,14 @@ public class PlayerCombat : CharacterCombat
         return null;
     }
 
+    public float MaxArmor { get => _maxArmor; }
+    private float _maxArmor = 0;
+    public float Armor { get => _armor; }
+    private float _armor = 0;
+
+    private float armorRegenTime = 0;
+    private float hurtTime = 0;
+
     public PlayerCombatData playerData;
 
     [Header("Dash")]
@@ -97,6 +105,14 @@ public class PlayerCombat : CharacterCombat
 
         VoidHotbarUI.Instance.Setup(this);
 
+        if (User.me.equipment.core != null)
+        {
+            _maxHealth += User.me.equipment.core.health;
+            _health = _maxHealth;
+            _maxArmor += User.me.equipment.core.armor;
+            _armor = _maxArmor;
+        }
+
         base.Awake();
     }
 
@@ -134,6 +150,18 @@ public class PlayerCombat : CharacterCombat
         Move(movement);
 
         CheckItemInArea();
+    }
+
+    private void FixedUpdate()
+    {
+        if (Time.time - hurtTime > 4)
+        {
+            if (_armor < _maxArmor && Time.time - armorRegenTime > 1)
+            {
+                _armor = Mathf.Min(_armor + (_maxArmor / 20f), _maxArmor);
+                armorRegenTime = Time.time;
+            }
+        }
     }
 
     private void OnEnable()
@@ -392,15 +420,32 @@ public class PlayerCombat : CharacterCombat
         var dungeon = DungeonManager.Instance;
 
         if (dungeon != null && dungeon.IsEndDungeon) return;
+        if (dmg <= 0) return;
+
+        hurtTime = Time.time;
 
         CameraController.Instance?.TriggerShake(0.075f, 0.175f, (Mathf.Min(dmg, _health) / _maxHealth * 1.5f) + 0.25f);
-        CameraController.Instance?.Hurt();
+
+        if (dmg > _armor)
+        {
+            dmg -= _armor;
+            _armor = 0;
+        }
+        else
+        {
+            _armor -= dmg;
+            dmg = 0;
+        }
+
+        if (dmg > 0)
+            CameraController.Instance?.Hurt();
 
         Instantiate(Resources.Load<Transform>("Effect/PlayerHitEffect"), RandomPositionGenerator.GetRandomPositionInCollider(_collider), Quaternion.identity);
 
         AudioManager.Instance?.PlaySound("PlayerHurt" + Random.Range(1, 4), 0.25f, Random.Range(1.1f, 1.35f));
 
-        base.TakeDamage(dmg);
+        if (dmg > 0)
+            base.TakeDamage(dmg);
     }
 
     private void OnDestroy()

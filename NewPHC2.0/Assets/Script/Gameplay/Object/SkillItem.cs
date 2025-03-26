@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using UnityEngine;
 
@@ -27,6 +28,11 @@ public abstract class SkillItem : ScriptableObject
         Object,
         OnHit,
         Passive
+    }
+
+    public static List<SkillItem> GetAllSkillItems()
+    {
+        return Resources.LoadAll<SkillItem>("Skill").ToList();
     }
 
     public static T CreateNewItem<T>(T item) where T : SkillItem

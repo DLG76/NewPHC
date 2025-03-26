@@ -12,6 +12,8 @@ public class LoginUI : MonoBehaviour
     [SerializeField] private Button loginButton;
     [SerializeField] private string nextScene;
 
+    private bool loggingIn = false;
+
     private void Awake()
     {
         usernameInput.text = PlayerPrefs.GetString("username", "");
@@ -53,6 +55,11 @@ public class LoginUI : MonoBehaviour
         if (string.IsNullOrEmpty(username) || string.IsNullOrEmpty(password))
             return;
 
+        if (loggingIn)
+            return;
+
+        loggingIn = true;
+
         StartCoroutine(DatabaseManager.Instance.Login(usernameInput.text, passwordInput.text, (success, error) =>
         {
             if (success)
@@ -71,6 +78,8 @@ public class LoginUI : MonoBehaviour
                 Debug.LogError("Login failed: " + error);
                 Awake();
             }
+
+            loggingIn = false;
         }));
     }
 
