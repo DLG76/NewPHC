@@ -19,18 +19,25 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
-    private void Awake()
-    {
-        LoadInventory();
-    }
+    private bool inventoryActive = false;
 
-    private void OnEnable()
+    private void Update()
     {
-        descriptionPanel.SetActive(false);
+        if (inventoryPanel.gameObject.activeSelf && !inventoryActive)
+        {
+            inventoryActive = true;
+            descriptionPanel.SetActive(false);
+            LoadInventory();
+        }
+        else if (!inventoryPanel.gameObject.activeSelf && inventoryActive)
+            SaveData();
     }
 
     public void LoadInventory()
     {
+        if (!inventoryPanel.gameObject.activeSelf)
+            return;
+
         foreach (Transform slot in inventoryPanel)
             Destroy(slot.gameObject);
 
@@ -122,8 +129,6 @@ public class InventoryUI : Singleton<InventoryUI>
     {
 
     }
-
-    private void OnDisable() => SaveData();
 
     private void SaveData()
     {

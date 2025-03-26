@@ -125,9 +125,7 @@ public class User
             }
 
             if (this == me)
-            {
                 InventoryUI.Instance?.LoadInventory();
-            }
         }
 
         answers = ConvertTextToClass<List<Answer>>(stats["answers"]?.ToString());
