@@ -55,8 +55,8 @@ Material:
     m_Ints: []
     m_Floats:
     - _WindInfluenceMask: 4
-    - _WindScale: 0.75
-    - _WindSpeed: 1
+    - _WindScale: 0.1
+    - _WindSpeed: 0.5
     - _WindStrength: 2
     m_Colors:
     - _WindDirection: {r: 2, g: 1, b: 0, a: 0}
