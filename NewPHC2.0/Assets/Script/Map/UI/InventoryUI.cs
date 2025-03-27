@@ -273,6 +273,7 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private void AddItem(Item item)
     {
+        Debug.Log(item);
         if (item == null)
             return;
 
@@ -283,6 +284,7 @@ public class InventoryUI : Singleton<InventoryUI>
             {
                 slot.inventoryItem.count++;
                 haveData = true;
+                LoadInventory();
                 break;
             }
 
@@ -301,6 +303,8 @@ public class InventoryUI : Singleton<InventoryUI>
             slot.OpenButton.onClick.AddListener(() => ShowItemData(inventoryItem.item));
 
             inventorySlots.Add(slot);
+
+            LoadInventory();
         }
     }
 
