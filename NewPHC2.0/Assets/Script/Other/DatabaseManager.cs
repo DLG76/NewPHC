@@ -190,14 +190,18 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         });
     }
 
-    public IEnumerator UpdateEquipment(Equipment equipment, System.Action<bool, Equipment, List<JObject>> callback)
+    public IEnumerator UpdateEquipment(Equipment equipment, System.Action<bool, JObject, List<JObject>> callback)
     {
         string jsonPayload = JsonConvert.SerializeObject(new JObject
         {
-            new JProperty("weapon1", equipment.weapon1),
-            new JProperty("weapon2", equipment.weapon2),
-            new JProperty("weapon3", equipment.weapon3),
-            new JProperty("core", equipment.core)
+            new JProperty("equipmentData", new JObject
+                {
+                    new JProperty("weapon1", equipment.weapon1?.id),
+                    new JProperty("weapon2", equipment.weapon2?.id),
+                    new JProperty("weapon3", equipment.weapon3?.id),
+                    new JProperty("core", equipment.core?.id)
+                }
+            )
         });
         byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonPayload);
 
@@ -215,7 +219,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             {
                 string responseText = request.downloadHandler.text;
                 JObject responseJson = JObject.Parse(responseText);
-                Equipment newEquipment = new Equipment(responseJson["equipment"]?.ToObject<JObject>());
+                JObject newEquipment = responseJson["equipment"]?.ToObject<JObject>();
                 List<JObject> inventory = responseJson["inventory"]?.ToObject<List<JObject>>();
                 callback?.Invoke(true, newEquipment, inventory);
             }
@@ -228,7 +232,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     public void GoToLoginScene()
     {
-        //SceneManager.LoadScene(loginScene);
+        SceneManager.LoadScene(loginScene);
     }
 }
 

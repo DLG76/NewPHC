@@ -11,7 +11,7 @@ public class InventorySlot : MonoBehaviour
     public Button OpenButton { get => openButton; }
     [SerializeField] private Button openButton;
 
-    private InventoryItem inventoryItem;
+    public InventoryItem inventoryItem;
 
     public void SetItem(InventoryItem inventoryItem)
     {

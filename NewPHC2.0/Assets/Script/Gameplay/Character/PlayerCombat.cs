@@ -105,6 +105,9 @@ public class PlayerCombat : CharacterCombat
 
         VoidHotbarUI.Instance.Setup(this);
 
+        _maxHealth = User.me.maxHealth;
+        _health = User.me.health;
+
         if (User.me.equipment.core != null)
         {
             _maxHealth += User.me.equipment.core.health;

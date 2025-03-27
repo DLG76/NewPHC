@@ -35,7 +35,20 @@ public class StageManager : Singleton<StageManager>
 
     private void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            mouseWorldPos.z = 100;
 
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, transform.right, Mathf.Infinity);
+
+            foreach (RaycastHit2D hit in hits)
+                if (hit.transform.gameObject.TryGetComponent(out Stage stage))
+                {
+                    stage.Select();
+                    break;
+                }
+        }
     }
 
     public void LoadStages() => LoadStages(null);
@@ -105,7 +118,7 @@ public class StageManager : Singleton<StageManager>
     private void UnlockNextStages(Stage stageObj)
     {
         foreach (var nextStageObj in stageObj.NextStages)
-            nextStageObj.Unlock();
+            nextStageObj.Unlock(stageObj);
     }
 
     public void PlayerMoveTo(Stage stage) => PlayerMoveTo(stage, playerMoveTime);

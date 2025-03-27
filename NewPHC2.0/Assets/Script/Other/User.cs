@@ -91,46 +91,61 @@ public class User
         exp = stats["exp"].ToObject<double>();
         clearedStages = ConvertTextToClass<List<ClearedStage>>(stats["clearedStages"].ToString());
 
-        equipment = new Equipment(stats["equipment"]?.ToObject<JObject>());
+        UpdateEquipment(stats["equipment"]?.ToObject<JObject>());
 
         if (stats["inventory"] != null && stats["inventory"]?.Type != JTokenType.Null)
-        {
-            inventory.Clear();
-            foreach (JObject inventorySlotJson in stats["inventory"]?.ToObject<List<JObject>>())
-            {
-                int count = inventorySlotJson["count"].ToObject<int>();
-                JObject itemJson = inventorySlotJson["itemId"].ToObject<JObject>();
-
-                if (itemJson != null)
-                {
-                    if (itemJson["type"].ToString() == "VoidItem")
-                        inventory.Add(new InventoryItem
-                        {
-                            item = new VoidItem(itemJson),
-                            count = count
-                        });
-                    else if (itemJson["type"].ToString() == "CoreItem")
-                        inventory.Add(new InventoryItem
-                        {
-                            item = new CoreItem(itemJson),
-                            count = count
-                        });
-                    else if (itemJson["type"].ToString() == "NormalItem")
-                        inventory.Add(new InventoryItem
-                        {
-                            item = new Item(itemJson),
-                            count = count
-                        });
-                }
-            }
-
-            if (this == me)
-                InventoryUI.Instance?.LoadInventory();
-        }
+            UpdateInventory(stats["inventory"]?.ToObject<List<JObject>>());
 
         answers = ConvertTextToClass<List<Answer>>(stats["answers"]?.ToString());
 
         haveData = true;
+    }
+
+    public void UpdateEquipment(JObject equipmentJson)
+    {
+        equipment = new Equipment(equipmentJson);
+
+        if (this == me)
+            InventoryUI.Instance?.LoadInventory();
+    }
+
+    public void UpdateInventory(List<JObject> inventoryJson)
+    {
+        inventory.Clear();
+
+        if (inventoryJson == null)
+            return;
+
+        foreach (JObject inventorySlotJson in inventoryJson)
+        {
+            int count = inventorySlotJson["count"].ToObject<int>();
+            JObject itemJson = inventorySlotJson["itemId"].ToObject<JObject>();
+
+            if (itemJson != null)
+            {
+                if (itemJson["type"].ToString() == "VoidItem")
+                    inventory.Add(new InventoryItem
+                    {
+                        item = new VoidItem(itemJson),
+                        count = count
+                    });
+                else if (itemJson["type"].ToString() == "CoreItem")
+                    inventory.Add(new InventoryItem
+                    {
+                        item = new CoreItem(itemJson),
+                        count = count
+                    });
+                else if (itemJson["type"].ToString() == "NormalItem")
+                    inventory.Add(new InventoryItem
+                    {
+                        item = new Item(itemJson),
+                        count = count
+                    });
+            }
+        }
+
+        if (this == me)
+            InventoryUI.Instance?.LoadInventory();
     }
 
     private static T ConvertTextToClass<T>(string text)

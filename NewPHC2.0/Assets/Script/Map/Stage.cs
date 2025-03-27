@@ -1,4 +1,5 @@
 using Newtonsoft.Json.Linq;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -18,6 +19,7 @@ public abstract class Stage : MonoBehaviour
     protected JObject _myClearedStage;
 
     protected bool isLock = false;
+    protected Stage previewStage;
 
     protected virtual void Awake()
     {
@@ -31,8 +33,6 @@ public abstract class Stage : MonoBehaviour
             Enter();
     }
 
-    private void OnMouseDown() => Select();
-
     public virtual void Setup(JObject stageData, JObject myClearedStage)
     {
         _stageData = stageData;
@@ -40,7 +40,7 @@ public abstract class Stage : MonoBehaviour
 
         if (isStartStage)
         {
-            Unlock();
+            Unlock(null);
         }
         else
         {
@@ -53,6 +53,8 @@ public abstract class Stage : MonoBehaviour
 
     public void Select()
     {
+        Debug.Log($"Stage {stageId} clicked");
+
         if (_stageData == null) return;
         if (isLock) return;
 
@@ -60,7 +62,7 @@ public abstract class Stage : MonoBehaviour
         {
             Enter();
         }
-        else
+        else if ((previewStage != null && currentStage == previewStage.stageId) || _nextStages.FirstOrDefault(ns => ns.stageId == currentStage) != null)
         {
             currentStage = stageId;
             StageManager.Instance.PlayerMoveTo(this);
@@ -76,8 +78,11 @@ public abstract class Stage : MonoBehaviour
         GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/SuccessStageIcon");
     }
 
-    public void Unlock()
+    public void Unlock(Stage previewStage)
     {
+        if (previewStage != null)
+            this.previewStage = previewStage;
+
         isLock = false;
     }
 
