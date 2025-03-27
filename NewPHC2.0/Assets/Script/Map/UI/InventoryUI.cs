@@ -29,6 +29,91 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private bool inventoryActive = false;
     private bool selectEquipmentMode = false;
+    private Item selectingItem;
+
+    private void Awake()
+    {
+        coreItemButton.OpenButton.onClick.RemoveAllListeners();
+        coreItemButton.OpenButton.onClick.AddListener(() =>
+        {
+            if (selectEquipmentMode && selectingItem != null)
+            {
+                if (selectingItem is CoreItem coreItem)
+                {
+                    AddItem(User.me.equipment.core);
+                    User.me.equipment.core = coreItem;
+                    coreItemButton.SetItem(new InventoryItem
+                    {
+                        item = selectingItem,
+                        count = 1
+                    });
+                }
+                selectEquipmentMode = false;
+            }
+
+            ShowItemData(User.me.equipment.core);
+        });
+        weapon1ItemButton.OpenButton.onClick.RemoveAllListeners();
+        weapon1ItemButton.OpenButton.onClick.AddListener(() =>
+        {
+            if (selectEquipmentMode && selectingItem != null)
+            {
+                if (selectingItem is VoidItem voidItem)
+                {
+                    AddItem(User.me.equipment.weapon1);
+                    User.me.equipment.weapon1 = voidItem;
+                    weapon1ItemButton.SetItem(new InventoryItem
+                    {
+                        item = selectingItem,
+                        count = 1
+                    });
+                }
+                selectEquipmentMode = false;
+            }
+
+            ShowItemData(User.me.equipment.weapon1);
+        });
+        weapon2ItemButton.OpenButton.onClick.RemoveAllListeners();
+        weapon2ItemButton.OpenButton.onClick.AddListener(() =>
+        {
+            if (selectEquipmentMode && selectingItem != null)
+            {
+                if (selectingItem is VoidItem voidItem)
+                {
+                    AddItem(User.me.equipment.weapon2);
+                    User.me.equipment.weapon2 = voidItem;
+                    weapon2ItemButton.SetItem(new InventoryItem
+                    {
+                        item = selectingItem,
+                        count = 1
+                    });
+                }
+                selectEquipmentMode = false;
+            }
+
+            ShowItemData(User.me.equipment.weapon2);
+        });
+        weapon3ItemButton.OpenButton.onClick.RemoveAllListeners();
+        weapon3ItemButton.OpenButton.onClick.AddListener(() =>
+        {
+            if (selectEquipmentMode && selectingItem != null)
+            {
+                if (selectingItem is VoidItem voidItem)
+                {
+                    AddItem(User.me.equipment.weapon3);
+                    User.me.equipment.weapon3 = voidItem;
+                    weapon3ItemButton.SetItem(new InventoryItem
+                    {
+                        item = selectingItem,
+                        count = 1
+                    });
+                }
+                selectEquipmentMode = false;
+            }
+
+            ShowItemData(User.me.equipment.weapon3);
+        });
+    }
 
     private void Update()
     {
@@ -67,6 +152,27 @@ public class InventoryUI : Singleton<InventoryUI>
 
             inventorySlots.Add(slot);
         }
+
+        coreItemButton.SetItem(new InventoryItem
+        {
+            item = User.me.equipment.core,
+            count = 1
+        });
+        weapon1ItemButton.SetItem(new InventoryItem
+        {
+            item = User.me.equipment.weapon1,
+            count = 1
+        });
+        weapon2ItemButton.SetItem(new InventoryItem
+        {
+            item = User.me.equipment.weapon2,
+            count = 1
+        });
+        weapon3ItemButton.SetItem(new InventoryItem
+        {
+            item = User.me.equipment.weapon3,
+            count = 1
+        });
     }
 
     private void ShowItemData(Item item)
@@ -113,92 +219,23 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private void EquipItem(Item item)
     {
+        selectingItem = item;
         selectEquipmentMode = true;
-        coreItemButton.OpenButton.onClick.RemoveAllListeners();
-        coreItemButton.OpenButton.onClick.AddListener(() =>
-        {
-            if (selectEquipmentMode)
-            {
-                if (item is CoreItem coreItem)
-                {
-                    AddItem(User.me.equipment.core);
-                    User.me.equipment.core = coreItem;
-                    coreItemButton.SetItem(new InventoryItem
-                    {
-                        item = item,
-                        count = 1
-                    });
-                    ShowItemData(item);
-                }
-                selectEquipmentMode = false;
-            }
-            else ShowItemData(User.me.equipment.core);
-        });
-        weapon1ItemButton.OpenButton.onClick.RemoveAllListeners();
-        weapon1ItemButton.OpenButton.onClick.AddListener(() =>
-        {
-        if (selectEquipmentMode)
-        {
-            if (item is VoidItem voidItem)
-            {
-                AddItem(User.me.equipment.weapon1);
-                User.me.equipment.weapon1 = voidItem;
-                weapon1ItemButton.SetItem(new InventoryItem
-                {
-                    item = item,
-                    count = 1
-                });
-                ShowItemData(item);
-                }
-                selectEquipmentMode = false;
-            }
-            else ShowItemData(User.me.equipment.weapon1);
-        });
-        weapon2ItemButton.OpenButton.onClick.RemoveAllListeners();
-        weapon2ItemButton.OpenButton.onClick.AddListener(() =>
-        {
-        if (selectEquipmentMode)
-        {
-            if (item is VoidItem voidItem)
-            {
-                AddItem(User.me.equipment.weapon2);
-                User.me.equipment.weapon2 = voidItem;
-                weapon2ItemButton.SetItem(new InventoryItem
-                {
-                    item = item,
-                    count = 1
-                });
-                ShowItemData(item);
-                }
-                selectEquipmentMode = false;
-            }
-            else ShowItemData(User.me.equipment.weapon2);
-        });
-        weapon3ItemButton.OpenButton.onClick.RemoveAllListeners();
-        weapon3ItemButton.OpenButton.onClick.AddListener(() =>
-        {
-        if (selectEquipmentMode)
-        {
-            if (item is VoidItem voidItem)
-            {
-                AddItem(User.me.equipment.weapon3);
-                User.me.equipment.weapon3 = voidItem;
-                weapon3ItemButton.SetItem(new InventoryItem
-                {
-                    item = item,
-                    count = 1
-                });
-                ShowItemData(item);
-                }
-                selectEquipmentMode = false;
-            }
-            else ShowItemData(User.me.equipment.weapon3);
-        });
     }
 
     private void UnequipItem(Item item)
     {
-        if (User.me.equipment.weapon1 == item)
+        if (User.me.equipment.core == item)
+        {
+            User.me.inventory.Add(new InventoryItem
+            {
+                item = User.me.equipment.core,
+                count = 1
+            });
+            User.me.equipment.core = null;
+            coreItemButton.SetItem(null);
+        }
+        else if (User.me.equipment.weapon1 == item)
         {
             User.me.inventory.Add(new InventoryItem
             {
@@ -208,7 +245,7 @@ public class InventoryUI : Singleton<InventoryUI>
             User.me.equipment.weapon1 = null;
             weapon1ItemButton.SetItem(null);
         }
-        if (User.me.equipment.weapon2 == item)
+        else if (User.me.equipment.weapon2 == item)
         {
             User.me.inventory.Add(new InventoryItem
             {
@@ -218,7 +255,7 @@ public class InventoryUI : Singleton<InventoryUI>
             User.me.equipment.weapon2 = null;
             weapon2ItemButton.SetItem(null);
         }
-        if (User.me.equipment.weapon3 == item)
+        else if (User.me.equipment.weapon3 == item)
         {
             User.me.inventory.Add(new InventoryItem
             {
@@ -228,6 +265,7 @@ public class InventoryUI : Singleton<InventoryUI>
             User.me.equipment.weapon3 = null;
             weapon3ItemButton.SetItem(null);
         }
+        else return;
 
         equipItemButton.gameObject.SetActive(true);
         unequipItemButton.gameObject.SetActive(false);
