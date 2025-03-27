@@ -230,6 +230,47 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         });
     }
 
+    public IEnumerator FuseVoid(Item item1, Item item2, System.Action<bool, Item, List<JObject>> callback)
+    {
+        string jsonPayload = JsonConvert.SerializeObject(new JObject
+        {
+            new JProperty("item1", item1.id),
+            new JProperty("item2", item2.id),
+        });
+        byte[] jsonBytes = Encoding.UTF8.GetBytes(jsonPayload);
+
+        UnityWebRequest request = new UnityWebRequest(Api.FUSE_VOID_URL, "POST");
+        request.uploadHandler = new UploadHandlerRaw(jsonBytes);
+        request.downloadHandler = new DownloadHandlerBuffer();
+        var header = new Dictionary<string, string>
+        {
+            { "Content-Type", "application/json" }
+        };
+
+        yield return tokenManager.HandleRequest(request, header, (responseRequest) =>
+        {
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                string responseText = request.downloadHandler.text;
+                JObject responseJson = JObject.Parse(responseText);
+                JObject itemJson = responseJson["resultItem"]?.ToObject<JObject>();
+                Item item;
+                if (itemJson["type"]?.ToString() == "CoreItem")
+                    item = new CoreItem(itemJson);
+                else if (itemJson["type"]?.ToString() == "VoidItem")
+                    item = new VoidItem(itemJson);
+                else
+                    item = new Item(itemJson);
+                List<JObject> inventory = responseJson["inventory"]?.ToObject<List<JObject>>();
+                callback?.Invoke(true, item, inventory);
+            }
+            else
+            {
+                callback?.Invoke(false, null, null);
+            }
+        });
+    }
+
     public void GoToLoginScene()
     {
         SceneManager.LoadScene(loginScene);

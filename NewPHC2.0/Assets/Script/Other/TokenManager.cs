@@ -70,7 +70,6 @@ public class TokenManager : SingletonPersistent<TokenManager>
         yield return HandleRequest(request, new Dictionary<string, string>(), onRequestSuccess);
 	}
 
-
 	public IEnumerator HandleRequest(UnityWebRequest request, Dictionary<string, string> otherHeaders, System.Action<UnityWebRequest> onRequestSuccess)
     {
         request.SetRequestHeader("Authorization", accessToken);
@@ -106,6 +105,8 @@ public class TokenManager : SingletonPersistent<TokenManager>
         }
         else
         {
+            if (request.result != UnityWebRequest.Result.Success)
+                Debug.LogError(request.downloadHandler.text);
             onRequestSuccess?.Invoke(request);
         }
     }

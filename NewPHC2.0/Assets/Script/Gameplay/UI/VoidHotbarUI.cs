@@ -10,7 +10,6 @@ public class VoidHotbarUI : Singleton<VoidHotbarUI>
 
     private bool settedUp = false;
     private int selectedIndex = 0;
-    private bool selected = false;
 
     private PlayerCombat player;
     private Equipment equipment;
@@ -63,51 +62,17 @@ public class VoidHotbarUI : Singleton<VoidHotbarUI>
         else if (Input.GetKeyDown(KeyCode.Alpha3))
             selectedIndex = 2;
 
-        if (!selected)
+        switch (selectedIndex)
         {
-            switch (selectedIndex)
-            {
-                case 0:
-                    if (equipment.weapon1 != null)
-                        player.SelectVoidItem(equipment.weapon1);
-                    break;
-                case 1:
-                    if (equipment.weapon2 != null)
-                        player.SelectVoidItem(equipment.weapon2);
-                    break;
-                case 2:
-                    if (equipment.weapon3 != null)
-                        player.SelectVoidItem(equipment.weapon3);
-                    break;
-            }
-            selected = true;
-        }
-        else
-        {
-            switch (selectedIndex)
-            {
-                case 0:
-                    if (equipment.weapon1 == null)
-                    {
-                        selectedIndex = 1;
-                        selected = false;
-                    }
-                    break;
-                case 1:
-                    if (equipment.weapon2 != null)
-                    {
-                        selectedIndex = 2;
-                        selected = false;
-                    }
-                    break;
-                case 2:
-                    if (equipment.weapon3 != null)
-                    {
-                        selectedIndex = 0;
-                        selected = false;
-                    }
-                    break;
-            }
+            case 0:
+                player.SelectVoidItem(equipment.weapon1);
+                break;
+            case 1:
+                player.SelectVoidItem(equipment.weapon2);
+                break;
+            case 2:
+                player.SelectVoidItem(equipment.weapon3);
+                break;
         }
     }
 

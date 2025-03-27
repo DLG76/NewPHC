@@ -7,22 +7,12 @@ public class CombatStage : Stage
 {
     [SerializeField] private Dungeon dungeon;
 
-    protected override void Awake()
-    {
-        base.Awake();
-    }
-
     public override void Setup(JObject stageData, JObject myClearedStage)
     {
         base.Setup(stageData, myClearedStage);
 
         if (stageData != null)
-            dungeon = Dungeon.Parse(_stageData["dungeon"]?.ToObject<JObject>());
-    }
-
-    public override void Success()
-    {
-
+            dungeon = Dungeon.Parse(_stageData["dungeon"]?.ToObject<JObject>(), stageData);
     }
 
     public override void Enter()

@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class StageManager : Singleton<StageManager>
 {
+    [Header("Profile Panel")]
+    [SerializeField] private GameObject profilePanel;
+    [Header("Stage Data")]
     [SerializeField] private Transform stagesParent;
     [SerializeField] private Transform player;
     [SerializeField] private float playerMoveTime = 0.75f;
@@ -17,20 +20,34 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
+        Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
+
+        StartCoroutine(fadeCanvas.EnterFade());
+    }
+
+    private void Start()
+    {
         LoadStages(() =>
         {
             if (!string.IsNullOrEmpty(Stage.currentStage))
             {
-                Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage);
+                Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage && s.MyClearedStage != null);
 
                 if (stage != null)
                 {
                     player.position = stage.transform.position;
                 }
+                else
+                {
+                    Stage startStage = stageObjs.FirstOrDefault(s => s.isStartStage);
+                    if (startStage != null)
+                    {
+                        Stage.currentStage = startStage.stageId;
+                        player.position = startStage.transform.position;
+                    }
+                }
             }
         });
-
-        StartCoroutine(fadeCanvas.EnterFade());
     }
 
     private void Update()
@@ -115,6 +132,14 @@ public class StageManager : Singleton<StageManager>
         }));
     }
 
+    public bool CanEnterStage()
+    {
+        if (profilePanel == null)
+            return true;
+
+        return !profilePanel.activeSelf;
+    }
+
     private void UnlockNextStages(Stage stageObj)
     {
         foreach (var nextStageObj in stageObj.NextStages)
@@ -140,5 +165,11 @@ public class StageManager : Singleton<StageManager>
     {
         DungeonManager.dungeon = dungeon;
         StartCoroutine(fadeCanvas.ExitFade("Dungeon"));
+    }
+
+    private void OnDestroy()
+    {
+        PlayerPrefs.SetString("currentStage", Stage.currentStage);
+        PlayerPrefs.Save();
     }
 }

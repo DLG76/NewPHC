@@ -36,6 +36,11 @@ public class CameraDrag : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
             dragOriginWorld = GetMouseWorldPosition();
+            Cursor.visible = false;
+        }
+        else if (Input.GetMouseButtonUp(1))
+        {
+            Cursor.visible = true;
         }
 
         if (Input.GetMouseButton(1))
@@ -66,12 +71,15 @@ public class CameraDrag : MonoBehaviour
     {
         if (confinerCollider == null) return position;
 
+        float orthoSize = virtualCamera.m_Lens.OrthographicSize;
+        float widthScale = (float)Screen.width / Screen.height;
+
         // ✅ ดึง Boundary (ขอบเขต) ของ Collider2D
         Bounds bounds = confinerCollider.bounds;
 
         // ✅ จำกัดตำแหน่ง X และ Y ให้อยู่ใน Bounds
-        float clampedX = Mathf.Clamp(position.x, bounds.min.x, bounds.max.x);
-        float clampedY = Mathf.Clamp(position.y, bounds.min.y, bounds.max.y);
+        float clampedX = Mathf.Clamp(position.x, bounds.min.x + (orthoSize * widthScale), bounds.max.x - (orthoSize * widthScale));
+        float clampedY = Mathf.Clamp(position.y, bounds.min.y + orthoSize, bounds.max.y - orthoSize);
 
         return new Vector3(clampedX, clampedY, position.z);
     }

@@ -279,7 +279,7 @@ public class VoidObject : MonoBehaviour
                 Vector2 direction = (collision.transform.position - transform.position).normalized;
 
                 entity.TakeDamage(AttackDamage);
-                entity.ApplyForce(direction, _item.ForcePower * 3);
+                entity.ApplyForce(direction, _item.ForcePower / 3f);
 
                 CameraController.Instance.TriggerShake(0.05f, 0.05f, 0.15f);
 

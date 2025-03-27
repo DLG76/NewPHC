@@ -43,7 +43,7 @@ public class ClearedStage
 {
     public string type { get; set; }
     public string stageId { get; set; }
-    public int time { get; set; }
+    public double time { get; set; }
 }
 
 public class Answer
@@ -80,8 +80,8 @@ public class User
         JObject stats = user["stats"]?.ToObject<JObject>();
         if (stats == null) return;
 
-        id = user["_id"].ToString();
-        name = user["name"].ToString();
+        id = user["_id"]?.ToString();
+        name = user["name"]?.ToString();
         friends = user["friends"]?.ToObject<List<string>>();
 
         maxHealth = stats["maxHealth"].ToObject<float>();

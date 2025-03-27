@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class StatsUI : MonoBehaviour
 {
+    [Header("PlayerInfoPanel")]
     [SerializeField] private TMP_Text maxHealthText;
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private TMP_Text armorText;
@@ -13,6 +14,8 @@ public class StatsUI : MonoBehaviour
     [SerializeField] private TMP_Text maxDamageText;
     [SerializeField] private TMP_Text expText;
 
+    [Header("Overworld")]
+    [SerializeField] private TMP_Text nameText;
     [SerializeField] private Slider healthBar;
 
     private void Update()
@@ -47,6 +50,8 @@ public class StatsUI : MonoBehaviour
         maxDamageText.text = $"MaxDamage: {maxDamage.ToString("0.00")}";
 
         expText.text = $"Exp: {User.me.exp.ToString("0.00")}";
+
+        nameText.text = User.me.name;
 
         healthBar.maxValue = maxHealth;
         healthBar.value = User.me.health;

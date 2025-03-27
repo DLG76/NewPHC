@@ -192,10 +192,10 @@ public class Dungeon
         return enemySpawnDatas.ToArray();
     }
 
-    public static Dungeon Parse(JObject dungeonJson)
+    public static Dungeon Parse(JObject dungeonJson, JObject stageData)
     {
         var dungeon = new Dungeon();
-        dungeon.StageData = dungeonJson;
+        dungeon.StageData = stageData;
 
         var waves = new List<Wave>();
 

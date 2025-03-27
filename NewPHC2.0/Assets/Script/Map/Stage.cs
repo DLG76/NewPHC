@@ -7,7 +7,7 @@ public abstract class Stage : MonoBehaviour
 {
     public static string currentStage;
 
-    [SerializeField] private bool isStartStage = false;
+    public bool isStartStage = false;
     public string stageId;
     public Stage[] NextStages { get => _nextStages; }
     [SerializeField] protected Stage[] _nextStages;
@@ -21,7 +21,7 @@ public abstract class Stage : MonoBehaviour
     protected bool isLock = false;
     protected Stage previewStage;
 
-    protected virtual void Awake()
+    protected virtual void Start()
     {
         if (string.IsNullOrEmpty(currentStage) && isStartStage)
             currentStage = stageId;
@@ -39,13 +39,15 @@ public abstract class Stage : MonoBehaviour
         _myClearedStage = myClearedStage;
 
         if (isStartStage)
-        {
             Unlock(null);
-        }
         else
-        {
             Lock();
-        }
+
+        if (_stageData != null)
+            if (_stageData["type"]?.ToString() == "CodeStage")
+                GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/CodeStageIcon");
+            else if (_stageData["type"]?.ToString() == "CombatStage")
+                GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("Sprite/CombatStageIcon");
 
         if (_myClearedStage != null)
             Success();
@@ -53,10 +55,9 @@ public abstract class Stage : MonoBehaviour
 
     public void Select()
     {
-        Debug.Log($"Stage {stageId} clicked");
-
         if (_stageData == null) return;
         if (isLock) return;
+        if (!StageManager.Instance.CanEnterStage()) return;
 
         if (currentStage == stageId)
         {
