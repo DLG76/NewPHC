@@ -20,8 +20,6 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
-        Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
-
         StartCoroutine(fadeCanvas.EnterFade());
     }
 
@@ -29,23 +27,24 @@ public class StageManager : Singleton<StageManager>
     {
         LoadStages(() =>
         {
+            Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
+
             if (!string.IsNullOrEmpty(Stage.currentStage))
             {
-                Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage && s.MyClearedStage != null);
+                Stage stage = stageObjs.FirstOrDefault(s => s.stageId == Stage.currentStage && !s.isLock);
 
                 if (stage != null)
                 {
                     player.position = stage.transform.position;
+                    return;
                 }
-                else
-                {
-                    Stage startStage = stageObjs.FirstOrDefault(s => s.isStartStage);
-                    if (startStage != null)
-                    {
-                        Stage.currentStage = startStage.stageId;
-                        player.position = startStage.transform.position;
-                    }
-                }
+            }
+
+            Stage startStage = stageObjs.FirstOrDefault(s => s.isStartStage);
+            if (startStage != null)
+            {
+                Stage.currentStage = startStage.stageId;
+                player.position = startStage.transform.position;
             }
         });
     }
@@ -142,8 +141,11 @@ public class StageManager : Singleton<StageManager>
 
     private void UnlockNextStages(Stage stageObj)
     {
+        if (stageObj.NextStages == null) return;
+
         foreach (var nextStageObj in stageObj.NextStages)
-            nextStageObj.Unlock(stageObj);
+            if (nextStageObj != null)
+                nextStageObj.Unlock(stageObj);
     }
 
     public void PlayerMoveTo(Stage stage) => PlayerMoveTo(stage, playerMoveTime);

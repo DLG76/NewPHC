@@ -27,7 +27,7 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
-    private bool inventoryActive = false;
+    private Equipment oldEquipment;
     private bool selectEquipmentMode = false;
     private InventorySlot selectingSlot;
 
@@ -107,22 +107,7 @@ public class InventoryUI : Singleton<InventoryUI>
         });
     }
 
-    private void Update()
-    {
-        if (profilePanel.activeSelf && inventoryPanel.gameObject.activeSelf && !inventoryActive)
-        {
-            inventoryActive = true;
-            descriptionPanel.SetActive(false);
-            LoadInventory();
-        }
-        else if ((!profilePanel.activeSelf || !inventoryPanel.gameObject.activeSelf) && inventoryActive)
-        {
-            inventoryActive = false;
-            SaveData();
-        }
-    }
-
-    public void LoadInventory()
+    private void LoadInventory()
     {
         if (!profilePanel.activeSelf)
             return;
@@ -337,16 +322,29 @@ public class InventoryUI : Singleton<InventoryUI>
             LoadInventory();
         }
     }
-
-    private void SaveData()
+    
+    public IEnumerator LoadScreen()
     {
-        StartCoroutine(DatabaseManager.Instance.UpdateEquipment(User.me.equipment, (success, equipmentJson, inventoryJson) =>
+        descriptionPanel.SetActive(false);
+        LoadInventory();
+        yield break;
+    }
+
+    public IEnumerator LeaveScreen()
+    {
+        if (User.me.equipment?.core == oldEquipment?.core &&
+            User.me.equipment?.weapon1 == oldEquipment?.weapon1 &&
+            User.me.equipment?.weapon2 == oldEquipment?.weapon2 &&
+            User.me.equipment?.weapon3 == oldEquipment?.weapon3)
+            yield break;
+
+        yield return DatabaseManager.Instance.UpdateEquipment(User.me.equipment, (success, equipmentJson, inventoryJson) =>
         {
             if (success)
             {
                 User.me.UpdateEquipment(equipmentJson);
                 User.me.UpdateInventory(inventoryJson);
             }
-        }));
+        });
     }
 }

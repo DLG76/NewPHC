@@ -18,14 +18,8 @@ public abstract class Stage : MonoBehaviour
     public JObject MyClearedStage { get => _myClearedStage; }
     protected JObject _myClearedStage;
 
-    protected bool isLock = false;
+    public bool isLock = false;
     protected Stage previewStage;
-
-    protected virtual void Start()
-    {
-        if (string.IsNullOrEmpty(currentStage) && isStartStage)
-            currentStage = stageId;
-    }
 
     protected virtual void Update()
     {
@@ -63,7 +57,7 @@ public abstract class Stage : MonoBehaviour
         {
             Enter();
         }
-        else if ((previewStage != null && currentStage == previewStage.stageId) || _nextStages.FirstOrDefault(ns => ns.stageId == currentStage) != null)
+        else if ((previewStage != null && currentStage == previewStage.stageId) || _nextStages.FirstOrDefault(ns => ns?.stageId == currentStage) != null)
         {
             currentStage = stageId;
             StageManager.Instance.PlayerMoveTo(this);

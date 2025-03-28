@@ -21,14 +21,18 @@ public class StatsUI : MonoBehaviour
     private void Update()
     {
         float maxHealth = User.me.maxHealth;
+        float health = User.me.health;
         if (User.me.equipment.core != null)
-            maxHealth = User.me.equipment.core.health;
+        {
+            maxHealth += User.me.equipment.core.health;
+            health += User.me.equipment.core.health;
+        }
         maxHealthText.text = $"MaxHealth: {maxHealth.ToString("0.00")}";
-        healthText.text = $"Health: {User.me.health.ToString("0.00")}";
+        healthText.text = $"Health: {health.ToString("0.00")}";
 
         float armor = 0;
         if (User.me.equipment.core != null)
-            armor = User.me.equipment.core.armor;
+            armor += User.me.equipment.core.armor;
         armorText.text = $"Armor: {armor.ToString("0.00")}";
 
         float minDamage = 0;
@@ -49,11 +53,11 @@ public class StatsUI : MonoBehaviour
             maxDamage += User.me.equipment.weapon3.MaxDamage;
         maxDamageText.text = $"MaxDamage: {maxDamage.ToString("0.00")}";
 
-        expText.text = $"Exp: {User.me.exp.ToString("0.00")}";
+        expText.text = $"Exp: {User.me.exp.ToString("0.00")} / {User.me.maxExp.ToString("0.00")}";
 
         nameText.text = User.me.name;
 
         healthBar.maxValue = maxHealth;
-        healthBar.value = User.me.health;
+        healthBar.value = health;
     }
 }

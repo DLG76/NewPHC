@@ -104,9 +104,6 @@ public class User
     public void UpdateEquipment(JObject equipmentJson)
     {
         equipment = new Equipment(equipmentJson);
-
-        if (this == me)
-            InventoryUI.Instance?.LoadInventory();
     }
 
     public void UpdateInventory(List<JObject> inventoryJson)
@@ -143,9 +140,6 @@ public class User
                     });
             }
         }
-
-        if (this == me)
-            InventoryUI.Instance?.LoadInventory();
     }
 
     private static T ConvertTextToClass<T>(string text)

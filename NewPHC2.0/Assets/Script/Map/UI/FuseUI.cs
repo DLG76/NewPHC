@@ -65,21 +65,6 @@ public class FuseUI : MonoBehaviour
         fuseButton.onClick.AddListener(Fuse);
     }
 
-    private void Update()
-    {
-        if (profilePanel.activeSelf && fusePanel.activeSelf && !fuseActive)
-        {
-            fuseActive = true;
-            ClearItemToFuse();
-            LoadInventory();
-        }
-        else if ((!profilePanel.activeSelf || !fusePanel.activeSelf) && fuseActive)
-        {
-            fuseActive = false;
-            ClearItemToFuse();
-        }
-    }
-
     private void ClearItemToFuse()
     {
         AddItem(item1Button.inventoryItem?.item);
@@ -92,7 +77,7 @@ public class FuseUI : MonoBehaviour
         fuseButton.interactable = false;
     }
 
-    public void LoadInventory()
+    private void LoadInventory()
     {
         if (!profilePanel.activeSelf)
             return;
@@ -254,5 +239,18 @@ public class FuseUI : MonoBehaviour
 
             LoadInventory();
         }
+    }
+
+    public IEnumerator LoadScreen()
+    {
+        ClearItemToFuse();
+        LoadInventory();
+        yield break;
+    }
+
+    public IEnumerator LeaveScreen()
+    {
+        ClearItemToFuse();
+        yield break;
     }
 }

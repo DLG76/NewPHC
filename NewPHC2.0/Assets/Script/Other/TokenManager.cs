@@ -99,7 +99,6 @@ public class TokenManager : SingletonPersistent<TokenManager>
             }
             else
             {
-                Debug.Log("To Login Scene");
                 DatabaseManager.Instance.GoToLoginScene();
             }
         }
