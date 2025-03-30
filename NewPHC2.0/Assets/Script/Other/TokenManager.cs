@@ -99,7 +99,8 @@ public class TokenManager : SingletonPersistent<TokenManager>
             }
             else
             {
-                DatabaseManager.Instance.GoToLoginScene();
+                Debug.Log("Refresh token failed.");
+                //DatabaseManager.Instance.GoToLoginScene();
             }
         }
         else

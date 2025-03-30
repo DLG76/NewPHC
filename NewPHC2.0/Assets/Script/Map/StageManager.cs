@@ -83,7 +83,8 @@ public class StageManager : Singleton<StageManager>
         {
             if (!success)
             {
-                DatabaseManager.Instance.GoToLoginScene();
+                Debug.Log("Failed to get stages.");
+                //DatabaseManager.Instance.GoToLoginScene();
                 return;
             }
 
@@ -92,7 +93,7 @@ public class StageManager : Singleton<StageManager>
                 if (!success)
                 {
                     Debug.LogError("Failed to get profile.");
-                    DatabaseManager.Instance.GoToLoginScene();
+                    //DatabaseManager.Instance.GoToLoginScene();
                     return;
                 }
 

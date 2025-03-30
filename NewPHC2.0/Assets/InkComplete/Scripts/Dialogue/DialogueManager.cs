@@ -69,12 +69,12 @@ public class DialogueManager : MonoBehaviour
         currentAudioInfo = defaultAudioInfo;
     }
 
-    public static DialogueManager GetInstance() 
+    public static DialogueManager GetInstance()
     {
         return instance;
     }
 
-    private void Start() 
+    private void Start()
     {
         dialogueIsPlaying = false;
         dialoguePanel.SetActive(false);
