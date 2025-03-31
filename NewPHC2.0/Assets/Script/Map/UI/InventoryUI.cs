@@ -4,6 +4,7 @@ using System.Linq;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class InventoryUI : Singleton<InventoryUI>
 {
@@ -20,10 +21,12 @@ public class InventoryUI : Singleton<InventoryUI>
     [SerializeField] private Button equipItemButton;
     [SerializeField] private Button unequipItemButton;
     [Header("Equipments")]
+    [SerializeField] private Transform hotbarPanel;
     [SerializeField] private InventorySlot coreItemButton;
     [SerializeField] private InventorySlot weapon1ItemButton;
     [SerializeField] private InventorySlot weapon2ItemButton;
     [SerializeField] private InventorySlot weapon3ItemButton;
+    [SerializeField] private GameObject selectingItemBG;
 
     private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
@@ -46,7 +49,7 @@ public class InventoryUI : Singleton<InventoryUI>
                     User.me.equipment.core = coreItem;
                     RemoveItem(coreItem);
                 }
-                selectEquipmentMode = false;
+                ClearSelecting();
             }
 
             ShowItemData(coreItemButton);
@@ -64,7 +67,7 @@ public class InventoryUI : Singleton<InventoryUI>
                     User.me.equipment.weapon1 = voidItem;
                     RemoveItem(voidItem);
                 }
-                selectEquipmentMode = false;
+                ClearSelecting();
             }
 
             ShowItemData(weapon1ItemButton);
@@ -82,7 +85,7 @@ public class InventoryUI : Singleton<InventoryUI>
                     User.me.equipment.weapon2 = voidItem;
                     RemoveItem(voidItem);
                 }
-                selectEquipmentMode = false;
+                ClearSelecting();
             }
 
             ShowItemData(weapon2ItemButton);
@@ -100,7 +103,7 @@ public class InventoryUI : Singleton<InventoryUI>
                     User.me.equipment.weapon3 = voidItem;
                     RemoveItem(voidItem);
                 }
-                selectEquipmentMode = false;
+                ClearSelecting();
             }
 
             ShowItemData(weapon3ItemButton);
@@ -227,8 +230,27 @@ public class InventoryUI : Singleton<InventoryUI>
 
     private void EquipItem(InventorySlot inventorySlot)
     {
-        selectingSlot = inventorySlot;
-        selectEquipmentMode = true;
+        if (!selectEquipmentMode)
+        {
+            selectingSlot = inventorySlot;
+            selectEquipmentMode = true;
+            inventoryPanel.gameObject.SetActive(false);
+            descriptionPanel.SetActive(false);
+            selectingItemBG.SetActive(true);
+            hotbarPanel.DOScale(Vector2.one * 1.5f, 0.5f);
+        }
+    }
+
+    private void ClearSelecting()
+    {
+        if (selectEquipmentMode)
+        {
+            inventoryPanel.gameObject.SetActive(true);
+            descriptionPanel.SetActive(true);
+            selectingItemBG.SetActive(false);
+            hotbarPanel.DOScale(Vector2.one, 0.5f);
+            selectEquipmentMode = false;
+        }
     }
 
     private void UnequipItem(InventorySlot inventorySlot)

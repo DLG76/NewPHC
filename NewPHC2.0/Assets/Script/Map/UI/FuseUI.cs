@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 
 public class FuseUI : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class FuseUI : MonoBehaviour
     [SerializeField] private GameObject profilePanel;
     [Header("Fuse Panel")]
     [SerializeField] private GameObject fusePanel;
+    private Animator fuseAnimator;
     [SerializeField] private InventorySlot item1Button;
     [SerializeField] private InventorySlot item2Button;
     [SerializeField] private InventorySlot resultItemButton;
@@ -20,13 +22,18 @@ public class FuseUI : MonoBehaviour
 
     private List<InventorySlot> inventorySlots = new List<InventorySlot>();
 
-    private bool fuseActive = false;
+    private bool fusing = false;
 
     private void Awake()
     {
+        fuseAnimator = fusePanel.GetComponent<Animator>();
+
         item1Button.OpenButton.onClick.RemoveAllListeners();
         item1Button.OpenButton.onClick.AddListener(() =>
         {
+            if (fusing)
+                return;
+
             var item = item1Button.inventoryItem?.item;
 
             if (item != null)
@@ -39,6 +46,9 @@ public class FuseUI : MonoBehaviour
         item2Button.OpenButton.onClick.RemoveAllListeners();
         item2Button.OpenButton.onClick.AddListener(() =>
         {
+            if (fusing)
+                return;
+
             var item = item2Button.inventoryItem?.item;
 
             if (item != null)
@@ -51,6 +61,9 @@ public class FuseUI : MonoBehaviour
         resultItemButton.OpenButton.onClick.RemoveAllListeners();
         resultItemButton.OpenButton.onClick.AddListener(() =>
         {
+            if (fusing)
+                return;
+
             var item = resultItemButton.inventoryItem?.item;
 
             if (item != null)
@@ -129,6 +142,9 @@ public class FuseUI : MonoBehaviour
 
     private void AddItemToFuse(InventorySlot inventorySlot)
     {
+        if (fusing)
+            return;
+
         var item = inventorySlot.inventoryItem?.item;
 
         if (item == null)
@@ -167,32 +183,47 @@ public class FuseUI : MonoBehaviour
         if (item1 == null || item2 == null)
             return;
 
+        fusing = true;
         fuseButton.interactable = false;
 
         StartCoroutine(DatabaseManager.Instance.FuseVoid(item1, item2, (success, resultItem, newInventory) =>
         {
             if (success)
+                StartCoroutine(FuseAnimation(resultItem, newInventory));
+            else
             {
-                ClearItemToFuse();
-                resultItemButton.SetItem(new InventoryItem
-                {
-                    item = resultItem,
-                    count = 1,
-                });
-
-                User.me.UpdateInventory(newInventory);
-                RemoveItem(resultItem);
-                LoadInventory();
-
-                fuseButton.interactable = false;
+                fuseButton.interactable = true;
+                fusing = false;
             }
-            else fuseButton.interactable = true;
         }));
+    }
+
+    private IEnumerator FuseAnimation(Item resultItem, List<JObject> newInventory)
+    {
+        User.me.UpdateInventory(newInventory);
+        RemoveItem(resultItem);
+        LoadInventory();
+
+        fuseAnimator.SetTrigger("Fuse");
+
+        yield return new WaitForSecondsRealtime(1.75f);
+
+        ClearItemToFuse();
+        resultItemButton.SetItem(new InventoryItem
+        {
+            item = resultItem,
+            count = 1,
+        });
+
+        yield return new WaitForSecondsRealtime(0.75f);
+
+        fuseButton.interactable = true;
+        fusing = false;
     }
 
     private InventorySlot AddItem(Item item)
     {
-        if (item == null)
+        if (item == null || fusing)
             return null;
 
         foreach (var slot in inventorySlots)
@@ -218,7 +249,7 @@ public class FuseUI : MonoBehaviour
 
     private void RemoveItem(Item item)
     {
-        if (item == null)
+        if (item == null || fusing)
             return;
 
         InventoryItem inventoryItem = null;
