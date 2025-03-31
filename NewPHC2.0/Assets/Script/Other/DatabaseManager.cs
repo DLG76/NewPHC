@@ -12,9 +12,12 @@ using Unity.VisualScripting;
 
 public class DatabaseManager : SingletonPersistent<DatabaseManager>
 {
-    [SerializeField] private string loginScene;
+    public static string LoginScene = "Lobby";
 
     private TokenManager tokenManager;
+    private GameObject loadingCanvas;
+
+    private bool loading = false;
 
     public override void Awake()
     {
@@ -22,6 +25,30 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
         var tokenManagerObject = new GameObject("TokenManager");
         tokenManager = tokenManagerObject.AddComponent<TokenManager>();
+        tokenManagerObject.transform.SetParent(transform);
+
+        loadingCanvas = Instantiate(Resources.Load<GameObject>("UI/LoadingCanvas"), transform);
+        loadingCanvas.SetActive(false);
+    }
+
+    private void ShowLoading()
+    {
+        loading = true;
+        StartCoroutine(ShowLoadingIE());
+    }
+
+    private IEnumerator ShowLoadingIE()
+    {
+        yield return new WaitForSecondsRealtime(0.5f);
+        
+        if (loading)
+            loadingCanvas.SetActive(true);
+    }
+
+    private void HideLoading()
+    {
+        loadingCanvas.SetActive(false);
+        loading = false;
     }
 
     public IEnumerator Login(string username, string password, System.Action<bool, string> callback)
@@ -38,6 +65,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         request.downloadHandler = new DownloadHandlerBuffer();
         request.SetRequestHeader("Content-Type", "application/json");
 
+        ShowLoading();
         yield return request.SendWebRequest();
 
         if (request.result == UnityWebRequest.Result.Success)
@@ -54,6 +82,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             tokenManager.ClearToken();
             Debug.LogError(request.responseCode + ": " + request.error);
         }
+
+        HideLoading();
     }
 
     public IEnumerator GetProfile(System.Action<bool, JObject> callback)
@@ -61,27 +91,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         UnityWebRequest request = new UnityWebRequest(Api.PROFILE_URL, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
 
-        yield return tokenManager.HandleRequest(request, (responseRequest) =>
-        {
-            if (responseRequest.result == UnityWebRequest.Result.Success)
-            {
-                string responseText = responseRequest.downloadHandler.text;
-                callback?.Invoke(true, JObject.Parse(responseText));
-            }
-            else
-            {
-                Debug.LogError(request.responseCode + ": " + request.error);
-                callback?.Invoke(false, null);
-            }
-        });
-    }
+        ShowLoading();
 
-    public IEnumerator GetUser(string userId, System.Action<bool, JObject> callback)
-    {
-        UnityWebRequest request = new UnityWebRequest(Api.GetUsersUrl(userId), "GET");
-        request.downloadHandler = new DownloadHandlerBuffer();
-
-        yield return tokenManager.HandleRequest(request, (responseRequest) =>
+        yield return tokenManager.HandleRequest(request, (request) =>
         {
             if (request.result == UnityWebRequest.Result.Success)
             {
@@ -94,6 +106,32 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null);
             }
         });
+
+        HideLoading();
+    }
+
+    public IEnumerator GetUser(string userId, System.Action<bool, JObject> callback)
+    {
+        UnityWebRequest request = new UnityWebRequest(Api.GetUsersUrl(userId), "GET");
+        request.downloadHandler = new DownloadHandlerBuffer();
+
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, (request) =>
+        {
+            if (request.result == UnityWebRequest.Result.Success)
+            {
+                string responseText = request.downloadHandler.text;
+                callback?.Invoke(true, JObject.Parse(responseText));
+            }
+            else
+            {
+                Debug.LogError(request.responseCode + ": " + request.error);
+                callback?.Invoke(false, null);
+            }
+        });
+
+        HideLoading();
     }
 
     public IEnumerator GetStages(System.Action<bool, List<JObject>, List<JObject>> callback)
@@ -101,7 +139,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         UnityWebRequest request = new UnityWebRequest(Api.GET_STAGES_URL, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
 
-        yield return tokenManager.HandleRequest(request, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, (request) =>
         {
             if (request.result == UnityWebRequest.Result.Success)
             {
@@ -117,6 +157,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null, null);
             }
         });
+
+        HideLoading();
     }
 
     public IEnumerator FinishedDungeon(string stageId, bool isWinner, double time, System.Action<bool> callback)
@@ -136,10 +178,14 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             { "Content-Type", "application/json" }
         };
 
-        yield return tokenManager.HandleRequest(request, header, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, header, (request) =>
         {
             callback?.Invoke(request.result == UnityWebRequest.Result.Success);
         });
+
+        HideLoading();
     }
 
     public IEnumerator SendCode(string stageId, string code, System.Action<bool> callback)
@@ -158,10 +204,14 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             { "Content-Type", "application/json" }
         };
 
-        yield return tokenManager.HandleRequest(request, header, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, header, (request) =>
         {
             callback?.Invoke(request.result == UnityWebRequest.Result.Success);
         });
+
+        HideLoading();
     }
 
     public IEnumerator RemoveItem(string itemId, System.Action<bool, List<JObject>> callback)
@@ -174,7 +224,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         UnityWebRequest request = new UnityWebRequest(Api.RemoveItemUrl(itemId, count), "POST");
         request.downloadHandler = new DownloadHandlerBuffer();
 
-        yield return tokenManager.HandleRequest(request, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, (request) =>
         {
             if (request.result == UnityWebRequest.Result.Success)
             {
@@ -188,6 +240,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null);
             }
         });
+
+        HideLoading();
     }
 
     public IEnumerator UpdateEquipment(Equipment equipment, System.Action<bool, JObject, List<JObject>> callback)
@@ -213,7 +267,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             { "Content-Type", "application/json" }
         };
 
-        yield return tokenManager.HandleRequest(request, header, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, header, (request) =>
         {
             if (request.result == UnityWebRequest.Result.Success)
             {
@@ -228,6 +284,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null, null);
             }
         });
+
+        HideLoading();
     }
 
     public IEnumerator FuseVoid(Item item1, Item item2, System.Action<bool, Item, List<JObject>> callback)
@@ -247,7 +305,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             { "Content-Type", "application/json" }
         };
 
-        yield return tokenManager.HandleRequest(request, header, (responseRequest) =>
+        ShowLoading();
+
+        yield return tokenManager.HandleRequest(request, header, (request) =>
         {
             if (request.result == UnityWebRequest.Result.Success)
             {
@@ -269,11 +329,13 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null, null);
             }
         });
+
+        HideLoading();
     }
 
     public void GoToLoginScene()
     {
-        SceneManager.LoadScene(loginScene);
+        SceneManager.LoadScene(LoginScene);
     }
 }
 

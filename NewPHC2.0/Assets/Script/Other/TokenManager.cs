@@ -49,17 +49,13 @@ public class TokenManager : SingletonPersistent<TokenManager>
         {
             string responseText = request.downloadHandler.text;
             JObject responseJson = JObject.Parse(responseText);
-            accessToken = responseJson["accessToken"].ToString();
-            PlayerPrefs.SetString("accessToken", accessToken);
-            PlayerPrefs.Save();
+            SetToken(responseJson["accessToken"].ToString(), refreshToken);
 
-            callback?.Invoke(true, 0, null);
+            callback?.Invoke(true, 200, null);
         }
         else
         {
-            PlayerPrefs.DeleteKey("accessToken");
-            PlayerPrefs.DeleteKey("refreshToken");
-            PlayerPrefs.Save();
+            ClearToken();
 
             callback?.Invoke(false, request.responseCode, request.error);
         }
@@ -68,7 +64,7 @@ public class TokenManager : SingletonPersistent<TokenManager>
 	public IEnumerator HandleRequest(UnityWebRequest request, System.Action<UnityWebRequest> onRequestSuccess)
     {
         yield return HandleRequest(request, new Dictionary<string, string>(), onRequestSuccess);
-	}
+    }
 
 	public IEnumerator HandleRequest(UnityWebRequest request, Dictionary<string, string> otherHeaders, System.Action<UnityWebRequest> onRequestSuccess)
     {
@@ -84,14 +80,12 @@ public class TokenManager : SingletonPersistent<TokenManager>
             yield return RefreshToken((success, statusCode, error) =>
             {
                 if (success)
-                {
                     refreshSuccess = true;
-                }
             });
 
             if (refreshSuccess)
-			{
-				UnityWebRequest newRequest = new UnityWebRequest(request.url, request.method);
+            {
+                UnityWebRequest newRequest = new UnityWebRequest(request.url, request.method);
 				newRequest.downloadHandler = new DownloadHandlerBuffer();
 				newRequest.uploadHandler = request.uploadHandler;
 
@@ -100,13 +94,11 @@ public class TokenManager : SingletonPersistent<TokenManager>
             else
             {
                 Debug.Log("Refresh token failed.");
-                //DatabaseManager.Instance.GoToLoginScene();
+                DatabaseManager.Instance.GoToLoginScene();
             }
         }
         else
         {
-            if (request.result != UnityWebRequest.Result.Success)
-                Debug.LogError(request.downloadHandler.text);
             onRequestSuccess?.Invoke(request);
         }
     }

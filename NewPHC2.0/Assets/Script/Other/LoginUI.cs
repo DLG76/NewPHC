@@ -7,29 +7,32 @@ using UnityEngine.UI;
 
 public class LoginUI : MonoBehaviour
 {
+    [SerializeField] private GameObject loginPanel;
     [SerializeField] private TMP_InputField usernameInput;
     [SerializeField] private TMP_InputField passwordInput;
     [SerializeField] private Button loginButton;
+    [SerializeField] private Button startGameButton;
     [SerializeField] private string nextScene;
 
     private bool loggingIn = false;
 
     private void Awake()
     {
-        usernameInput.text = PlayerPrefs.GetString("username", "");
-        passwordInput.text = PlayerPrefs.GetString("password", "");
+        startGameButton.onClick.RemoveAllListeners();
+        startGameButton.onClick.AddListener(GoToOverworld);
+        loginButton.onClick.RemoveAllListeners();
+        loginButton.onClick.AddListener(Login);
     }
 
     private void Start()
     {
         if (PlayerPrefs.HasKey("accessToken"))
         {
-            usernameInput.gameObject.SetActive(false);
-            passwordInput.gameObject.SetActive(false);
+            HideAll();
             StartCoroutine(TokenManager.Instance.RefreshToken((success, statusCode, error) =>
             {
                 if (success)
-                    GoToOverworld();
+                    ShowStartGameButton();
                 else if (statusCode == 401)
                     RestartScene();
                 else
@@ -38,10 +41,28 @@ public class LoginUI : MonoBehaviour
         }
         else
         {
-            usernameInput.gameObject.SetActive(true);
-            passwordInput.gameObject.SetActive(true);
-            loginButton.onClick.AddListener(Login);
+            ShowLoginPanel();
         }
+    }
+
+    private void ShowLoginPanel()
+    {
+        startGameButton.gameObject.SetActive(false);
+        usernameInput.text = PlayerPrefs.GetString("username", "");
+        passwordInput.text = PlayerPrefs.GetString("password", "");
+        loginPanel.SetActive(true);
+    }
+
+    private void ShowStartGameButton()
+    {
+        loginPanel.SetActive(false);
+        startGameButton.gameObject.SetActive(true);
+    }
+
+    private void HideAll()
+    {
+        startGameButton.gameObject.SetActive(false);
+        loginPanel.SetActive(false);
     }
 
     private void Login()
@@ -68,7 +89,7 @@ public class LoginUI : MonoBehaviour
                 PlayerPrefs.SetString("password", password);
                 PlayerPrefs.Save();
                 Debug.Log("Login successful.");
-                GoToOverworld();
+                ShowStartGameButton();
             }
             else
             {
@@ -76,7 +97,7 @@ public class LoginUI : MonoBehaviour
                 PlayerPrefs.DeleteKey("password");
                 PlayerPrefs.Save();
                 Debug.LogError("Login failed: " + error);
-                Awake();
+                ShowLoginPanel();
             }
 
             loggingIn = false;
@@ -90,6 +111,9 @@ public class LoginUI : MonoBehaviour
             Debug.LogError("Next scene is not set.");
             return;
         }
+
+        string loginScene = SceneManager.GetActiveScene().name;
+        DatabaseManager.LoginScene = loginScene;
 
         SceneManager.LoadScene(nextScene);
     }

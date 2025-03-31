@@ -538,7 +538,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1541872376}
     m_Modifications:
     - target: {fileID: 5513914067210363621, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
       propertyPath: ShapeModule.type
@@ -548,9 +548,13 @@ PrefabInstance:
       propertyPath: ShapeModule.m_Scale.x
       value: 28.67
       objectReference: {fileID: 0}
+    - target: {fileID: 5513914067210363621, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6066019806288447989, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
       propertyPath: m_Name
-      value: Wind Leaf (1)
+      value: StarEffect
       objectReference: {fileID: 0}
     - target: {fileID: 7847357565383991959, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
       propertyPath: m_LocalPosition.x
@@ -597,6 +601,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
+--- !u!4 &116003857 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7847357565383991959, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
+  m_PrefabInstance: {fileID: 116003856}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &117633352
 GameObject:
   m_ObjectHideFlags: 0
@@ -1815,7 +1824,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
+  m_fontSize: 31.5
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -3871,7 +3880,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25.65
+  m_fontSize: 50.8
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7599,6 +7608,7 @@ Transform:
   m_Children:
   - {fileID: 1360094371}
   - {fileID: 1994978096}
+  - {fileID: 116003857}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1549572553
@@ -8178,7 +8188,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 49.2
+  m_fontSize: 87
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -10783,4 +10793,3 @@ SceneRoots:
   - {fileID: 1946417613}
   - {fileID: 1549572555}
   - {fileID: 817820353}
-  - {fileID: 116003856}
