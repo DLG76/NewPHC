@@ -1,4 +1,5 @@
 using DG.Tweening;
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -13,11 +14,16 @@ public class CodeUI : Singleton<CodeUI>
 
     [Header("Code UI")]
     [SerializeField] private GameObject codePanel;
-    [SerializeField] private TMP_Text descriptionText;
-    [SerializeField] private TMP_InputField exampleOutputText;
+    [SerializeField] private Transform descriptionContent;
+    [SerializeField] private TMP_InputField exampleOutputField;
     //[SerializeField] private TMP_Text hintText;
-    [SerializeField] private TMP_InputField codeInput;
+    [SerializeField] private TMP_InputField codeInputField;
     [SerializeField] private Button submitButton;
+    [SerializeField] private Transform popupsParent;
+
+    [Header("Npc UI")]
+    [SerializeField] private Image npcImage;
+    [SerializeField] private Transform npcDialogContent;
 
     [Header("Image UI")]
     [SerializeField] private GameObject dialoguePanel;
@@ -28,6 +34,9 @@ public class CodeUI : Singleton<CodeUI>
     private DialogueManager dialogueManager;
     private Coroutine showCoroutine;
 
+    private TMP_Text descriptionTextModel;
+    private Image descriptionImageModel;
+
     private string stageId;
     private bool sendedCode = false;
 
@@ -36,6 +45,9 @@ public class CodeUI : Singleton<CodeUI>
         storyPanel.SetActive(false);
 
         submitButton.onClick.AddListener(SendCode);
+
+        descriptionTextModel = Resources.Load<TMP_Text>("UI/DescriptionText");
+        descriptionImageModel = Resources.Load<Image>("UI/DescriptionImage");
     }
 
     private void Start()
@@ -76,12 +88,9 @@ public class CodeUI : Singleton<CodeUI>
     {
         if (currentStage.MyClearedStage != null)
         {
-            descriptionText.text = currentStage.StageData["description"]?.ToObject<string>();
-            exampleOutputText.text = currentStage.StageData["exampleOutput"]?.ToObject<string>();
-            codeInput.text = currentStage.MyClearedStage["code"]?.ToObject<string>();
-            codeInput.interactable = false;
+            LoadCodeUI(currentStage);
+            codeInputField.interactable = false;
             dialoguePanel.SetActive(false);
-            codePanel.SetActive(true);
             submitButton.gameObject.SetActive(false);
             storyPanel.SetActive(true);
             yield break;
@@ -113,11 +122,9 @@ public class CodeUI : Singleton<CodeUI>
         }
         else dialoguePanel.SetActive(false);
 
-        descriptionText.text = currentStage.StageData["description"]?.ToObject<string>();
-        exampleOutputText.text = currentStage.StageData["exampleOutput"]?.ToObject<string>();
-        //hintText.text = quest.hint;
+        LoadCodeUI(currentStage);
+        codeInputField.interactable = true;
         submitButton.gameObject.SetActive(true);
-        codeInput.interactable = true;
         codePanel.SetActive(true);
 
         while (!sendedCode)
@@ -141,7 +148,7 @@ public class CodeUI : Singleton<CodeUI>
     {
         if (!string.IsNullOrEmpty(stageId))
         {
-            string code = codeInput.text;
+            string code = codeInputField.text;
 
             yield return DatabaseManager.Instance.SendCode(stageId, code, (success) =>
             {
@@ -156,6 +163,78 @@ public class CodeUI : Singleton<CodeUI>
                 sendedCode = true;
             });
         }
+    }
+
+    private void LoadCodeUI(CodeStage currentStage)
+    {
+        var npcData = currentStage.StageData["npc"];
+        if (npcData != null)
+        {
+            Sprite npcSprite = Resources.Load<Sprite>($"Sprite/CodeStageSprite/NPC/{npcData["npcPrefabName"]}");
+
+            if (npcSprite != null)
+            {
+                npcImage.sprite = npcSprite;
+                npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.textureRect.width / npcSprite.textureRect.height;
+                npcImage.gameObject.SetActive(true);
+
+                foreach (Transform c in npcDialogContent)
+                    Destroy(c.gameObject);
+
+                foreach (var valueData in npcData["dialog"]?.ToObject<List<JObject>>())
+                    if (valueData["valueType"]?.ToString() == "text")
+                    {
+                        var descriptionText = Instantiate(descriptionTextModel, npcDialogContent);
+                        descriptionText.text = valueData["value"]?.ToString();
+                    }
+                    else if (valueData["valueType"]?.ToString() == "image")
+                    {
+                        var descriptionImage = Instantiate(descriptionImageModel, npcDialogContent);
+                        string spritePath = valueData["value"]?.ToString();
+                        if (!string.IsNullOrEmpty(spritePath))
+                        {
+                            Sprite sprite = Resources.Load<Sprite>($"Sprite/CodeStageSprite/Image/{spritePath}");
+                            descriptionImage.sprite = sprite;
+                            descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                        }
+                    }
+            }
+        }
+        else npcImage.gameObject.SetActive(false);
+
+        foreach (Transform c in descriptionContent)
+            Destroy(c.gameObject);
+
+        foreach (var valueData in currentStage.StageData["description"]?.ToObject<List<JObject>>())
+            if (valueData["valueType"]?.ToString() == "text")
+            {
+                var descriptionText = Instantiate(descriptionTextModel, descriptionContent);
+                descriptionText.text = valueData["value"]?.ToString();
+            }
+            else if (valueData["valueType"]?.ToString() == "image")
+            {
+                string spritePath = valueData["value"]?.ToString();
+
+                if (!string.IsNullOrEmpty(spritePath))
+                {
+                    Sprite sprite = Resources.Load<Sprite>($"Sprite/CodeStageSprite/Image/{spritePath}");
+
+                    if (sprite != null)
+                    {
+                        var descriptionImage = Instantiate(descriptionImageModel, descriptionContent);
+                        descriptionImage.sprite = sprite;
+                        descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                    }
+                }
+            }
+
+        exampleOutputField.text = currentStage.StageData["exampleOutput"]?.ToObject<string>();
+        codeInputField.text = currentStage.MyClearedStage?["code"]?.ToObject<string>() ?? string.Empty;
+
+        foreach (var popup in popupsParent.GetComponentsInChildren<WindowPopupUI>())
+            popup.QuitWindowNow();
+
+        codePanel.SetActive(true);
     }
 
     public void ExitQuest()

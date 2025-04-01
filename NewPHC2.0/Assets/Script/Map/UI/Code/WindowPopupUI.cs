@@ -82,6 +82,16 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         isActived = false;
     }
 
+    public void QuitWindowNow()
+    {
+        Awake();
+
+        backgroundCanvasGroup.interactable = false;
+        backgroundCanvasGroup.alpha = 0;
+        transform.localScale = Vector2.zero;
+        isActived = false;
+    }
+
     public void OnPointerDown(PointerEventData eventData)
     {
         Vector2 localMousePos = GetLocalMousePosition(eventData);

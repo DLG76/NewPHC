@@ -19,9 +19,4 @@ public class CombatStage : Stage
     {
         StageManager.Instance.PlayCombat(dungeon);
     }
-
-    protected override void Update()
-    {
-        base.Update();
-    }
 }

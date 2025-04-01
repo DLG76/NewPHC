@@ -11,6 +11,8 @@ public abstract class Stage : MonoBehaviour
     public string stageId;
     public Stage[] NextStages { get => _nextStages; }
     [SerializeField] protected Stage[] _nextStages;
+    public Stage PreviewStage { get => _previewStage; }
+    [SerializeField] protected Stage _previewStage;
 
     public JObject StageData { get => _stageData; }
     protected JObject _stageData;
@@ -19,13 +21,6 @@ public abstract class Stage : MonoBehaviour
     protected JObject _myClearedStage;
 
     public bool isLock = false;
-    protected Stage previewStage;
-
-    protected virtual void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Space) && currentStage == stageId)
-            Enter();
-    }
 
     public virtual void Setup(JObject stageData, JObject myClearedStage)
     {
@@ -57,9 +52,8 @@ public abstract class Stage : MonoBehaviour
         {
             Enter();
         }
-        else if ((previewStage != null && currentStage == previewStage.stageId) || _nextStages.FirstOrDefault(ns => ns?.stageId == currentStage) != null)
+        else
         {
-            currentStage = stageId;
             StageManager.Instance.PlayerMoveTo(this);
 
             //Debug.Log($"currentStage: {currentStage}");
@@ -76,7 +70,7 @@ public abstract class Stage : MonoBehaviour
     public void Unlock(Stage previewStage)
     {
         if (previewStage != null)
-            this.previewStage = previewStage;
+            this._previewStage = previewStage;
 
         isLock = false;
     }
