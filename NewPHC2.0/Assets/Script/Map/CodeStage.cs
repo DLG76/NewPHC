@@ -15,9 +15,4 @@ public class CodeStage : Stage
         }
         CodeUI.Instance.Show(this, stageId);
     }
-
-    protected override void Update()
-    {
-        base.Update();
-    }
 }
