@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6104230022798540416}
   - component: {fileID: 3397289228161624039}
   m_Layer: 5
-  m_Name: DescriptionText
+  m_Name: DialogText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -36,7 +36,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 515, y: -315}
-  m_SizeDelta: {x: 830, y: 0}
+  m_SizeDelta: {x: 830, y: 439.6}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &987227256596352704
 CanvasRenderer:
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
+    rgba: 4294967295
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -105,8 +105,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 40
-  m_fontSizeBase: 40
+  m_fontSize: 35
+  m_fontSizeBase: 35
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

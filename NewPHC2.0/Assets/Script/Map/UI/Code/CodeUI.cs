@@ -35,7 +35,8 @@ public class CodeUI : Singleton<CodeUI>
     private Coroutine showCoroutine;
 
     private TMP_Text descriptionTextModel;
-    private Image descriptionImageModel;
+    private TMP_Text dialogText;
+    private Image imageModel;
 
     private string stageId;
     private bool sendedCode = false;
@@ -47,7 +48,8 @@ public class CodeUI : Singleton<CodeUI>
         submitButton.onClick.AddListener(SendCode);
 
         descriptionTextModel = Resources.Load<TMP_Text>("UI/DescriptionText");
-        descriptionImageModel = Resources.Load<Image>("UI/DescriptionImage");
+        dialogText = Resources.Load<TMP_Text>("UI/DialogText");
+        imageModel = Resources.Load<Image>("UI/Image");
     }
 
     private void Start()
@@ -57,19 +59,20 @@ public class CodeUI : Singleton<CodeUI>
         characterA.color = new Color32(150, 150, 150, 255);
         characterB.color = new Color32(150, 150, 150, 255);
 
-        dialogueManager.onCharacterTalk += (character) =>
-        {
-            if (character == characterA.name)
+        if (dialogueManager != null)
+            dialogueManager.onCharacterTalk += (character) =>
             {
-                characterA.DOColor(Color.white, 0.3f);
-                characterB.DOColor(new Color32(150, 150, 150, 255), 0.3f);
-            }
-            else if (character == characterB.name)
-            {
-                characterA.DOColor(new Color32(150, 150, 150, 255), 0.3f);
-                characterB.DOColor(Color.white, 0.3f);
-            }
-        };
+                if (character == characterA.name)
+                {
+                    characterA.DOColor(Color.white, 0.3f);
+                    characterB.DOColor(new Color32(150, 150, 150, 255), 0.3f);
+                }
+                else if (character == characterB.name)
+                {
+                    characterA.DOColor(new Color32(150, 150, 150, 255), 0.3f);
+                    characterB.DOColor(Color.white, 0.3f);
+                }
+            };
     }
 
     public void Show(CodeStage currentStage, string stageId)
@@ -168,7 +171,7 @@ public class CodeUI : Singleton<CodeUI>
     private void LoadCodeUI(CodeStage currentStage)
     {
         var npcData = currentStage.StageData["npc"];
-        if (npcData != null)
+        if (npcData != null && npcData.Type != JTokenType.Null)
         {
             Sprite npcSprite = Resources.Load<Sprite>($"Sprite/CodeStageSprite/NPC/{npcData["npcPrefabName"]}");
 
@@ -184,18 +187,22 @@ public class CodeUI : Singleton<CodeUI>
                 foreach (var valueData in npcData["dialog"]?.ToObject<List<JObject>>())
                     if (valueData["valueType"]?.ToString() == "text")
                     {
-                        var descriptionText = Instantiate(descriptionTextModel, npcDialogContent);
+                        var descriptionText = Instantiate(dialogText, npcDialogContent);
                         descriptionText.text = valueData["value"]?.ToString();
                     }
                     else if (valueData["valueType"]?.ToString() == "image")
                     {
-                        var descriptionImage = Instantiate(descriptionImageModel, npcDialogContent);
                         string spritePath = valueData["value"]?.ToString();
                         if (!string.IsNullOrEmpty(spritePath))
                         {
                             Sprite sprite = Resources.Load<Sprite>($"Sprite/CodeStageSprite/Image/{spritePath}");
-                            descriptionImage.sprite = sprite;
-                            descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+
+                            if (sprite != null)
+                            {
+                                var descriptionImage = Instantiate(imageModel, npcDialogContent);
+                                descriptionImage.sprite = sprite;
+                                descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                            }
                         }
                     }
             }
@@ -221,14 +228,14 @@ public class CodeUI : Singleton<CodeUI>
 
                     if (sprite != null)
                     {
-                        var descriptionImage = Instantiate(descriptionImageModel, descriptionContent);
+                        var descriptionImage = Instantiate(imageModel, descriptionContent);
                         descriptionImage.sprite = sprite;
                         descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
                     }
                 }
             }
 
-        exampleOutputField.text = currentStage.StageData["exampleOutput"]?.ToObject<string>();
+        exampleOutputField.text = currentStage.StageData["exampleOutput"]?.ToObject<string>() ?? string.Empty;
         codeInputField.text = currentStage.MyClearedStage?["code"]?.ToObject<string>() ?? string.Empty;
 
         foreach (var popup in popupsParent.GetComponentsInChildren<WindowPopupUI>())

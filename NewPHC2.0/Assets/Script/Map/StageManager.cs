@@ -30,6 +30,9 @@ public class StageManager : Singleton<StageManager>
     {
         LoadStages(() =>
         {
+            foreach (var stageObj in stageObjs)
+                stageObj.PreviewStages = stageObjs.Select(s => s.NextStages.FirstOrDefault(sc => sc.stage == stageObj)).Where(x => x != null).ToArray();
+
             Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
 
             if (!string.IsNullOrEmpty(Stage.currentStage))
@@ -61,7 +64,7 @@ public class StageManager : Singleton<StageManager>
             Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             mouseWorldPos.z = 100;
 
-            RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, transform.right, Mathf.Infinity);
+            RaycastHit2D[] hits = Physics2D.RaycastAll(mouseWorldPos, Vector3.forward, Mathf.Infinity);
 
             foreach (RaycastHit2D hit in hits)
                 if (hit.transform.gameObject.TryGetComponent(out stage))
@@ -151,9 +154,9 @@ public class StageManager : Singleton<StageManager>
     {
         if (stageObj.NextStages == null) return;
 
-        foreach (var nextStageObj in stageObj.NextStages)
-            if (nextStageObj != null)
-                nextStageObj.Unlock(stageObj);
+        foreach (var nextStageLine in stageObj.NextStages)
+            if (nextStageLine != null)
+                nextStageLine.stage?.Unlock();
     }
 
     public void PlayerMoveTo(Stage stage)
@@ -173,20 +176,28 @@ public class StageManager : Singleton<StageManager>
 
         if (currentStageObj == null) yield break;
 
-        StagePathFinder finder = new StagePathFinder();
-        List<Stage> path = finder.ShortestPathLCA(currentStageObj, stageToGo);
+        if (currentStageObj.NextStages.Select(sc => sc.stage).FirstOrDefault(s => s == currentStageObj) != null ||
+            currentStageObj.PreviewStages.Select(sc => sc.stage).FirstOrDefault(s => s == currentStageObj) != null)
+            yield return PlayerMoveStepToIE(currentStageObj, time);
 
-        if (path.Count > 0)
-        {
-            Stage startMoveStage = path[0];
-            if (Vector2.Distance(startMoveStage.transform.position, player.position) > 0.5)
-                yield return PlayerMoveStepToIE(startMoveStage, time);
+        //StagePathFinder finder = new StagePathFinder();
+        ////List<Stage> path = finder.ShortestPathLCA(currentStageObj, stageToGo);
+        //List<Stage> path = finder.ShortestPathFromStage(currentStageObj, stageToGo);
 
-            path.RemoveAt(0);
-        }
+        //foreach (var stage in path)
+        //    Debug.Log("Stage: " + stage.name);
 
-        foreach (var stage in path)
-            yield return PlayerMoveStepToIE(stage, time);
+        //if (path.Count > 0)
+        //{
+        //    Stage startMoveStage = path[0];
+        //    if (Vector2.Distance(startMoveStage.transform.position, player.position) > 0.5)
+        //        yield return PlayerMoveStepToIE(startMoveStage, time);
+
+        //    path.RemoveAt(0);
+        //}
+
+        //foreach (var stage in path)
+        //    yield return PlayerMoveStepToIE(stage, time);
     }
 
     public IEnumerator PlayerMoveStepToIE(Stage stage, float time)
@@ -217,73 +228,126 @@ public class StageManager : Singleton<StageManager>
     }
 }
 
+//public class StagePathFinder
+//{
+//    // หาทางไปยัง Root (หรือบรรพบุรุษทั้งหมด)
+//    public List<Stage> FindPathToRoot(Stage stage)
+//    {
+//        List<Stage> path = new List<Stage>();
+//        while (stage != null)
+//        {
+//            path.Add(stage);
+//            stage = stage.PreviewStage;
+//        }
+//        path.Reverse(); // กลับลำดับให้เริ่มจาก Root
+//        return path;
+//    }
+
+//    // หาบรรพบุรุษร่วมที่ใกล้ที่สุด (LCA)
+//    public Stage FindLCA(Stage A, Stage B)
+//    {
+//        List<Stage> pathA = FindPathToRoot(A);
+//        List<Stage> pathB = FindPathToRoot(B);
+
+//        Stage lca = null;
+//        int minLength = Mathf.Min(pathA.Count, pathB.Count);
+
+//        for (int i = 0; i < minLength; i++)
+//        {
+//            if (pathA[i] == pathB[i])
+//            {
+//                lca = pathA[i];
+//            }
+//            else
+//            {
+//                break;
+//            }
+//        }
+//        return lca; // คืนค่า LCA
+//    }
+
+//    // หาทางที่สั้นที่สุดระหว่าง Stage A → B
+//    public List<Stage> ShortestPathLCA(Stage A, Stage B)
+//    {
+//        Stage lca = FindLCA(A, B);
+
+//        // หาทางจาก A ไปยัง LCA
+//        List<Stage> pathAtoLCA = new List<Stage>();
+//        Stage current = A;
+//        while (current != lca)
+//        {
+//            pathAtoLCA.Add(current);
+//            current = current.PreviewStage;
+//        }
+//        pathAtoLCA.Add(lca);  // รวม LCA ด้วย
+
+//        // หาทางจาก LCA ไปยัง B
+//        List<Stage> pathBtoLCA = new List<Stage>();
+//        current = B;
+//        while (current != lca)
+//        {
+//            pathBtoLCA.Add(current);
+//            current = current.PreviewStage;
+//        }
+
+//        pathBtoLCA.Reverse(); // กลับลำดับให้เป็น LCA → B
+
+//        // รวมเส้นทางจาก A → LCA และ LCA → B
+//        pathAtoLCA.AddRange(pathBtoLCA);
+//        return pathAtoLCA;
+//    }
+//}
 
 public class StagePathFinder
 {
-    // หาทางไปยัง Root (หรือบรรพบุรุษทั้งหมด)
-    public List<Stage> FindPathToRoot(Stage stage)
+    // หาทางที่สั้นที่สุดจาก Stage A ไปยัง Stage B โดยใช้ BFS
+    public List<Stage> ShortestPathFromStage(Stage startStage, Stage endStage)
     {
-        List<Stage> path = new List<Stage>();
-        while (stage != null)
+        // ถ้าจุดเริ่มต้นและปลายทางเหมือนกัน
+        if (startStage == endStage)
+            return new List<Stage> { startStage };
+
+        // คิวสำหรับ BFS และแผนที่สำหรับติดตามที่เคยเดินผ่าน
+        Queue<Stage> queue = new Queue<Stage>();
+        Dictionary<Stage, Stage> parentMap = new Dictionary<Stage, Stage>();
+
+        // เริ่มต้น BFS จาก startStage
+        queue.Enqueue(startStage);
+        parentMap[startStage] = null; // ไม่มี parent สำหรับ startStage
+
+        // BFS
+        while (queue.Count > 0)
         {
-            path.Add(stage);
-            stage = stage.PreviewStage;
-        }
-        path.Reverse(); // กลับลำดับให้เริ่มจาก Root
-        return path;
-    }
+            Stage current = queue.Dequeue();
 
-    // หาบรรพบุรุษร่วมที่ใกล้ที่สุด (LCA)
-    public Stage FindLCA(Stage A, Stage B)
-    {
-        List<Stage> pathA = FindPathToRoot(A);
-        List<Stage> pathB = FindPathToRoot(B);
-
-        Stage lca = null;
-        int minLength = Mathf.Min(pathA.Count, pathB.Count);
-
-        for (int i = 0; i < minLength; i++)
-        {
-            if (pathA[i] == pathB[i])
-            {
-                lca = pathA[i];
-            }
-            else
-            {
+            // ถ้าค้นพบปลายทาง
+            if (current == endStage)
                 break;
+
+            // ตรวจสอบทุกเส้นทางที่เชื่อมโยงกับ current
+            foreach (var connection in current.NextStages.Concat(current.PreviewStages).Distinct())
+            {
+                Stage neighbor = connection.stage;
+
+                if (neighbor != null)
+                    if (!parentMap.ContainsKey(neighbor)) // ถ้ายังไม่เคยมาเยือน
+                    {
+                        queue.Enqueue(neighbor);
+                        parentMap[neighbor] = current; // บันทึก parent ของ neighbor
+                    }
             }
         }
-        return lca; // คืนค่า LCA
-    }
 
-    // หาทางที่สั้นที่สุดระหว่าง Stage A → B
-    public List<Stage> ShortestPathLCA(Stage A, Stage B)
-    {
-        Stage lca = FindLCA(A, B);
+        // สร้างเส้นทางจาก endStage ไปยัง startStage โดยย้อนกลับจาก parentMap
+        List<Stage> path = new List<Stage>();
+        Stage pathStage = endStage;
 
-        // หาทางจาก A ไปยัง LCA
-        List<Stage> pathAtoLCA = new List<Stage>();
-        Stage current = A;
-        while (current != lca)
+        while (pathStage != null)
         {
-            pathAtoLCA.Add(current);
-            current = current.PreviewStage;
-        }
-        pathAtoLCA.Add(lca);  // รวม LCA ด้วย
-
-        // หาทางจาก LCA ไปยัง B
-        List<Stage> pathBtoLCA = new List<Stage>();
-        current = B;
-        while (current != lca)
-        {
-            pathBtoLCA.Add(current);
-            current = current.PreviewStage;
+            path.Insert(0, pathStage); // เพิ่ม stage ในลำดับที่เริ่มจาก startStage
+            pathStage = parentMap.ContainsKey(pathStage) ? parentMap[pathStage] : null;
         }
 
-        pathBtoLCA.Reverse(); // กลับลำดับให้เป็น LCA → B
-
-        // รวมเส้นทางจาก A → LCA และ LCA → B
-        pathAtoLCA.AddRange(pathBtoLCA);
-        return pathAtoLCA;
+        return path.Count > 1 ? path : new List<Stage>(); // ถ้า path เป็นแค่ startStage ก็คืนค่าว่าง
     }
 }

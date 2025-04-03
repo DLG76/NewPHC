@@ -7,6 +7,15 @@ public class CombatStage : Stage
 {
     [SerializeField] private Dungeon dungeon;
 
+    protected override void Awake()
+    {
+        base.Awake();
+
+        var canvas = GetComponentInChildren<Canvas>();
+        if (canvas != null)
+            canvas.gameObject.SetActive(false);
+    }
+
     public override void Setup(JObject stageData, JObject myClearedStage)
     {
         base.Setup(stageData, myClearedStage);

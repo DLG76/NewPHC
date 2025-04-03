@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 public class CodeStage : Stage
@@ -6,6 +7,15 @@ public class CodeStage : Stage
     [SerializeField] private SeceneDialogue _beforeSeceneDialogue;
     public SeceneDialogue AfterSeceneDialogue { get => _afterSeceneDialogue; }
 	[SerializeField] private SeceneDialogue _afterSeceneDialogue;
+
+    protected override void Awake()
+    {
+        base.Awake();
+
+        var stageText = GetComponentInChildren<TMP_Text>();
+        if (stageText != null)
+            stageText.text = name;
+    }
 
     public override void Enter()
     {
