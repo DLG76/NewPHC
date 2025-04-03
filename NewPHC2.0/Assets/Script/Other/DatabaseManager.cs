@@ -137,7 +137,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             }
         });
 
-        HideLoading();
+        //HideLoading();
     }
 
     public IEnumerator GetUser(string userId, System.Action<bool, JObject> callback)

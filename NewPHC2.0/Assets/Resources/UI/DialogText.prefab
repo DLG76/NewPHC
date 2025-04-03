@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 987227256596352704}
   - component: {fileID: 6104230022798540416}
   - component: {fileID: 3397289228161624039}
+  - component: {fileID: 4758913585576603900}
   m_Layer: 5
   m_Name: DialogText
   m_TagString: Untagged
@@ -36,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 515, y: -315}
-  m_SizeDelta: {x: 830, y: 439.6}
+  m_SizeDelta: {x: 830, y: 0}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!222 &987227256596352704
 CanvasRenderer:
@@ -66,19 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'aa
-
-    aa
-
-    aa
-
-    aa
-
-    aa
-
-    aa
-
-    aa'
+  m_text: abc <link=\"https://www.example.com\"><color=#07C4FF>Example Website</color></link>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: ecca2fcb15582034fa88478f451f59ee, type: 2}
   m_sharedMaterial: {fileID: -2120748961045862302, guid: ecca2fcb15582034fa88478f451f59ee, type: 2}
@@ -87,7 +76,7 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
+    rgba: 4281479730
   m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
@@ -161,3 +150,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
+--- !u!114 &4758913585576603900
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2565567074422994979}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 34fc37a11a455904eab5b95048f3e532, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

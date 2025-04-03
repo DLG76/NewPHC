@@ -5,6 +5,7 @@ using TMPro;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public abstract class Stage : MonoBehaviour
 {
@@ -13,9 +14,8 @@ public abstract class Stage : MonoBehaviour
     public bool isStartStage = false;
     public string stageId;
 
-    public StageConnection[] NextStages { get => _nextStages; }
-    [SerializeField] protected StageConnection[] _nextStages;
-    public StageConnection[] PreviewStages = new StageConnection[0];
+    public StageConnection[] ConnectingStages { get => _connectingStages; set => _connectingStages = value; }
+    [SerializeField, FormerlySerializedAs("_nextStages")] protected StageConnection[] _connectingStages;
 
     public JObject StageData { get => _stageData; }
     protected JObject _stageData;
@@ -33,12 +33,12 @@ public abstract class Stage : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        foreach (var stageLine in _nextStages)
+        foreach (var stageLine in _connectingStages)
         {
-            if (stageLine?.stage == null) continue;
+            if (stageLine?.stageB == null) continue;
 
             Vector3 startPos = transform.position;
-            Vector3 endPos = stageLine.stage.transform.position;
+            Vector3 endPos = stageLine.stageB.transform.position;
 
             // หาทิศทางหลักของเส้นตรงจาก A → B
             Vector3 mainDirection = (endPos - startPos).normalized;
@@ -131,12 +131,12 @@ public abstract class Stage : MonoBehaviour
             linesObj.transform.SetParent(transform);
         }
 
-        foreach (var stageLine in _nextStages)
+        foreach (var stageLine in _connectingStages)
         {
-            if (stageLine?.stage == null) continue;
+            if (stageLine?.stageB == null) continue;
 
             Vector3 startPos = transform.position;
-            Vector3 endPos = stageLine.stage.transform.position;
+            Vector3 endPos = stageLine.stageB.transform.position;
 
             // หาทิศทางหลักของเส้นตรงจาก A → B
             Vector3 mainDirection = (endPos - startPos).normalized;
@@ -207,6 +207,8 @@ public abstract class Stage : MonoBehaviour
 
                 lineObj.transform.SetParent(linesObj.transform);
             }
+
+            stageLine.stageA = this;
         }
     }
 
@@ -270,6 +272,6 @@ public abstract class Stage : MonoBehaviour
 public class StageConnection
 {
     public AnimationCurve curve = AnimationCurve.EaseInOut(0, 0, 1, 0);
-    [HideInInspector] public Stage previewStage;
-    public Stage stage;
+    public Stage stageA;
+    [FormerlySerializedAs("stage")] public Stage stageB;
 }

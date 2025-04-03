@@ -2,7 +2,9 @@ using DG.Tweening;
 using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
+using System.Text.RegularExpressions;
 using TMPro;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.TextCore.Text;
@@ -35,7 +37,7 @@ public class CodeUI : Singleton<CodeUI>
     private Coroutine showCoroutine;
 
     private TMP_Text descriptionTextModel;
-    private TMP_Text dialogText;
+    private TMP_Text dialogTextModel;
     private Image imageModel;
 
     private string stageId;
@@ -48,7 +50,7 @@ public class CodeUI : Singleton<CodeUI>
         submitButton.onClick.AddListener(SendCode);
 
         descriptionTextModel = Resources.Load<TMP_Text>("UI/DescriptionText");
-        dialogText = Resources.Load<TMP_Text>("UI/DialogText");
+        dialogTextModel = Resources.Load<TMP_Text>("UI/DialogText");
         imageModel = Resources.Load<Image>("UI/Image");
     }
 
@@ -187,8 +189,8 @@ public class CodeUI : Singleton<CodeUI>
                 foreach (var valueData in npcData["dialog"]?.ToObject<List<JObject>>())
                     if (valueData["valueType"]?.ToString() == "text")
                     {
-                        var descriptionText = Instantiate(dialogText, npcDialogContent);
-                        descriptionText.text = valueData["value"]?.ToString();
+                        var dialogText = Instantiate(dialogTextModel, npcDialogContent);
+                        dialogText.text = GetText(valueData["value"]?.ToString());
                     }
                     else if (valueData["valueType"]?.ToString() == "image")
                     {
@@ -199,9 +201,9 @@ public class CodeUI : Singleton<CodeUI>
 
                             if (sprite != null)
                             {
-                                var descriptionImage = Instantiate(imageModel, npcDialogContent);
-                                descriptionImage.sprite = sprite;
-                                descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                                var image = Instantiate(imageModel, npcDialogContent);
+                                image.sprite = sprite;
+                                image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
                             }
                         }
                     }
@@ -216,7 +218,7 @@ public class CodeUI : Singleton<CodeUI>
             if (valueData["valueType"]?.ToString() == "text")
             {
                 var descriptionText = Instantiate(descriptionTextModel, descriptionContent);
-                descriptionText.text = valueData["value"]?.ToString();
+                descriptionText.text = GetText(valueData["value"]?.ToString());
             }
             else if (valueData["valueType"]?.ToString() == "image")
             {
@@ -228,9 +230,9 @@ public class CodeUI : Singleton<CodeUI>
 
                     if (sprite != null)
                     {
-                        var descriptionImage = Instantiate(imageModel, descriptionContent);
-                        descriptionImage.sprite = sprite;
-                        descriptionImage.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                        var image = Instantiate(imageModel, descriptionContent);
+                        image.sprite = sprite;
+                        image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
                     }
                 }
             }
@@ -242,6 +244,17 @@ public class CodeUI : Singleton<CodeUI>
             popup.QuitWindowNow();
 
         codePanel.SetActive(true);
+    }
+
+    private string GetText(string defaultText)
+    {
+        var textSplit = defaultText.Split(" ");
+
+        for (int i = 0; i < textSplit.Length; i++)
+            if (textSplit[i].StartsWith("http"))
+                textSplit[i] = $"<link=\"{textSplit[i]}\"><color=#05C2FF><u>{textSplit[i]}</u></color></link>";
+
+        return string.Join(" ", textSplit);
     }
 
     public void ExitQuest()

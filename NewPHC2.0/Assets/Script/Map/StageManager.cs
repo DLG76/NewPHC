@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -31,7 +32,11 @@ public class StageManager : Singleton<StageManager>
         LoadStages(() =>
         {
             foreach (var stageObj in stageObjs)
-                stageObj.PreviewStages = stageObjs.Select(s => s.NextStages.FirstOrDefault(sc => sc.stage == stageObj)).Where(x => x != null).ToArray();
+            {
+                var oldConnectingStages = stageObj.ConnectingStages;
+                var newConnectingStages = stageObjs.Where(s => s != stageObj).Select(s => s.ConnectingStages.FirstOrDefault(cs => cs.stageB == stageObj)).Where(s => s != null).ToArray();
+                stageObj.ConnectingStages = oldConnectingStages.Concat(newConnectingStages).Distinct().ToArray();
+            }
 
             Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
 
@@ -152,11 +157,11 @@ public class StageManager : Singleton<StageManager>
 
     private void UnlockNextStages(Stage stageObj)
     {
-        if (stageObj.NextStages == null) return;
+        if (stageObj.ConnectingStages == null) return;
 
-        foreach (var nextStageLine in stageObj.NextStages)
+        foreach (var nextStageLine in stageObj.ConnectingStages)
             if (nextStageLine != null)
-                nextStageLine.stage?.Unlock();
+                nextStageLine.stageB?.Unlock();
     }
 
     public void PlayerMoveTo(Stage stage)
@@ -176,9 +181,9 @@ public class StageManager : Singleton<StageManager>
 
         if (currentStageObj == null) yield break;
 
-        if (currentStageObj.NextStages.Select(sc => sc.stage).FirstOrDefault(s => s == currentStageObj) != null ||
-            currentStageObj.PreviewStages.Select(sc => sc.stage).FirstOrDefault(s => s == currentStageObj) != null)
-            yield return PlayerMoveStepToIE(currentStageObj, time);
+        if (currentStageObj.ConnectingStages.FirstOrDefault(cs => cs.stageA == stageToGo || cs.stageB == stageToGo) != null ||
+            currentStageObj.ConnectingStages.FirstOrDefault(cs => cs.stageA == stageToGo || cs.stageB == stageToGo) != null)
+            yield return PlayerMoveStepToIE(stageToGo, time);
 
         //StagePathFinder finder = new StagePathFinder();
         ////List<Stage> path = finder.ShortestPathLCA(currentStageObj, stageToGo);
@@ -325,9 +330,9 @@ public class StagePathFinder
                 break;
 
             // ตรวจสอบทุกเส้นทางที่เชื่อมโยงกับ current
-            foreach (var connection in current.NextStages.Concat(current.PreviewStages).Distinct())
+            foreach (var connection in current.ConnectingStages)
             {
-                Stage neighbor = connection.stage;
+                Stage neighbor = connection.stageB;
 
                 if (neighbor != null)
                     if (!parentMap.ContainsKey(neighbor)) // ถ้ายังไม่เคยมาเยือน
