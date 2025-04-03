@@ -33,8 +33,6 @@ public abstract class Stage : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        if (!isStartStage) return;
-
         foreach (var stageLine in _nextStages)
         {
             if (stageLine?.stage == null) continue;
