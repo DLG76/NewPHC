@@ -27,7 +27,7 @@ public abstract class Stage : MonoBehaviour
 
     [SerializeField] private Vector2 lineSize = new Vector2(0.25f, 0.1f); // ขนาดเส้นประ (ยาว, หนา)
     [SerializeField, Min(0)] private float gapSize = 0.1f; // ระยะห่างระหว่างเส้นประ
-    [SerializeField, Min(0)] private float padding = 0.4f; // ระยะห่างระหว่างเส้นประ
+    [SerializeField, Min(0)] private float padding = 0.4f; // ระยะห่างระหว่างเส้นประทั้งหมดกับจุดต้นทางและปลายทาง
 
     public bool isLock = false;
 

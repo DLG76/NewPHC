@@ -53,6 +53,25 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     public IEnumerator Login(string username, string password, System.Action<bool, string> callback)
     {
+        //ShowLoading();
+
+        //var textAsset = Resources.Load<TextAsset>("TesterUser");
+
+        //string responseText = textAsset.text;
+        //JObject responseJson = JObject.Parse(responseText);
+
+        //if (responseJson["name"]?.ToString() == username)
+        //    if (responseJson["name"]?.ToString() == password)
+        //        callback?.Invoke(true, null);
+        //    else
+        //        callback?.Invoke(false, "Password ไม่ถูกต้อง");
+        //else
+        //    callback?.Invoke(false, "ไม่พบ Username");
+
+        //HideLoading();
+
+        //yield break;
+
         string jsonPayload = JsonConvert.SerializeObject(new JObject
         {
             new JProperty("username", username),
@@ -88,6 +107,17 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     public IEnumerator GetProfile(System.Action<bool, JObject> callback)
     {
+        //ShowLoading();
+
+        //var textAsset = Resources.Load<TextAsset>("TesterUser");
+
+        //string responseText = textAsset.text;
+        //callback?.Invoke(true, JObject.Parse(responseText));
+
+        //HideLoading();
+
+        //yield break;
+
         UnityWebRequest request = new UnityWebRequest(Api.PROFILE_URL, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
 
@@ -136,6 +166,20 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     public IEnumerator GetStages(System.Action<bool, List<JObject>, List<JObject>> callback)
     {
+        //ShowLoading();
+
+        //var textAsset = Resources.Load<TextAsset>("PHC.stages");
+
+        //string responseText = textAsset.text;
+        //JObject responseJson = JObject.Parse(responseText);
+        //List<JObject> clearedStages = responseJson["clearedStages"]?.ToObject<List<JObject>>();
+        //List<JObject> stages = responseJson["stages"]?.ToObject<List<JObject>>();
+        //callback?.Invoke(true, clearedStages, stages);
+
+        //HideLoading();
+
+        //yield break;
+
         UnityWebRequest request = new UnityWebRequest(Api.GET_STAGES_URL, "GET");
         request.downloadHandler = new DownloadHandlerBuffer();
 

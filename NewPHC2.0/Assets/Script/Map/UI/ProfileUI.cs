@@ -39,7 +39,7 @@ public class ProfileUI : MonoBehaviour
 
     public void OpenPlayerInfo()
     {
-        if (loadingUI) return;
+        if (loadingUI || !User.me.haveData) return;
 
         TransformSelection(infoButton);
 
@@ -51,11 +51,11 @@ public class ProfileUI : MonoBehaviour
         loadingUI = true;
         fusePanel.DOFade(0, duration).SetEase(Ease.OutQuad);
         yield return new WaitForSecondsRealtime(duration);
+        OpenProfilePanel();
         fusePanel.gameObject.SetActive(false);
         yield return fuseUI.LeaveScreen();
         yield return inventoryUI.LoadScreen();
         infoPanel.gameObject.SetActive(true);
-        OpenProfilePanel();
         infoPanel.DOFade(1, duration).SetEase(Ease.OutQuad);
         yield return new WaitForSecondsRealtime(duration);
         loadingUI = false;
@@ -63,7 +63,7 @@ public class ProfileUI : MonoBehaviour
 
     public void OpenFuse()
     {
-        if (loadingUI) return;
+        if (loadingUI || !User.me.haveData) return;
 
         TransformSelection(fuseButton);
 
@@ -75,11 +75,11 @@ public class ProfileUI : MonoBehaviour
         loadingUI = true;
         infoPanel.DOFade(0, duration).SetEase(Ease.OutQuad);
         yield return new WaitForSecondsRealtime(duration);
+        OpenProfilePanel();
         infoPanel.gameObject.SetActive(false);
         yield return inventoryUI.LeaveScreen();
         yield return fuseUI.LoadScreen();
         fusePanel.gameObject.SetActive(true);
-        OpenProfilePanel();
         fusePanel.DOFade(1, duration).SetEase(Ease.OutQuad);
         yield return new WaitForSecondsRealtime(duration);
         loadingUI = false;
