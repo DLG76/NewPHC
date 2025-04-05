@@ -31,13 +31,6 @@ public class StageManager : Singleton<StageManager>
     {
         LoadStages(() =>
         {
-            foreach (var stageObj in stageObjs)
-            {
-                var oldConnectingStages = stageObj.ConnectingStages;
-                var newConnectingStages = stageObjs.Where(s => s != stageObj).Select(s => s.ConnectingStages.FirstOrDefault(cs => cs.stageB == stageObj)).Where(s => s != null).ToArray();
-                stageObj.ConnectingStages = oldConnectingStages.Concat(newConnectingStages).Distinct().ToArray();
-            }
-
             Stage.currentStage = PlayerPrefs.GetString("currentStage", null);
 
             if (!string.IsNullOrEmpty(Stage.currentStage))
@@ -59,9 +52,11 @@ public class StageManager : Singleton<StageManager>
             }
         });
     }
-
+    
     private void Update()
     {
+        if (!CanEnterStage()) return;
+
         Stage stage = null;
 
         if (Input.GetMouseButtonDown(0))
@@ -118,7 +113,6 @@ public class StageManager : Singleton<StageManager>
                     return;
                 }
 
-                Debug.Log("profile: " + profile);
                 User.me.UpdateProfile(profile);
 
                 List<Stage> clearedStageObjs = new List<Stage>();
@@ -138,6 +132,14 @@ public class StageManager : Singleton<StageManager>
                             clearedStageObjs.Add(stageObj);
                     }
                     else stageObj.Setup(null, null);
+                }
+
+                var allConnectingStages = stageObjs.SelectMany(s => s.ConnectingStages).Distinct().ToArray();
+
+                foreach (var stageObj in stageObjs)
+                {
+                    var connectingStages = allConnectingStages.Where(cs => cs.stageA == stageObj || cs.stageB == stageObj).ToArray();
+                    stageObj.ConnectingStages = connectingStages;
                 }
 
                 foreach (var stageObj in clearedStageObjs)

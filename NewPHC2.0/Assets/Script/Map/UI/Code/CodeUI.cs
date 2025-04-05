@@ -179,7 +179,7 @@ public class CodeUI : Singleton<CodeUI>
             if (npcSprite != null)
             {
                 npcImage.sprite = npcSprite;
-                npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.textureRect.height / npcSprite.textureRect.width;
+                npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.rect.height / npcSprite.rect.width;
                 npcImage.gameObject.SetActive(true);
 
                 foreach (Transform c in npcDialogContent)
@@ -202,7 +202,7 @@ public class CodeUI : Singleton<CodeUI>
                             {
                                 var image = Instantiate(imageModel, npcDialogContent);
                                 image.sprite = sprite;
-                                image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                                image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.rect.width / sprite.rect.height;
                             }
                         }
                     }
@@ -231,7 +231,7 @@ public class CodeUI : Singleton<CodeUI>
                     {
                         var image = Instantiate(imageModel, descriptionContent);
                         image.sprite = sprite;
-                        image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.textureRect.width / sprite.textureRect.height;
+                        image.GetComponent<AspectRatioFitter>().aspectRatio = sprite.rect.width / sprite.rect.height;
                     }
                 }
             }

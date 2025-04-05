@@ -33,6 +33,8 @@ public class ProfileUI : MonoBehaviour
         profilePanel.DOFade(0, duration).SetEase(Ease.OutQuad);
         (profilePanel.transform as RectTransform).DOAnchorMax(Vector2.one * 2, duration).SetEase(Ease.OutQuad);
         (profilePanel.transform as RectTransform).DOAnchorMin(Vector2.one, duration).SetEase(Ease.OutQuad);
+        yield return inventoryUI.LeaveScreen();
+        yield return fuseUI.LeaveScreen();
         yield return new WaitForSecondsRealtime(duration);
         profilePanel.gameObject.SetActive(false);
     }

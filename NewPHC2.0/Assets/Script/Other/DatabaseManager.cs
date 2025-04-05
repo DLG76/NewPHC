@@ -525,7 +525,46 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
     {
         ShowLoading();
 
+        var oldEquipment = User.me.equipment;
+
+        string GetItemIdByKey(Equipment eq, string key)
+        {
+            return key switch
+            {
+                "weapon1" => eq.weapon1?.id,
+                "weapon2" => eq.weapon2?.id,
+                "weapon3" => eq.weapon3?.id,
+                "core" => eq.core?.id,
+                _ => null
+            };
+        }
+
+        var removedItems = new Dictionary<string, string>();
+        var addedItems = new Dictionary<string, string>();
+
+        var keys = new[] { "weapon1", "weapon2", "weapon3", "core" };
+
+        foreach (var key in keys)
+        {
+            string oldId = GetItemIdByKey(oldEquipment, key);
+            string newId = GetItemIdByKey(equipment, key);
+
+            if (oldId != newId && newId != null)
+            {
+                if (oldId != null) removedItems[key] = oldId;
+                if (newId != null) addedItems[key] = newId;
+            }
+        }
+
+        foreach (var kvp in removedItems)
+            LocalUserManager.AddItem(kvp.Value);
+
+        foreach (var kvp in addedItems)
+            LocalUserManager.RemoveItem(kvp.Value);
+
         LocalUserManager.SaveData();
+
+        yield return GetProfile((_, userData) => callback?.Invoke(true, userData["stats"]["equipment"].ToObject<JObject>(), userData["stats"]["inventory"].ToObject<List<JObject>>()));
 
         HideLoading();
 
@@ -837,6 +876,23 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 }
 
                 return null;
+            }
+        }
+
+        public static void RemoveItem(string itemId)
+        {
+            if (!User.me.haveData || itemId == null) return;
+
+            var inventoryItem = User.me.inventory.FirstOrDefault(i => i.item.id == itemId);
+
+            if (inventoryItem != null)
+            {
+                inventoryItem.count--;
+
+                if (inventoryItem.count <= 0)
+                    User.me.inventory.Remove(inventoryItem);
+
+                SaveData();
             }
         }
     }

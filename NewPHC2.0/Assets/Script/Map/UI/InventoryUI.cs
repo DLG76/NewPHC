@@ -5,6 +5,8 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using DG.Tweening;
+using Unity.VisualScripting;
+using Newtonsoft.Json;
 
 public class InventoryUI : Singleton<InventoryUI>
 {
@@ -372,6 +374,13 @@ public class InventoryUI : Singleton<InventoryUI>
     
     public IEnumerator LoadScreen()
     {
+        oldEquipment = new Equipment
+        {
+            core = User.me.equipment?.core,
+            weapon1 = User.me.equipment?.weapon1,
+            weapon2 = User.me.equipment?.weapon2,
+            weapon3 = User.me.equipment?.weapon3,
+        };
         descriptionPanel.SetActive(false);
         LoadInventory();
         yield break;
