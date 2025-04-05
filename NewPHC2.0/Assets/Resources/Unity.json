@@ -1,0 +1,208 @@
+[
+    {
+        "_stage": "0",
+        "_id": "d2820aa84472201f494bddfe",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "อาวล่ะทุกคนนน พร้อมจะเริ่มทำเกมที่ไม่เหมือนใครในเวลา 3 วันรึยังง"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "เข้าไปที่ https://unity.com/download โหลด Unity Hub แล้วเปิดเลย"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity0-1"
+                }
+            ]
+        }
+    },
+    { 
+        "_stage": "1-1",
+        "_id": "a6d6e4de3e1b56e11df36a2d",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "แต่เดี๋ยวก่อน..มันต้อง Sign in Account ด้วยนะ"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ถ้ายังไม่มี Account กด Create Account"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity1-1_1"
+                }
+            ]
+        }
+    },
+    { 
+        "_stage": "1-2",
+        "_id": "a2716b7a2f03dbec60cfd6d6",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "จากนั้นมันแนะนำให้ Install Unity Editor Version ไหนก็โหลดอันนั้นเลย ไม่มีปัญหา"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "image",
+                    "value": "Unity1-2_1"
+                }
+            ]
+        }
+    },
+    { 
+        "_stage": "1-3",
+        "_id": "c4fe0dca84e887589e65a857",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ก้าวแรกของจริงแล้วว สร้างโปรเจคกัน"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "กด New Project"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity1-3_1"
+                },
+                {
+                    "valueType": "text",
+                    "value": "เลือก Universal 3D เท่านั้นนะ"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity1-3_2"
+                }
+            ]
+        }
+    },
+    { 
+        "_stage": "1-4",
+        "_id": "673ece613ed05079bd21fe69",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ยินดีต้อนรับมือใหม่ทั้งหลาย ขั้นแรกเลย ถ้าเขียนโค้ดคง Print Hello World เป็นก้าวแรกแต่ตอนนี้มาสร้าง Object แรกกันดีกว่า"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "1.คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวา \r\n2.กดตามนี้เลย 3D Object > Cube"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity1-4_1"
+                }
+            ]
+        }
+    },
+    { 
+        "_stage": "1-5",
+        "_id": "39759f2edf99a044362c294b",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "เห็นป่าวๆ มีของโผล่ขึ้นมาใน \"Scene\" แล้วลองเล่นกับมันดูดีกว่า"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "1.คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวา \r\n2.กดตามนี้เลย 3D Object > Cube"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Unity1-4_1"
+                },
+                {
+                    "valueType": "text",
+                    "value": "จะเห็นเครื่องมือให้ใช้ ขยับ หมุน และเพิ่มลดขนาด \r\nเคล็ดไม่ลับ : สำหรับบางคนลองกด Q W E R ดูมันเป็น Shortcut"
+                }
+            ]
+        }
+    },
+    {
+        "_stage": "C",
+        "_id": "67ee3d9b45892a5866e750d6",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    }
+]
