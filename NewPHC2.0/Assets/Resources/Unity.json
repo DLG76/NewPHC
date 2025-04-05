@@ -1,208 +1,924 @@
 [
-    {
-        "_stage": "0",
-        "_id": "d2820aa84472201f494bddfe",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "อาวล่ะทุกคนนน พร้อมจะเริ่มทำเกมที่ไม่เหมือนใครในเวลา 3 วันรึยังง"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "เข้าไปที่ https://unity.com/download โหลด Unity Hub แล้วเปิดเลย"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity0-1"
-                }
-            ]
-        }
-    },
-    { 
-        "_stage": "1-1",
-        "_id": "a6d6e4de3e1b56e11df36a2d",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "แต่เดี๋ยวก่อน..มันต้อง Sign in Account ด้วยนะ"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "ถ้ายังไม่มี Account กด Create Account"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity1-1_1"
-                }
-            ]
-        }
-    },
-    { 
-        "_stage": "1-2",
-        "_id": "a2716b7a2f03dbec60cfd6d6",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "จากนั้นมันแนะนำให้ Install Unity Editor Version ไหนก็โหลดอันนั้นเลย ไม่มีปัญหา"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "image",
-                    "value": "Unity1-2_1"
-                }
-            ]
-        }
-    },
-    { 
-        "_stage": "1-3",
-        "_id": "c4fe0dca84e887589e65a857",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "ก้าวแรกของจริงแล้วว สร้างโปรเจคกัน"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "กด New Project"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity1-3_1"
-                },
-                {
-                    "valueType": "text",
-                    "value": "เลือก Universal 3D เท่านั้นนะ"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity1-3_2"
-                }
-            ]
-        }
-    },
-    { 
-        "_stage": "1-4",
-        "_id": "673ece613ed05079bd21fe69",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "ยินดีต้อนรับมือใหม่ทั้งหลาย ขั้นแรกเลย ถ้าเขียนโค้ดคง Print Hello World เป็นก้าวแรกแต่ตอนนี้มาสร้าง Object แรกกันดีกว่า"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "1.คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวา \r\n2.กดตามนี้เลย 3D Object > Cube"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity1-4_1"
-                }
-            ]
-        }
-    },
-    { 
-        "_stage": "1-5",
-        "_id": "39759f2edf99a044362c294b",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "เห็นป่าวๆ มีของโผล่ขึ้นมาใน \"Scene\" แล้วลองเล่นกับมันดูดีกว่า"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "1.คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวา \r\n2.กดตามนี้เลย 3D Object > Cube"
-                },
-                {
-                    "valueType": "image",
-                    "value": "Unity1-4_1"
-                },
-                {
-                    "valueType": "text",
-                    "value": "จะเห็นเครื่องมือให้ใช้ ขยับ หมุน และเพิ่มลดขนาด \r\nเคล็ดไม่ลับ : สำหรับบางคนลองกด Q W E R ดูมันเป็น Shortcut"
-                }
-            ]
-        }
-    },
-    {
-        "_stage": "C",
-        "_id": "67ee3d9b45892a5866e750d6",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CombatStage",
-        "dungeon": {
-            "waves": [
-                {
-                    "enemySpawnDatas": [
-                        {
-                            "enemyPrefabName": "MeleeEnemy",
-                            "count": 1
-                        }
-                    ],
-                    "bossPrefabName": null,
-                    "bossPosition": null
-                },
-                {
-                    "enemySpawnDatas": [
-                        {
-                            "enemyPrefabName": "MeleeEnemy",
-                            "count": 2
-                        },
-                        {
-                            "enemyPrefabName": "RangedEnemy",
-                            "count": 1
-                        }
-                    ],
-                    "bossPrefabName": null,
-                    "bossPosition": null
-                }
-            ]
+  {
+    "_stage": "0",
+    "_id": "d2820aa84472201f494bddfe",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "อาวล่ะทุกคนนน พร้อมจะเริ่มทำเกมที่ไม่เหมือนใครในเวลา 3 วันรึยังง"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "เข้าไปที่ https://unity.com/download โหลด Unity Hub แล้วเปิดเลย"
         },
-        "lostRewardId": null,
-        "clearTimes": []
+        {
+          "valueType": "image",
+          "value": "Unity0-1"
+        }
+      ]
     }
+  },
+  {
+    "_stage": "1-1",
+    "_id": "a6d6e4de3e1b56e11df36a2d",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "แต่เดี๋ยวก่อน..มันต้อง Sign in Account ด้วยนะ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ถ้ายังไม่มี Account กด Create Account"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-1_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-2",
+    "_id": "a2716b7a2f03dbec60cfd6d6",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "จากนั้นมันแนะนำให้ Install Unity Editor Version ไหนก็โหลดอันนั้นเลย ไม่มีปัญหา"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "image",
+          "value": "Unity1-2_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-3",
+    "_id": "c4fe0dca84e887589e65a857",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ก้าวแรกของจริงแล้วว สร้างโปรเจคกัน"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "กด New Project"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-3_1"
+        },
+        {
+          "valueType": "text",
+          "value": "เลือก Universal 3D เท่านั้นนะ"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-3_2"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-4",
+    "_id": "673ece613ed05079bd21fe69",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ยินดีต้อนรับมือใหม่ทั้งหลาย ขั้นแรกเลย ถ้าเขียนโค้ดคง Print Hello World เป็นก้าวแรกแต่ตอนนี้มาสร้าง Object แรกกันดีกว่า"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวา \r\n2.กดตามนี้เลย 3D Object > Cube"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-4_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-5",
+    "_id": "39759f2edf99a044362c294b",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "เห็นป่าวๆ มีของโผล่ขึ้นมาใน \"Scene\" แล้วลองเล่นกับมันดูดีกว่า"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.คลิ๊กซ้ายที่ 3D Object ในซีน"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-5_1"
+        },
+        {
+          "valueType": "text",
+          "value": "จะเห็นเครื่องมือให้ใช้ ขยับ หมุน และเพิ่มลดขนาด \r\nเคล็ดไม่ลับ : สำหรับบางคนลองกด Q W E R ดูมันเป็น Shortcut"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-6",
+    "_id": "0b8e2108451c06fd0ade6bc4",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "สร้างเกมจาก 0 ใน 3 วันคงเป็นไปไม่ได้ พี่เลยเตรียมของดีไว้ให้เราไม่ได้เรื่มต้นจาก 0 "
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.เข้า https://drive.google.com/drive/u/0/folders/1zphmYrF4K_JWzxjhs1A8loMjPN_uhnz9 \r\n2.โหลด Asset ทุกอันได้เลย"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-6_1"
+        },
+        {
+          "valueType": "text",
+          "value": "3.Double Click ไฟล์โหลดมา \r\n4.จะมีหน้าต่าง Import Unity Package เด้งขึ้นมา กด Import"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-6_2"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-7",
+    "_id": "cfb637dc92ab2eb763926143",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "มาทำส่วนที่สำคัญที่สุดในเกมอย่าง Map แล้วหรอ ก็ถ้าไม่ทำ Player ก็เดินตกโลกแบบ Infinite Loop อะนะ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": []
+    }
+  },
+  {
+    "_stage": "1-8",
+    "_id": "489fb5de5db134928a2122be",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie เราจะมาช่วยนายทํา Map สุดเจ๋งกันน อย่างเเรกเลยนะถ้าผู้เล่นไม่มีพื้นให้ยืน เนี่ยเเล้วเขาจะอยู่ได้ยังไง TT"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "คลิ๊กขวาที่ในช่อง Hierarchy ด้านขวากดตามนี้เลย 3D Object > Terrain"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-9",
+    "_id": "59046629000574a3ead78561",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie ดูเหมือนว่า Terrain เราจะใหญ่ไปนะ ปรับขนาดมันหน่อย!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ไปที่ Inspector ด้านขวาเเล้วกดตามนี้เลย! Terrain Settings > Mesh Resolution > Terrain Width & Terrain Height"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-9_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-10",
+    "_id": "39b593029031d03d284a7111",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie ตอนนี่เนี่ย พื้นเรายังไม่มีหญ้าเลย ช่วยเราด้วย!!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ใน Inspector ด้านบนเลือกเเปรง ด้านล่าง\nBrush Strength : นํ้าหนักเเปรง\nBrush Size : ขนาดเเปรง\nBrush Rotation : หมุนเเปรง\n\nเครื่องมือ Raise & Lower Terrain\nคลิ๊กซ้ายเพิ่มความสูง คลิ๊กซ้าย + Ctrl ลดความสูง"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-10_1"
+        },
+        {
+          "valueType": "text",
+          "value": "เครื่องมือ Paint Terrain คลิ๊กซ้ายลงสี Terrain"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-10_2"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-11",
+    "_id": "03d41adb0d0ec8de30ff0433",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie ว้าววววว ตอนนี้มีพื้นหญ้าเเล้ว ต่อมาเราช่วยใส่พืชด้วยกันหน่อย!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ใน Inspector ไปปุ่มที่สามที่เขียนว่า \"Add Trees\" เพิ่มต้นไม้โดยการกด Edit trees > Add Trees เเล้วใส่ Prefab ของต้นไม้เข้าไป จากนั้นกด Add เเล้วเริ่มระบายได้เลย"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-11_1"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-11_2"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-12",
+    "_id": "b85abe5a5a4d0d8de9184b42",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie เรามาสร้างบ้านกัน!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ใน Asset Furniture ไปที่ Assets > Prefabs > Structure เเล้วลากวางได้เลย"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-12_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-13",
+    "_id": "99d79edc99d2e856e2824f93",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie เรามาสร้างบ้านกัน!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "ใน Asset Furniture ไปที่ี่ Assets > Prefabs \nเเละเราก็เลือก Furniture ของห้องที่เราได้เเล้วลากวางเลย!"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-13_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-14",
+    "_id": "4583df5aeff11542ecef1f9d",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie โอ้ววว ช่วยด้วย!! ผมโดน Monster ที่ร้ายกาดที่สุดมาโจมตีเเล้ว!! Monster Texture ม่วงนั่นเอง TT"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "วิธีการเเก้ตามภาพ:\nCase 1:"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_1"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_2"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_3"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_4"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_5"
+        },
+        {
+          "valueType": "text",
+          "value": "Case 2:"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_6"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_7"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_8"
+        },  
+        {
+          "valueType": "image",
+          "value": "Unity1-14_9"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_10"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-14_11"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-15",
+    "_id": "80e88e6b67587f91a433b70d",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie ขอบคุณที่ช่วยเราออกมา \nดูเหมือนว่า Monster จะกินพระอาทิตย์ไปด้วย! ช่วยเอามันกลับมาหน่อย"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "กดไปที่ Directional light ใน Hierarchy\nใน Inspector:\nRotation : ปรับว่าพระอาทิตย์อยู่ตรงไหนของ skybox\ncolor: เปลี่ยนสีพระอาทิตย์\nintensity : ปรับความสว่างของพระอาทิตย์"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-15_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-16",
+    "_id": "2c6af56b7728c2d950b2eb42",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie นอกจากที่ Monster \nกินพระอาทิตย์ไปแล้วเนี่ย มันก็กินไฟไปด้วย!!"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1. Spotlight : (เป็น light ที่จะปล่อยเเสงเป็นจุดๆ)"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-16_1"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-16_2"
+        },
+        {
+          "valueType": "text",
+          "value": "2. Point light : (เป็น light ที่จะปล่อยเเสงโดยรอบๆ)"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-16_3"
+        },
+        {
+          "valueType": "text",
+          "value": "เอามารวมกันแล้วจะเป็นแบบนี้"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-16_4"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-17",
+    "_id": "ae7f3782a1502c4e7e41c0fb",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "wassap homie ขอบคุณที่ช่วยเรานะ \nถึงเวลาที่เราต้องจาก ก่อนที่เราจะจากลา เราจะให้สิ่งนี้กับนาย"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "Post Processing\nวิธีการ Setup 1. คลืกขวาเเล้ว volume -> global volume\nnew -> add override -> postprocessing effect "
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-17_1"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-17_2"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-18",
+    "_id": "fe55463f9f8740c83b5d3775",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "โย่วววว ยินดีต้อนรับสู่ขั้นตอนการสร้าง Player นะ บอกเลยง่ายมากกๆๆ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.เข้าไปในโฟลเดอร์ Asset > Asset > Player\n2.ลาก Object ที่ชื่อ Player เข้า Scene\n3.ลองกด Play ดู"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-18_1"
+        },
+        {
+          "valueType": "text",
+          "value": "Fact เฉยๆ : Object ที่อยู่ในไฟล์โปรเจคแบบ Player ตัวนี้เรียกว่า"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-19",
+    "_id": "1c767f8e2a7609d5cc677755",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "จะบอกว่าจริงๆ Player ตัวนี้ทำอะไรได้หลายอย่างมากเลยนะ ลองไปตั้งค่ามันดูสิ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": []
+    }
+  },
+  {
+    "_stage": "1-20",
+    "_id": "d276f206bb038b8f3f7244f7",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ถ้าอยากให้เกมเรามี Enemy ล่ะก็มาถูกด่านแล้วว"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.เลือก Object ที่อยากจะให้กลายเป็น Enemy\n2.จิ้ม Object นั้น -> กด Add Component \"Turret\""
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-20_1"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-21",
+    "_id": "df326ab560bb34eae55dba78",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ยังไม่จบนะใจเย็น เราต้องตั้งค่า \"กระสุน\" ให้ Enemy ก่อน"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.สร้าง 3D Object Sphere ขึ้นมา\n2.กด Add Component \"Bullet\""
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-21_1"
+        },
+        {
+          "valueType": "text",
+          "value": "3.ลาก \"กระสุน\" ของเราลงไปที่ว่างใน Project เลย"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-21_2"
+        },
+        {
+          "valueType": "text",
+          "value": "4.ลบ Bullet ใน Scene ทิ้งได้เลย\n5.จิ้ม Enemy แล้วลาก Bullet จากช่อง Project ไปใส่ในช่อง Bullet Prefab"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-21_3"
+        },
+        {
+          "valueType": "text",
+          "value": "แล้วจะต้องได้แบบนี้นะ"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-21_4"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-22",
+    "_id": "be3b0099b8fd6a4d55d82d0a",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "อย่าลืมตั้งค่าจุดที่กระสุนจะออกด้วยนา"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.คลิ๊กขวาใน Hierarchy > Create Empty ตั้งชื่อว่า Firepoint\n2.ลาก Empty Object ไปวางในจุดที่กระสุนจะยิงออกมา"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-22_1"
+        },
+        {
+          "valueType": "text",
+          "value": "แล้วอย่าลืมลากให้ Firepoint เข้าไปอยู่ข้างใน ป้อมปืนด้วยนะ"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-22_2"
+        },
+        {
+          "valueType": "text",
+          "value": "3.จิ้ม Enemy แล้วลาก Firepoint ไปใส่ในช่อง Fire Point"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-22_3"
+        },
+        {
+          "valueType": "text",
+          "value": "ช่อง FirePoint ใน Enemy ต้องเป็นแบบนี้นะ"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-22_4"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-23",
+    "_id": "24d10ba4b91533c57eb3a977",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ลองหาโมเดลมาทำ Enemy ดูสิ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        
+      ]
+    }
+  },
+  {
+    "_stage": "1-24",
+    "_id": "918aad5a0528cc99730ea8fe",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "เคยเห็นพวก Jumppad หรือ Trap ในเกมทั่วไปปะ \nพวกอย่างนั้นพี่ก็มีให้นะเราสามารถทำให้\nสิ่งที่ Player สัมผัสทำงานตามที่เราตั้งค่าได้"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+        {
+          "valueType": "text",
+          "value": "1.จิ้ม Object นั้น -> กด Add Component \"Interactable Object\""
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-24_1"
+        },
+        {
+          "valueType": "text",
+          "value": "2.เลือก Efffect ที่จะเกิดขึ้นเมื่อ Player สัมผัส\nEffect ที่พี่เตรียมมามีเยอะไปอะอธิบายยาวแน่เลย..งั้นลองเล่นดูนะ"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-24_2"
+        },
+        {
+          "valueType": "text",
+          "value": "อันนี้ตัวอย่าง :"
+        },
+        {
+          "valueType": "image",
+          "value": "Unity1-24_3"
+        }
+      ]
+    }
+  },
+  {
+    "_stage": "1-25",
+    "_id": "63bfc5ddf519f20e4f325827",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ลองหาโมเดลมาใส่ให้ตรงกับ Effectดูนะ"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+      ]
+    }
+  },
+  {
+    "_stage": "1-26",
+    "_id": "c9fe55f15b4e34cff3aeefe9",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "ลองหา Asset มาจัด Map สำหรับเกมของเรากัน"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+      ]
+    }
+  },
+  {
+    "_stage": "1-27",
+    "_id": "3cda761a50ca4e8f7e775ed1",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "เอา Map , Enemy และ Object ต่างๆมารวมกันดีกว่าา"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+      ]
+    }
+  },
+  {
+    "_stage": "1-28",
+    "_id": "484c3d8479cf8eb3de20847a",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CodeStage",
+    "description": [
+      {
+        "valueType": "text",
+        "value": "รวมทุกอย่างเข้าด้วยกันและ!!\nเสร็จ Mini Project แล้วววว"
+      }
+    ],
+    "hint": "...",
+    "exampleOutput": "",
+    "npc": {
+      "npcPrefabName": "Gen",
+      "dialog": [
+      ]
+    }
+  },
+  {
+    "_stage": "C",
+    "_id": "67ee3d9b45892a5866e750d6",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  }
 ]
