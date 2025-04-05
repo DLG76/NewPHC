@@ -224,6 +224,11 @@ public class InventoryUI : Singleton<InventoryUI>
                 equipItemButton.gameObject.SetActive(true);
                 unequipItemButton.gameObject.SetActive(false);
             }
+        else
+        {
+            equipItemButton.gameObject.SetActive(false);
+            unequipItemButton.gameObject.SetActive(false);
+        }
 
         descriptionPanel.SetActive(true);
     }
@@ -238,6 +243,26 @@ public class InventoryUI : Singleton<InventoryUI>
             descriptionPanel.SetActive(false);
             selectingItemBG.SetActive(true);
             hotbarPanel.DOScale(Vector2.one * 1.5f, 0.5f);
+
+            var item = inventorySlot.inventoryItem?.item;
+
+            if (item == null)
+            {
+                if (item is CoreItem)
+                {
+                    coreItemButton.OpenButton.interactable = true;
+                    weapon1ItemButton.OpenButton.interactable = false;
+                    weapon2ItemButton.OpenButton.interactable = false;
+                    weapon3ItemButton.OpenButton.interactable = false;
+                }
+                else if (item is VoidItem)
+                {
+                    coreItemButton.OpenButton.interactable = false;
+                    weapon1ItemButton.OpenButton.interactable = true;
+                    weapon2ItemButton.OpenButton.interactable = true;
+                    weapon3ItemButton.OpenButton.interactable = true;
+                }
+            }
         }
     }
 

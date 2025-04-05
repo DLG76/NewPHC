@@ -118,6 +118,7 @@ public class StageManager : Singleton<StageManager>
                     return;
                 }
 
+                Debug.Log("profile: " + profile);
                 User.me.UpdateProfile(profile);
 
                 List<Stage> clearedStageObjs = new List<Stage>();
@@ -140,7 +141,7 @@ public class StageManager : Singleton<StageManager>
                 }
 
                 foreach (var stageObj in clearedStageObjs)
-                    UnlockNextStages(stageObj);
+                    UnlockConnectingStages(stageObj);
 
                 onStagesLoaded?.Invoke();
             }));
@@ -155,7 +156,7 @@ public class StageManager : Singleton<StageManager>
         return !profilePanel.activeSelf;
     }
 
-    private void UnlockNextStages(Stage stageObj)
+    private void UnlockConnectingStages(Stage stageObj)
     {
         if (stageObj.ConnectingStages == null) return;
 

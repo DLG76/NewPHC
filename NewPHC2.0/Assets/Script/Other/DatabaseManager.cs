@@ -16,6 +16,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 {
     public static string LoginScene = "Lobby";
 
+    [SerializeField] private TextAsset stagesFile;
+
     private TokenManager tokenManager;
     private GameObject loadingCanvas;
 
@@ -200,8 +202,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
     private IEnumerator GetOnlyStages(System.Action<List<JObject>> callback)
     {
-        var textAsset = Resources.Load<TextAsset>("PHCStages");
-        List<JObject> stages = JsonConvert.DeserializeObject<List<JObject>>(textAsset.text);
+        List<JObject> stages = JsonConvert.DeserializeObject<List<JObject>>(stagesFile.text);
         callback?.Invoke(stages);
         yield break;
     }
@@ -276,9 +277,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
         //string myUserId = PlayerPrefs.GetString("myUserId");
 
-        var textAsset = Resources.Load<TextAsset>("PHCStages");
-
-        List<JObject> stages = JsonConvert.DeserializeObject<List<JObject>>(textAsset.text);
+        List<JObject> stages = JsonConvert.DeserializeObject<List<JObject>>(stagesFile.text);
         List<JObject> clearedStages = new List<JObject>();
 
         string clearedStagesString = PlayerPrefs.GetString("clearedStage", null);
@@ -431,6 +430,20 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         {
             if (success)
             {
+                string answersString = PlayerPrefs.GetString("answers", "[]");
+                List<JObject> answers = JsonConvert.DeserializeObject<List<JObject>>(answersString);
+
+                var newAnswer = new JObject
+                {
+                    new JProperty("stageId", stageId),
+                    new JProperty("code", code),
+                };
+
+                answers.Add(newAnswer);
+
+                PlayerPrefs.SetString("answers", JsonConvert.SerializeObject(answers));
+                PlayerPrefs.Save();
+
                 JObject rewardClamed = LocalUserManager.GetReward(stage["rewardId"]?.ToString());
 
                 callback?.Invoke(true, rewardClamed);
@@ -440,20 +453,6 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 callback?.Invoke(false, null);
             }
         });
-
-        string answersString = PlayerPrefs.GetString("answers", "[]");
-        List<JObject> answers = JsonConvert.DeserializeObject<List<JObject>>(answersString);
-
-        var newAnswer = new JObject
-        {
-            new JProperty("stageId", stageId),
-            new JProperty("code", code),
-        };
-
-        answers.Add(newAnswer);
-
-        PlayerPrefs.SetString("answers", JsonConvert.SerializeObject(answers));
-        PlayerPrefs.Save();
 
         HideLoading();
 
@@ -737,7 +736,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             byte[] byteArray = Encoding.UTF8.GetBytes(
                 PlayerPrefs.GetString("inventory", "") +
                 PlayerPrefs.GetString("equipment", "") +
-                PlayerPrefs.GetString("clearedStage", "")
+                PlayerPrefs.GetString("clearedStage", "") +
+                PlayerPrefs.GetString("answers", "")
             );
 
             Debug.Log($"Byte size of string: {byteArray.Length} bytes {Mathf.Round((float)byteArray.Length / (5 * 1024 * 1024)) * 100}%");

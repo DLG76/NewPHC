@@ -24,6 +24,9 @@ public class RewardUI : MonoBehaviour
 
         var rewardCanvasAnimator = GetComponentInChildren<Animator>();
 
+        foreach (Transform c in rewardContent)
+            Destroy(c.gameObject);
+
         StartCoroutine(ShowReward(rewardData));
 
         rewardCanvasAnimator.SetTrigger("Show");
@@ -31,7 +34,7 @@ public class RewardUI : MonoBehaviour
 
     private IEnumerator ShowReward(JObject rewardData)
     {
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.5f);
 
         var expSlot = Instantiate(inventorySlotModel, rewardContent);
         expSlot.SetItem(new InventoryItem
@@ -47,9 +50,9 @@ public class RewardUI : MonoBehaviour
         });
         expSlot.IconImage.transform.localScale = Vector3.one * 0.7f;
         expSlot.transform.localScale = Vector3.zero;
-        expSlot.transform.DOScale(Vector3.one, 0.75f);
+        expSlot.transform.DOScale(Vector3.one, 0.4f);
 
-        yield return new WaitForSecondsRealtime(1);
+        yield return new WaitForSecondsRealtime(0.2f);
 
         var itemSlot = Instantiate(inventorySlotModel, rewardContent);
         itemSlot.SetItem(new InventoryItem
@@ -58,6 +61,6 @@ public class RewardUI : MonoBehaviour
             count = rewardData["itemCount"].ToObject<int>()
         });
         itemSlot.transform.localScale = Vector3.zero;
-        itemSlot.transform.DOScale(Vector3.one, 0.75f);
+        itemSlot.transform.DOScale(Vector3.one, 0.4f);
     }
 }

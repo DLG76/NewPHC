@@ -179,7 +179,7 @@ public class CodeUI : Singleton<CodeUI>
             if (npcSprite != null)
             {
                 npcImage.sprite = npcSprite;
-                npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.textureRect.width / npcSprite.textureRect.height;
+                npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.textureRect.height / npcSprite.textureRect.width;
                 npcImage.gameObject.SetActive(true);
 
                 foreach (Transform c in npcDialogContent)
