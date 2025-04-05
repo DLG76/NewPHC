@@ -1,3 +1,4 @@
+using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -11,8 +12,14 @@ public class InventorySlot : MonoBehaviour
     [SerializeField] private TMP_Text countText;
     public Button OpenButton { get => openButton; }
     [SerializeField] private Button openButton;
+    private CanvasGroup canvasGroup;
 
     public InventoryItem inventoryItem;
+
+    private void Awake()
+    {
+        canvasGroup = openButton.GetComponent<CanvasGroup>();
+    }
 
     public void SetItem(InventoryItem inventoryItem)
     {
@@ -38,5 +45,10 @@ public class InventorySlot : MonoBehaviour
             countText.gameObject.SetActive(true);
         }
         else countText.gameObject.SetActive(false);
+    }
+
+    public void SetAlpha(float alpha)
+    {
+        canvasGroup.DOFade(alpha, 0.3f).SetEase(Ease.OutQuad);
     }
 }

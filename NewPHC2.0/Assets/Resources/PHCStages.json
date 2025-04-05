@@ -3,9 +3,14 @@
         "_id": "67ebd2f5cf167028e2db009f",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
-        "description": [],
+        "description": [
+            {
+                "valueType": "text",
+                "value": "เอาหล่ะได้เวลาออกผจญภัยครั้งใหม่\nมาบอกสวัสดีโลกใบใหม่หน่อยดีกว่า\n[โจทย์] แสดงผล \"Hello World\""
+            }
+        ],
         "hint": "...",
-        "exampleOutput": null,
+        "exampleOutput": "Hello World!",
         "npc": {
             "npcPrefabName": "Gen",
             "dialog": [
