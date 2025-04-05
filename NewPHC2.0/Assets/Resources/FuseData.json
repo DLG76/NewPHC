@@ -1,0 +1,17 @@
+[
+  {
+    "_id": "67e5859effab842e3ec139b5",
+    "item1": "67eff2a69162d2dd53591b80",
+    "item2": "67eff2a69162d2dd53591b80",
+    "results": [
+      {
+        "itemId": "67eff2c19162d2dd53591b83",
+        "rate": 4
+      },
+      {
+        "itemId": "67eff2cb9162d2dd53591b86",
+        "rate": 1
+      }
+    ]
+  }
+]

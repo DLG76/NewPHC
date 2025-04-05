@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class InventorySlot : MonoBehaviour
 {
+    public Image IconImage { get => iconImage; }
     [SerializeField] private Image iconImage;
     [SerializeField] private TMP_Text countText;
     public Button OpenButton { get => openButton; }
@@ -24,11 +25,13 @@ public class InventorySlot : MonoBehaviour
         if (inventoryItem == null)
         {
             iconImage.sprite = null;
+            iconImage.gameObject.SetActive(false);
             countText.gameObject.SetActive(false);
             return;
         }
 
         iconImage.sprite = inventoryItem.item?.Icon;
+        iconImage.gameObject.SetActive(inventoryItem.item != null);
         if (inventoryItem.item != null && inventoryItem.item.CanStack)
         {
             countText.text = $"x{inventoryItem.count}";

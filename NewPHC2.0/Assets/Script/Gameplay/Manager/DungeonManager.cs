@@ -9,6 +9,7 @@ using UnityEngine.SceneManagement;
 
 public class DungeonManager : Singleton<DungeonManager>
 {
+    public static string beforeScene;
     public static Dungeon dungeon;
 
     [SerializeField] private CinemachineVirtualCamera cinemachine;
@@ -96,9 +97,10 @@ public class DungeonManager : Singleton<DungeonManager>
 
             yield return new WaitForSeconds(1);
 
-            yield return DatabaseManager.Instance.FinishedDungeon(dungeon.StageData["_id"]?.ToString(), true, Time.time - startTime, (success) =>
+            yield return DatabaseManager.Instance.FinishedDungeon(dungeon.StageData["_id"]?.ToString(), true, Time.time - startTime, (success, reward) =>
             {
                 ExitDungeon();
+                RewardUI.CreateRewardUI(reward);
             });
 
             yield break;
@@ -165,8 +167,7 @@ public class DungeonManager : Singleton<DungeonManager>
 
     private void ExitDungeon()
     {
-        Debug.Log("DUNGEON MANAGER : Exit Dungeon");
-        StartCoroutine(fadeCanvas.ExitFade("TestOverworld"));
+        StartCoroutine(fadeCanvas.ExitFade(beforeScene));
     }
 
     private void OnDestroy()

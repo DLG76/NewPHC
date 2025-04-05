@@ -155,14 +155,13 @@ public class CodeUI : Singleton<CodeUI>
         {
             string code = codeInputField.text;
 
-            yield return DatabaseManager.Instance.SendCode(stageId, code, (success) =>
+            yield return DatabaseManager.Instance.SendCode(stageId, code, (success, reward) =>
             {
-                Debug.Log("Send code: " + success);
-
                 if (success)
                 {
                     storyPanel.SetActive(false);
                     StageManager.Instance.LoadStages();
+                    RewardUI.CreateRewardUI(reward);
                 }
 
                 sendedCode = true;

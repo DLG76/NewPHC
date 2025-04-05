@@ -9,19 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ab10a4dc77676ae439755a6e8b2d728a, type: 3}
-  m_Name: CannonSkill (1)
+  m_Script: {fileID: 11500000, guid: ea936d8dc3b24bb4c8f27497a0ae6288, type: 3}
+  m_Name: FireSkill 1
   m_EditorClassIdentifier: 
-  Name: Cannon
+  Name: Fire
   Icon: {fileID: 0}
   Description: 
   CanBuy: 0
   PriceBuy: 0
   PriceSell: 0
   Level: 1
-  skillType: 2
+  skillType: 1
   IsSingle: 0
   IsDefault: 0
   IsRealInstance: 1
-  speedMultiply: 0.5
-  damageMultiply: 2
+  tickTime: 0.5
+  maxTickCount: 10
+  burningDamageMultiply: 0.4
+  effectVoidModel: {fileID: 6568527092760291090, guid: 6465c29ad5e1a024d914308b852e54bd, type: 3}

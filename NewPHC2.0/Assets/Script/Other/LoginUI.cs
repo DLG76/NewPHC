@@ -22,6 +22,12 @@ public class LoginUI : MonoBehaviour
         startGameButton.onClick.AddListener(GoToOverworld);
         loginButton.onClick.RemoveAllListeners();
         loginButton.onClick.AddListener(Login);
+
+        /////////////////////// ชั่วคราว ///////////////////////
+        PlayerPrefs.SetString("myUserId", string.Join("", System.Guid.NewGuid().ToByteArray()));
+        PlayerPrefs.Save();
+        GoToOverworld();
+        //////////////////////////////////////////////////////
     }
 
     private void Start()

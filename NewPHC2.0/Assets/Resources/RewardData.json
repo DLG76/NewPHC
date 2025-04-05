@@ -1,0 +1,18 @@
+[
+    {
+        "_id": "67ef92971d0548cb07bc772f",
+        "exp": 100,
+        "itemDrops": [
+            {
+                "itemId": "67dd53bebf81599b6f7fafe4",
+                "rate": 1,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2a69162d2dd53591b80",
+                "rate": 1,
+                "count": 1
+            }
+        ]
+    }
+]

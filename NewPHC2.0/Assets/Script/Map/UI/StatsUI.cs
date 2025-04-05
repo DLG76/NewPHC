@@ -13,11 +13,22 @@ public class StatsUI : MonoBehaviour
     [SerializeField] private TMP_Text minDamageText;
     [SerializeField] private TMP_Text maxDamageText;
     [SerializeField] private TMP_Text expText;
+    [SerializeField] private Button userIdButton;
 
     [Header("Overworld")]
     [SerializeField] private TMP_Text nameText;
     [SerializeField] private Slider healthBar;
 
+    private void Awake()
+    {
+        userIdButton.onClick.RemoveAllListeners();
+        userIdButton.onClick.AddListener(() =>
+        {
+            string myUserId = PlayerPrefs.GetString("myUserId");
+            GUIUtility.systemCopyBuffer = myUserId;
+        });
+    }
+    
     private void Update()
     {
         float maxHealth = User.me.maxHealth;

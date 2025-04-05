@@ -9,18 +9,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a57414e632af8647b0caeab87866efe, type: 3}
-  m_Name: TitanSkill (1)
+  m_Script: {fileID: 11500000, guid: fdf143371319d1140aac4ccf160ee8df, type: 3}
+  m_Name: BombSkill 2
   m_EditorClassIdentifier: 
-  Name: Titan Size
+  Name: Bomb
   Icon: {fileID: 0}
-  Description: 
+  Description: explode and drop item
   CanBuy: 0
   PriceBuy: 0
   PriceSell: 0
   Level: 1
-  skillType: 2
-  IsSingle: 0
+  skillType: 1
+  IsSingle: 1
   IsDefault: 0
   IsRealInstance: 1
-  sizeMultiply: 1.5
+  bombSize: 1.1
+  bombDamageMultiply: 1.7
+  bombForcePower: 8

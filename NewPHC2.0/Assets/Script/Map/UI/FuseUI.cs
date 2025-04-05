@@ -201,7 +201,7 @@ public class FuseUI : MonoBehaviour
     private IEnumerator FuseAnimation(Item resultItem, List<JObject> newInventory)
     {
         User.me.UpdateInventory(newInventory);
-        RemoveItem(resultItem);
+        RemoveItem(resultItem, true);
         LoadInventory();
 
         fuseAnimator.SetTrigger("Fuse");
@@ -247,9 +247,9 @@ public class FuseUI : MonoBehaviour
         return inventorySlots.FirstOrDefault(s => s.inventoryItem == inventoryItem);
     }
 
-    private void RemoveItem(Item item)
+    private void RemoveItem(Item item, bool skipFushing = false)
     {
-        if (item == null || fusing)
+        if (item == null || (fusing && !skipFushing))
             return;
 
         InventoryItem inventoryItem = null;

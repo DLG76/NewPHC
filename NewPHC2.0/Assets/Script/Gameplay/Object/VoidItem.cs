@@ -32,19 +32,24 @@ public class VoidItem : Item
         ForcePower = itemJson["forcePower"]?.Value<float>() ?? 1;
         LifeTime = itemJson["lifeTime"]?.Value<float>() ?? 5;
 
+        if (itemJson["skills"] == null || itemJson["skills"].Type == JTokenType.Null) return;
+
         var skillItems = SkillItem.GetAllSkillItems();
+        var skillToAdds = new List<SkillItem>();
 
         foreach (var skillData in itemJson["skills"])
         {
             var skillName = skillData["skillName"].Value<string>();
             var level = skillData["level"]?.Value<int>() ?? 1;
 
-            if (skillName != null && skillItems.FirstOrDefault(si => si.Name == skillName && si.Level == level) != null)
-            {
-                var skill = skillItems.FirstOrDefault(si => si.Name == skillName && si.Level == level);
-                AddSkill(skill);
-            }
+            var skill = skillItems.FirstOrDefault(si => si.Name == skillName && si.Level == level);
+
+            if (skillName != null && skill != null)
+                skillToAdds.Add(skill);
         }
+
+        foreach (var skill in skillToAdds.OrderByDescending(skill => skill.IsSingle))
+            AddSkill(skill);
 
         if (SkillItems.Count == 0)
             AddSkill(skillItems.FirstOrDefault(si => si is BreakableSkill && si.Level == 1));

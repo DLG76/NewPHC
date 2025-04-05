@@ -1,12 +1,12 @@
 ﻿using DG.Tweening;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class StageManager : Singleton<StageManager>
@@ -161,7 +161,12 @@ public class StageManager : Singleton<StageManager>
 
         foreach (var nextStageLine in stageObj.ConnectingStages)
             if (nextStageLine != null)
-                nextStageLine.stageB?.Unlock();
+            {
+                if (nextStageLine.stageB == stageObj)
+                    nextStageLine.stageA?.Unlock();
+                if (nextStageLine.stageA == stageObj)
+                    nextStageLine.stageB?.Unlock();
+            }
     }
 
     public void PlayerMoveTo(Stage stage)
@@ -181,8 +186,7 @@ public class StageManager : Singleton<StageManager>
 
         if (currentStageObj == null) yield break;
 
-        if (currentStageObj.ConnectingStages.FirstOrDefault(cs => cs.stageA == stageToGo || cs.stageB == stageToGo) != null ||
-            currentStageObj.ConnectingStages.FirstOrDefault(cs => cs.stageA == stageToGo || cs.stageB == stageToGo) != null)
+        if (currentStageObj.ConnectingStages.FirstOrDefault(cs => cs.stageA == stageToGo || cs.stageB == stageToGo) != null)
             yield return PlayerMoveStepToIE(stageToGo, time);
 
         //StagePathFinder finder = new StagePathFinder();
@@ -215,13 +219,14 @@ public class StageManager : Singleton<StageManager>
         else if (direction.x < 0)
             player.GetComponent<SpriteRenderer>().flipX = false;
 
-        yield return player.DOMove(stage.transform.position, time).WaitForCompletion();
-
         Stage.currentStage = stage.stageId;
+
+        yield return player.DOMove(stage.transform.position, time).WaitForCompletion();
     }
 
     public void PlayCombat(Dungeon dungeon)
     {
+        DungeonManager.beforeScene = SceneManager.GetActiveScene().name;
         DungeonManager.dungeon = dungeon;
         StartCoroutine(fadeCanvas.ExitFade("Dungeon"));
     }

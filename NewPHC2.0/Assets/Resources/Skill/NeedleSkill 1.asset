@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ab10a4dc77676ae439755a6e8b2d728a, type: 3}
+  m_Name: NeedleSkill 1
+  m_EditorClassIdentifier: 
+  Name: Needle
+  Icon: {fileID: 0}
+  Description: 
+  CanBuy: 0
+  PriceBuy: 0
+  PriceSell: 0
+  Level: 1
+  skillType: 2
+  IsSingle: 0
+  IsDefault: 0
+  IsRealInstance: 1
+  speedMultiply: 2
+  damageMultiply: 0.5

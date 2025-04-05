@@ -9,22 +9,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72d8e50433ec9d848a1c0da960748ba2, type: 3}
-  m_Name: HealSkill (1)
+  m_Script: {fileID: 11500000, guid: 6a57414e632af8647b0caeab87866efe, type: 3}
+  m_Name: TitanSkill 2
   m_EditorClassIdentifier: 
-  Name: Heal
+  Name: Titan Size
   Icon: {fileID: 0}
   Description: 
   CanBuy: 0
   PriceBuy: 0
   PriceSell: 0
   Level: 1
-  skillType: 0
+  skillType: 2
   IsSingle: 0
   IsDefault: 0
   IsRealInstance: 1
-  healItemModel: {fileID: 525867754709557323, guid: f267cc0fd93c72f44b5b63c74dd37a0a, type: 3}
-  healEffectModel: {fileID: 8034429405507886573, guid: 3aae6c5a8badd704bb5d6574f85b419e, type: 3}
-  healPoint: 1
-  healCount: 5
-  healDelay: 0.25
+  sizeMultiply: 1.7

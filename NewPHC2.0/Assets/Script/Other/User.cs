@@ -43,6 +43,7 @@ public class ClearedStage
 {
     public string type { get; set; }
     public string stageId { get; set; }
+    public string rewardId { get; set; }
     public double time { get; set; }
 }
 
@@ -89,14 +90,14 @@ public class User
         level = stats["level"].ToObject<int>();
         maxExp = stats["maxExp"].ToObject<double>();
         exp = stats["exp"].ToObject<double>();
-        clearedStages = ConvertTextToClass<List<ClearedStage>>(stats["clearedStages"].ToString());
+        clearedStages = ConvertTextToClass<List<ClearedStage>>(stats["clearedStages"]?.ToString() ?? "[]");
 
         UpdateEquipment(stats["equipment"]?.ToObject<JObject>());
 
         if (stats["inventory"] != null && stats["inventory"]?.Type != JTokenType.Null)
             UpdateInventory(stats["inventory"]?.ToObject<List<JObject>>());
 
-        answers = ConvertTextToClass<List<Answer>>(stats["answers"]?.ToString());
+        answers = ConvertTextToClass<List<Answer>>(stats["answers"]?.ToString() ?? "[]");
 
         haveData = true;
     }

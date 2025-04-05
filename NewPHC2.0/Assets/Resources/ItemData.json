@@ -1,0 +1,161 @@
+[
+    {
+        "_id": "67eff2ea9162d2dd53591b8f",
+        "type": "VoidItem",
+        "name": "Bird A",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 20,
+        "maxDamage": 50,
+        "minSpeed": 1,
+        "maxSpeed": 2,
+        "chargeTime": 0.85,
+        "forcePower": 1.4,
+        "lifeTime": 5,
+        "skills": [
+            {
+              "skillName": "Bomb",
+              "level": 3
+            },
+            {
+              "skillName": "Heal",
+              "level": 3
+            },
+            {
+              "skillName": "Slow Down",
+              "level": 2
+            },
+            {
+              "skillName": "Titan Size",
+              "level": 2
+            }
+          ]
+    },
+    {
+        "_id": "67eff2db9162d2dd53591b8c",
+        "type": "VoidItem",
+        "name": "Bird B",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 15,
+        "maxDamage": 42,
+        "minSpeed": 1,
+        "maxSpeed": 2,
+        "chargeTime": 1,
+        "forcePower": 1.3,
+        "lifeTime": 4,
+        "skills": [
+            {
+              "skillName": "Fire",
+              "level": 3
+            },
+            {
+              "skillName": "Heal",
+              "level": 2
+            }
+          ]
+    },
+    {
+        "_id": "67eff2d39162d2dd53591b89",
+        "type": "VoidItem",
+        "name": "Bird C",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 12,
+        "maxDamage": 35,
+        "minSpeed": 0.8,
+        "maxSpeed": 1.8,
+        "chargeTime": 1.1,
+        "forcePower": 1.3,
+        "lifeTime": 4,
+        "skills": [
+          {
+            "skillName": "Fire",
+            "level": 1
+          },
+          {
+            "skillName": "Cannon",
+            "level": 1
+          }
+        ]
+    },
+    {
+        "_id": "67eff2cb9162d2dd53591b86",
+        "type": "VoidItem",
+        "name": "Bird D",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 10,
+        "maxDamage": 30,
+        "minSpeed": 0.6,
+        "maxSpeed": 1.7,
+        "chargeTime": 1.1,
+        "forcePower": 1.25,
+        "lifeTime": 3.5,
+        "skills": [
+            {
+              "skillName": "Heal",
+              "level": 2
+            },
+            {
+              "skillName": "Needle",
+              "level": 1
+            }
+          ]
+    },
+    {
+        "_id": "67eff2c19162d2dd53591b83",
+        "type": "VoidItem",
+        "name": "Bird E",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 7,
+        "maxDamage": 25,
+        "minSpeed": 0.5,
+        "maxSpeed": 1.5,
+        "chargeTime": 1.2,
+        "forcePower": 1.2,
+        "lifeTime": 3,
+        "skills": []
+    },
+    {
+        "_id": "67eff2a69162d2dd53591b80",
+        "type": "VoidItem",
+        "name": "Bird F",
+        "description": "ใช้ในการโจมตี Enemy",
+        "canStack": false,
+        "minDamage": 5,
+        "maxDamage": 20,
+        "minSpeed": 0.5,
+        "maxSpeed": 1.5,
+        "chargeTime": 1.2,
+        "forcePower": 1,
+        "lifeTime": 3,
+        "skills": []
+    },
+    {
+        "type": "CoreItem",
+        "name": "Egg Core",
+        "description": "ใช้เพิ่มเลือดและพลังป้องกัน",
+        "canStack": false,
+        "_id": "67eff9442f59bb81baf3c0e2",
+        "health": 20,
+        "armor": 5
+    },
+    {
+        "_id": "67eff9092f59bb81baf3c0df",
+        "type": "CoreItem",
+        "name": "Bubble Core",
+        "description": "ใช้เพิ่มเลือดและพลังป้องกัน",
+        "canStack": false,
+        "health": 10,
+        "armor": 5
+    },
+    {
+        "_id": "67dd53bebf81599b6f7fafe4",
+        "type": "NormalItem",
+        "name": "เกลือ",
+        "description": "เค็ม",
+        "canStack": true
+    }
+]

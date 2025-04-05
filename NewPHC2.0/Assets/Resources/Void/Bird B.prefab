@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5866628955599458499}
   - component: {fileID: 1000935378236501111}
   m_Layer: 3
-  m_Name: ExclusiveBird
+  m_Name: Bird B
   m_TagString: Void
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
