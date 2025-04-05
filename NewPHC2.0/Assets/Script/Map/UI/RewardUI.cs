@@ -11,15 +11,18 @@ public class RewardUI : MonoBehaviour
     [SerializeField] private InventorySlot inventorySlotModel;
     [SerializeField] private Button closeButton;
 
-    public static void CreateRewardUI(JObject rewardData)
+    public static void CreateRewardUI(JObject rewardData) => CreateRewardUI(rewardData, null);
+
+    public static void CreateRewardUI(JObject rewardData, System.Action onClosingRewardUI)
     {
         var rewardCanvas = Instantiate(Resources.Load<RewardUI>("UI/RewardCanvas"));
-        rewardCanvas.Setup(rewardData);
+        rewardCanvas.Setup(rewardData, onClosingRewardUI);
         DontDestroyOnLoad(rewardCanvas.gameObject);
     }
 
-    public void Setup(JObject rewardData)
+    public void Setup(JObject rewardData, System.Action onClosingRewardUI)
     {
+        closeButton.onClick.AddListener(() => onClosingRewardUI?.Invoke());
         closeButton.onClick.AddListener(() => Destroy(gameObject));
 
         var rewardCanvasAnimator = GetComponentInChildren<Animator>();

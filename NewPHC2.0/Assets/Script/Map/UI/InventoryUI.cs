@@ -232,6 +232,14 @@ public class InventoryUI : Singleton<InventoryUI>
             unequipItemButton.gameObject.SetActive(false);
         }
 
+        if (!descriptionPanel.activeSelf)
+        {
+            var descriptionPanelRect = descriptionPanel.transform as RectTransform;
+
+            descriptionPanelRect.localScale = Vector3.zero;
+            descriptionPanelRect.DOScale(Vector3.one, 0.3f);
+        }
+
         descriptionPanel.SetActive(true);
     }
 
@@ -248,21 +256,29 @@ public class InventoryUI : Singleton<InventoryUI>
 
             var item = inventorySlot.inventoryItem?.item;
 
-            if (item == null)
+            if (item != null)
             {
                 if (item is CoreItem)
                 {
                     coreItemButton.OpenButton.interactable = true;
+                    coreItemButton.SetAlpha(1);
                     weapon1ItemButton.OpenButton.interactable = false;
+                    weapon1ItemButton.SetAlpha(0.2f);
                     weapon2ItemButton.OpenButton.interactable = false;
+                    weapon2ItemButton.SetAlpha(0.2f);
                     weapon3ItemButton.OpenButton.interactable = false;
+                    weapon3ItemButton.SetAlpha(0.2f);
                 }
                 else if (item is VoidItem)
                 {
                     coreItemButton.OpenButton.interactable = false;
+                    coreItemButton.SetAlpha(0.2f);
                     weapon1ItemButton.OpenButton.interactable = true;
+                    weapon1ItemButton.SetAlpha(1);
                     weapon2ItemButton.OpenButton.interactable = true;
+                    weapon2ItemButton.SetAlpha(1);
                     weapon3ItemButton.OpenButton.interactable = true;
+                    weapon3ItemButton.SetAlpha(1);
                 }
             }
         }
@@ -276,6 +292,16 @@ public class InventoryUI : Singleton<InventoryUI>
             descriptionPanel.SetActive(true);
             selectingItemBG.SetActive(false);
             hotbarPanel.DOScale(Vector2.one, 0.5f);
+
+            coreItemButton.OpenButton.interactable = true;
+            coreItemButton.SetAlpha(1);
+            weapon1ItemButton.OpenButton.interactable = true;
+            weapon1ItemButton.SetAlpha(1);
+            weapon2ItemButton.OpenButton.interactable = true;
+            weapon2ItemButton.SetAlpha(1);
+            weapon3ItemButton.OpenButton.interactable = true;
+            weapon3ItemButton.SetAlpha(1);
+
             selectEquipmentMode = false;
         }
     }

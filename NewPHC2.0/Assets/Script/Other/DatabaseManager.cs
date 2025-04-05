@@ -16,7 +16,36 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 {
     public static string LoginScene = "Lobby";
 
-    [SerializeField] private TextAsset stagesFile;
+    ///////////////////////////////////////////////////////////////////
+    public static World world = World.Python;
+    public enum World
+    {
+        Python,
+        Blender,
+        Website,
+        Unity
+    }
+
+    private TextAsset stagesFile
+    {
+        get
+        {
+            switch (world)
+            {
+                case World.Python:
+                    return Resources.Load<TextAsset>("PythonStages");
+                case World.Blender:
+                    return Resources.Load<TextAsset>("BlenderStages");
+                case World.Website:
+                    return Resources.Load<TextAsset>("WebsiteStages");
+                case World.Unity:
+                    return Resources.Load<TextAsset>("UnityStages");
+                default:
+                    return null;
+            }
+        }
+    }
+    ///////////////////////////////////////////////////////////////////
 
     private TokenManager tokenManager;
     private GameObject loadingCanvas;

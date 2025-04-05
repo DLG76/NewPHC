@@ -5,12 +5,138 @@
         "itemDrops": [
             {
                 "itemId": "67dd53bebf81599b6f7fafe4",
-                "rate": 1,
+                "rate": 4,
                 "count": 1
             },
             {
                 "itemId": "67eff2a69162d2dd53591b80",
+                "rate": 4,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2c19162d2dd53591b83",
                 "rate": 1,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "_id": "761e74382eeee37331be3ff9",
+        "exp": 300,
+        "itemDrops": [
+            {
+                "itemId": "67eff2a69162d2dd53591b80",
+                "rate": 4,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2c19162d2dd53591b83",
+                "rate": 1,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "_id": "586c6538703be5a33fe9d4ea",
+        "exp": 650,
+        "itemDrops": [
+            {
+                "itemId": "67dd53bebf81599b6f7fafe4",
+                "rate": 3,
+                "count": 1
+            },
+            {
+                "itemId": "67eff9092f59bb81baf3c0df",
+                "rate": 3,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2a69162d2dd53591b80",
+                "rate": 3,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2c19162d2dd53591b83",
+                "rate": 2,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "_id": "851c41e060148f481545ed79",
+        "exp": 1500,
+        "itemDrops": [
+            {
+                "itemId": "67dd53bebf81599b6f7fafe4",
+                "rate": 3,
+                "count": 1
+            },
+            {
+                "itemId": "67eff9092f59bb81baf3c0df",
+                "rate": 2,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2cb9162d2dd53591b86",
+                "rate": 1,
+                "count": 2
+            }
+        ]
+    },
+    {
+        "_id": "e781b45a123b105c63da2162",
+        "exp": 3000,
+        "itemDrops": [
+            {
+                "itemId": "67eff9442f59bb81baf3c0e2",
+                "rate": 3,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2d39162d2dd53591b89",
+                "rate": 1,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "_id": "9dee536685a0b2551b71a042",
+        "exp": 4500,
+        "itemDrops": [
+            {
+                "itemId": "67dd53bebf81599b6f7fafe4",
+                "rate": 2,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2d39162d2dd53591b89",
+                "rate": 4,
+                "count": 2
+            },
+            {
+                "itemId": "67eff2db9162d2dd53591b8c",
+                "rate": 1,
+                "count": 1
+            }
+        ]
+    },
+    {
+        "_id": "4311994a296b0b589b3b0ce6",
+        "exp": 7000,
+        "itemDrops": [
+            {
+                "itemId": "67dd53bebf81599b6f7fafe4",
+                "rate": 2,
+                "count": 1
+            },
+            {
+                "itemId": "67eff2d39162d2dd53591b89",
+                "rate": 2,
+                "count": 2
+            },
+            {
+                "itemId": "67eff2db9162d2dd53591b8c",
+                "rate": 3,
                 "count": 1
             }
         ]

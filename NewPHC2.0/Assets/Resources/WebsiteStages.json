@@ -1,0 +1,752 @@
+[
+    {
+        "_id": "rea2jiud9r4sfwnq9logdmh2",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Install VScode\nโหลดเป็นไหม ถ้าไม่ ถามพี่ข้าวกล้อง หรือพี่ไทเกอร์"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "https://code.visualstudio.com/download"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "vjifa8fb84uyl5vkm3hbhw1w",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Setup Extension\nน้องชายคิดว่า Extension Live Server มีความสำคัญยังไง?"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "กด ช่องที่ 5 แถบซ้ายสุด (Extension) พิมพ์ Live Server"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "lfvy59qejy82xgfepuwm519r",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Web Structure\nน้องชายพี่ นายคิดว่า Front-end และ Back-end ต่างกันยังไง บอกพี่สิ"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ให้น้องมองว่าการสร้างเว็ป คือการสร้างบ้านหลังนึง\n\nโดย HTML คือ ส่วนของโครงสร้างบ้าน\n       CSS คือ การตกแต่งบ้าน\n       JavaScript คือ เฟอร์นิเจอร์\n\nโดยเว็ปจะมีส่วน Front-end และ Back-end ต้องทำงานร่วมกัน\n\nดูเพิ่มเติม  https://youtu.be/uKtBapOGs5A?si=k2dixfKqVBVK3JxT"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "javrtsk9hjk6os1ows0ljm96",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Setup html and css\nน้องชาย พี่เป็นมือใหม่อะ พี่ขอ โค้ด Setup Html ทั้งหมดหน่อย"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "DOCTYPE And Link CSS\nเมื่อเปิด VScode ลองพิม ! และกด enter ดูสิ! อย่าลืมว่าต้อง Link CSS ด้วยนะ"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "pc2lgti1q4vkigb37yykt716",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Text (h1,h2,p)\nถ้าพี่จะทำหัวข้อ\nพี่ควรใช้ tag อะไร\nหรอน้องชายย"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "tag h1 ใช้สำหรับการสร้าง text ขนาดใหญ่\n\nดูเพิ่มเติม\nhttps://www.w3schools.com/tags/tag_hn.asp"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "gtvefsa4iwknz4adwaqt6yj8",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Object (div)\nน้องๆคิดว่า tag Div มีความสำคัญแค่ไหน ทำไม?"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "tag div คือ tag basic สำหรับการ\nสร้าง Object หรือ คลุม Parent"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "kb2h5a47yjvy02lxfbzq3ybh",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Class,ID\nClass มีหน้าที่ยังไง ใน CSS"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "Class และ ID จะอยู่ใน Tag เชื่อพี่น้องชาย\nแถมสองอันนี้สำคัญต่อการ เข้าถึง html ของ css มากๆ"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "l1xndo0anhamv8qy7y1uf1z4",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Parent,Child\nน้องชายช่วยพี่ด้วย พี่แมกหายไปในดง div หา tag ของ class ของพี่แมกให้หน่อย ว่ามันคืออะไร\n\n<div class=\"this is parent\">\n <div class=\"Pmax1\">\n  <div class=\"PmaxFake\">\n         <h1 class=\"Pmax\"></h1>\n  </div>\n </div>\n</div>"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ให้น้องนึกภาพว่า Object ในแต่ละ tag ของ html คือกล่องสี่เหลี่ยมกล่องนึง\n\nสมมุติว่า  <div class=\"Box\">      <h1>Hello World</h1>\n</div>\n\nclass Box ต่อไปนี้คือ Parent ของ h1 และ h1 คือ child   ดังนั้น h1 จะอยู่ภายในกล่องของ class Box"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "dt5d1ks71id0hn5g112bm1qq",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ลองสร้าง หน้าเว็ป\nโดยมีรายละเอียดคือ\n1.ชื่อน้อง\n2.คำคม\n3.สถานะ\n4.คอนแทค\n\nแคปรูปและสามารถฝากพี่ส่งให้ใครในดิสก็ได้"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": null
+    },
+    {
+        "_id": "49z981w859bxiwd286xvyn0a",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Setup CSS / Refering\nช่วยพี่ด้วยน้อง พี่ทำ CSS ไม่เป็นช่วย setup css ให้พี่หน่อยย"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "การ Set up CSS มีไว้เพื่อ การ Reset ทุกอย่าง\nโดยใช้ 3 คำสั่งเท่านั้น\n\n*การ Refer ถึง class หรือ tag ทำแบบนี้\n <h1 class=\"Name\">      Khaokong </h1>  เมื่อน้อง Refer ถึง text นั้นใน CSS ต้องใช้ว่า  .Name {  }\n\nไม่เข้าใจตรงไหนลอง Prompt AI ดูนะ"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "vq80bevivfq8id46qwmotcpc",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Font\nน้องๆคิดว่าฟอนต์ มีประโยชน์แค่ไหน ในการทำเว็ป"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "หลังจากเข้าถึง text ได้แล้ว\n\nจากนั้นลองพิมพ์คำว่า Font หรือ text เพื่อให้มันแสดงคำสั่งที่เกี่ยวข้อง และลองใช้ คำสั่งเหล่านั้นดูนะ\n\nตัวอย่าง https://www.youtube.com/shorts/ycEH25YeGKU"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "sp13f45ovj9g4uqykv1suj2y",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "หาฟอนต์เท่ๆจาก Google font และวิธีลง ใน Html"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "https://fonts.google.com/"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "u9zsm7pwqdq8n04ax6ift81n",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "font-size\nน้องคิดว่า เว็ปที่ทำตอนนี้ text ไหนควรจะใหญ่ที่สุด\nเพราะอะไร"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": null
+    },
+    {
+        "_id": "v8uul89mxoqhuc4xv7y2nxoy",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "font-weight\nหัวข้อ และ รายละเอียดเล็กๆ เราควรใช้อันไหน เป็น\nFont-weight : Bold;"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": null
+    },
+    {
+        "_id": "8wu1khvkn0kdsbg865oql2a7",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Margin\nสร้างระยะห่าง 30px ระหว่าง ชื่อ คำคม สถานะ คอนแทก ไม่เข้าใจถามพี่ข้าวกล้องได้เลยน้อง"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": null
+    },
+    {
+        "_id": "e0mp3shh220c9omdeiv7tvep",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "จัด parent และ item ใน parent อยู่ตรงกลาง"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ทำแล้วกดผ่าน ไม่เข้าใจถามพี่ข้าวกล้องได้เลยน้อง"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "o54yu4brqkoddj819ld51yyi",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "color\nน้องลอง เปลี่ยนสี Text ของตัวเองดู สีจ๊าบๆ แล้ว กดผ่านได้เลย"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ทำไม่ได้ลองดูคลิปนี้ https://www.youtube.com/shorts/ycEH25YeGKU"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "19m1mdkx6uurkzmm0zle73zn",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Background-color\nเปลี่ยนสีพื้นหลังให้ ไม่กลบ Object ด้วยนะ ทำแล้วกดผ่านเลย"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ลองเข้าถึง tag body ดูน้องชาย"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "xs2ziepyjhr2l84g0vwdbxdm",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ปรับแต่งหน้าเว็ปจากของเดิม\nให้ เท่ขึ้น และคิดว่า ส่งไปจีบสาวได้"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "อยากให้พี่ดูเรียกได่เลยน้อง เสร็จแล้วกดผ่าน"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "h0mp555dew4ci17pzl1n8yt5",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "น้องชาย พี่อยากเชื่อม html กับ Js อะ ช่วยพี่หน่อยยย เชื่อมยังไง"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ลองใช้ tag script ในบรรทัดล่างสุดของ tag body (Parent ใหญ่)  ดูครับน้อง และ เชื่อมไฟล์ด้วย src=\"\""
+                }
+            ]
+        }
+    },
+    {
+        "_id": "zfaodxni5cx39r4ydfrpbzo1",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "สร้าง tag h1 และใส่คำคมเข้าไป จากนั้น import ใน JS เลยน้อง (ใช้เว็ปนี้จนจบ JS project เลยนะ)"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "การ Import มีรูปแบบประมาณนี้\n\nlet ชื่อตัวแปร = document.getElementById(\"ไอดีของ object หรือ text เรา\");\n\nดังนั้นถ้าไม่มี ID ก็ไปเพิ่มสะ"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "pogy842x21sqen00rwe3rx86",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ทำปุ่มกด Show คำคม และกดอีกปุ่ม เพื่อเปลี่ยนสีคำคมเป็นสีตามปุ่มได้\nไม่เข้าใจถามพี่ข้าวกล้อง\nทำแล้วกดผ่าน"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "*ใครมาถึงส่วนต่อจากนี้ ทักมาให้ผมสอนได้ครับ*  ส่วนนี้ค่อนข้าง Advance Level ละน้อง gen AI ก็ได้ แต่ถ้าใครอยากทำเอง\nขั้นตอน\nสร้าง tag Button สำหรับกด และ import ลง js\nสร้าง Function สำหรับกดและเปลี่ยนสี โดยเข้าถึงสไตล์ ตัวอย่าง function Changetheme() {  Name.style.color = \"Black\" }\nเชื่อมฟังชั่นกับการคลิ๊ก โดยใช้  Button.addEventListener(\"click\", Changetheme);\n\nทำตามคลิปนี้ได้ แต่คลิปนี้จะแปลกตรงที่ไม่แยกไฟล์ JS กับ Html และ ไม่แยกเขียนฟังชั่น แต่จะใช้เป็น array ใน addEventListener (ศึกษา array เพิ่มเติมได้)  https://youtu.be/PyDyqirB72A?si=EoXDYbK-CNR20pJm"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "hl02pfu2svz7ou1y8vj60y97",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ทำปุ่มกด เปลี่ยนจากคำคมเป็น Contact (IG , Facebook)\nทำแล้วกดผ่าน"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ขั้นตอนเหมือน การเปลี่ยนสี แต่แค่เปลี่ยน Function เป็น\n\nName.innerHTML = \"<h1>Khaokong2</h1>\"  ใส่แท็กด้วยนะ*\n\nดูเพิ่มเติม (จะได้รู้ถึงความแตกต่างระหว่าง innerHtml และ innerText) https://youtube.com/shorts/Xddyi6BLKxc?si=1TtJsoHokJKFjrwN"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "mi43f5fex7zpu5iirpxmrqg6",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ทำปุ่มสุดท้ายคือกด Pop up และ show มีมปั่นๆ ทำแล้วกดผ่าน"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ลองสร้าง tag button และ tag img ดู\nจากนั้นใน css ปรับ tag img ให้ display(การแสดงผล) เป็น none  และใช้ฟังชั่น\nfunction PopUp() {  Img.style.display = \"block\" }\n\nคือการแก้ไข การแสดงผลผ่านการกด\n\nจากนั้น ให้ button ควบคุมการใช้งานฟังชั่น Button.addEventListener(\"click\", PopUp);"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "d7p1xma4h26uf7n12q09ga19",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ใส่ อนิเมชั่นให้มันเท่ๆหน่อยน้อง  (ค่อยๆ Fade มา, มาจากทางซ้ายขวา ได้หมด ตามจินตนาการ)"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "สร้าง @keyframe ใน css สร้างอนิเมชั่น\nเพิ่ม animation ของรูปเป็น none\nเพิ่ม .style.animation และ เพิ่ม animation ลงเมื่อกด"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "yn7ztdooko59o1uccl05u6cu",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "Build ขึ้น GitHub"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "https://github.com/"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "sdb1qlqd4drhyurxl6shrr61",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "emnsptn43kxqnec7sts81mst",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "timvn5glnrvwz1ctmxtcrp6j",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "4h1msa0jd53ubwcj46top7x8",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "j00o3ypkh0gcw9eo88ulf396",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "bpan3ki6yj7ut37a43viefj8",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    }
+]

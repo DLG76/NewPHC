@@ -99,7 +99,7 @@
     },
     {
         "_id": "67ee19501a37bb3d36e70014",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "761e74382eeee37331be3ff9",
         "type": "CodeStage",
         "description": [
             {
@@ -127,7 +127,7 @@
     },
     {
         "_id": "67ee19961a37bb3d36e70016",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "761e74382eeee37331be3ff9",
         "type": "CodeStage",
         "description": [
             {
@@ -141,7 +141,7 @@
     },
     {
         "_id": "67ee19ec1a37bb3d36e70017",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
         "description": [
             {
@@ -155,7 +155,7 @@
     },
     {
         "_id": "67ee1a091a37bb3d36e70018",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
         "description": [
             {
@@ -169,7 +169,7 @@
     },
     {
         "_id": "67ee1a261a37bb3d36e70019",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
         "description": [
             {
@@ -183,7 +183,7 @@
     },
     {
         "_id": "67ee1a3a1a37bb3d36e7001a",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "9dee536685a0b2551b71a042",
         "type": "CodeStage",
         "description": [
             {
@@ -197,7 +197,7 @@
     },
     {
         "_id": "67ee1a4c1a37bb3d36e7001b",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
         "description": [
             {
@@ -211,7 +211,7 @@
     },
     {
         "_id": "67ee1a721a37bb3d36e7001c",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
         "description": [
             {
@@ -225,7 +225,7 @@
     },
     {
         "_id": "67ee1a851a37bb3d36e7001d",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
         "description": [
             {
@@ -239,7 +239,7 @@
     },
     {
         "_id": "67ee1a991a37bb3d36e7001e",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
         "description": [
             {
@@ -285,7 +285,7 @@
     },
     {
         "_id": "67ee1b9c1a37bb3d36e7001f",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
         "description": [
             {
@@ -315,7 +315,7 @@
     },
     {
         "_id": "67ee1bf41a37bb3d36e70020",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
         "description": [
             {
@@ -329,7 +329,7 @@
     },
     {
         "_id": "67ee1c041a37bb3d36e70021",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
         "description": [
             {
@@ -343,7 +343,7 @@
     },
     {
         "_id": "67ee1c1d1a37bb3d36e70022",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
         "description": [
             {
@@ -357,7 +357,7 @@
     },
     {
         "_id": "67ee1c371a37bb3d36e70023",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
         "description": [
             {
@@ -371,7 +371,7 @@
     },
     {
         "_id": "67ee1c441a37bb3d36e70024",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
         "description": [
             {
@@ -385,7 +385,7 @@
     },
     {
         "_id": "67ee1c711a37bb3d36e70025",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
         "description": [
             {
@@ -399,7 +399,7 @@
     },
     {
         "_id": "67ee1c8e1a37bb3d36e70026",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
         "description": [
             {
@@ -413,7 +413,7 @@
     },
     {
         "_id": "67ee3d9b45892a5866e750d6",
-        "rewardId": "67ef92971d0548cb07bc772f",
+        "rewardId": "761e74382eeee37331be3ff9",
         "type": "CombatStage",
         "dungeon": {
             "waves": [
@@ -440,6 +440,289 @@
                     ],
                     "bossPrefabName": null,
                     "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "5d6c27957bc8f312d4463d75",
+        "rewardId": "586c6538703be5a33fe9d4ea",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "ChargeEnemy",
+                            "count": 2
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 3
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 2
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "df4f3ac4d5ab03f2dfff405c",
+        "rewardId": "586c6538703be5a33fe9d4ea",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 5
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 7
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "e22e294cf5377e637e193f60",
+        "rewardId": "851c41e060148f481545ed79",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "ChargeEnemy",
+                            "count": 3
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        },
+                        {
+                            "enemyPrefabName": "ChargeEnemy",
+                            "count": 1
+                        },
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 3
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "352b9ec61f0d88242b98105e",
+        "rewardId": "e781b45a123b105c63da2162",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 7
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 3
+                        },
+                        {
+                            "enemyPrefabName": "ChargeEnemy",
+                            "count": 7
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "4090fcfcac8f2119f03befda",
+        "rewardId": "9dee536685a0b2551b71a042",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 10
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 4
+                        },
+                        {
+                            "enemyPrefabName": "ChargeEnemy",
+                            "count": 6
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 7
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "abc26621d238a406f5afb062",
+        "rewardId": "4311994a296b0b589b3b0ce6",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 6
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 6
+                        },
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 6
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 9
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 9
+                        },
+                        {
+                            "enemyPrefabName": "HealEnemy",
+                            "count": 9
+                        }
+                    ],
+                    "bossPrefabName": "CrystalBoss",
+                    "bossPosition": {
+                        "x": 0,
+                        "y": 10
+                    }
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "22e05781467391d58754db4e",
+        "rewardId": "4311994a296b0b589b3b0ce6",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": "SamuraiBoss",
+                    "bossPosition": {
+                        "x": 0,
+                        "y": 0
+                    }
                 }
             ]
         },

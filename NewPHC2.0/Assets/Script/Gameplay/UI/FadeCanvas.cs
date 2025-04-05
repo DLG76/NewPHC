@@ -10,6 +10,7 @@ public class FadeCanvas : Singleton<FadeCanvas>
 {
     [SerializeField] private Transform content;
     [SerializeField] private Gradient color;
+    public static bool HaveBox { get => boxs.Count > 0; }
     private static List<Box> boxs = new List<Box>();
     [SerializeField] private int scale = 7;
     [SerializeField] private float createBoxTick = 0.01f;

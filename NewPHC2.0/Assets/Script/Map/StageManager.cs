@@ -14,7 +14,10 @@ public class StageManager : Singleton<StageManager>
     [Header("Profile Panel")]
     [SerializeField] private GameObject profilePanel;
     [Header("Stage Data")]
-    [SerializeField] private Transform stagesParent;
+    [SerializeField] private Transform pythonStagesParent;
+    [SerializeField] private Transform blenderStagesParent;
+    [SerializeField] private Transform websiteStagesParent;
+    [SerializeField] private Transform unityStagesParent;
     [SerializeField] private Transform player;
     [SerializeField] private float playerMoveTime = 0.75f;
     [SerializeField] private FadeCanvas fadeCanvas;
@@ -24,7 +27,12 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
-        StartCoroutine(fadeCanvas.EnterFade());
+        if (FadeCanvas.HaveBox)
+            StartCoroutine(fadeCanvas.EnterFade());
+        else
+            Destroy(Instantiate(Resources.Load<GameObject>("Timeline Starter")), 10);
+
+
     }
 
     private void Start()
@@ -81,13 +89,37 @@ public class StageManager : Singleton<StageManager>
 
     public void LoadStages(System.Action onStagesLoaded)
     {
+        Transform stagesParent = null;
+
+        switch (DatabaseManager.world)
+        {
+            case DatabaseManager.World.Python:
+                stagesParent = pythonStagesParent;
+                break;
+            case DatabaseManager.World.Blender:
+                stagesParent = blenderStagesParent;
+                break;
+            case DatabaseManager.World.Website:
+                stagesParent = websiteStagesParent;
+                break;
+            case DatabaseManager.World.Unity:
+                stagesParent = unityStagesParent;
+                break;
+        }
+
         if (stagesParent == null)
         {
             Debug.LogError("stagesParent is null");
             return;
         }
 
-        stageObjs = stagesParent.GetComponentsInChildren<Stage>();
+        pythonStagesParent?.gameObject.SetActive(false);
+        blenderStagesParent?.gameObject.SetActive(false);
+        websiteStagesParent?.gameObject.SetActive(false);
+        unityStagesParent?.gameObject.SetActive(false);
+        stagesParent.gameObject.SetActive(true);
+
+        Stage[] stageObjs = stagesParent.GetComponentsInChildren<Stage>();
 
         StartCoroutine(DatabaseManager.Instance.GetStages((success, myClearedStages, stages) =>
         {

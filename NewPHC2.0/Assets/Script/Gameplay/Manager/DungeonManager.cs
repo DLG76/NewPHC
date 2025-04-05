@@ -99,8 +99,7 @@ public class DungeonManager : Singleton<DungeonManager>
 
             yield return DatabaseManager.Instance.FinishedDungeon(dungeon.StageData["_id"]?.ToString(), true, Time.time - startTime, (success, reward) =>
             {
-                ExitDungeon();
-                RewardUI.CreateRewardUI(reward);
+                RewardUI.CreateRewardUI(reward, ExitDungeon);
             });
 
             yield break;
