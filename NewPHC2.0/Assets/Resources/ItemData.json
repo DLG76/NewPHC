@@ -140,7 +140,7 @@
     "description": "ใช้เพิ่มเลือดและพลังป้องกัน",
     "canStack": false,
     "health": 20,
-    "armor": 5
+    "armor": 10
   },
   {
     "_id": "67eff9092f59bb81baf3c0df",

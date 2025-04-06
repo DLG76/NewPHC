@@ -73,6 +73,7 @@ public class VoidObject : MonoBehaviour
         if (_rigidbody == null)
             _rigidbody = gameObject.AddComponent<Rigidbody2D>();
 
+        _rigidbody.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
         _rigidbody.freezeRotation = false;
         _rigidbody.isKinematic = false;
         _rigidbody.gravityScale = 0;

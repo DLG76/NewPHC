@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandler, IDragHandler, IPointerEnterHandler, IPointerExitHandler
 {
     private static List<WindowPopupUI> Instances = new List<WindowPopupUI>();
+    private static WindowPopupUI ActiveWindow;
 
     [SerializeField] private RectTransform headerRect;
     [SerializeField] private Button quitWindowButton;
@@ -24,6 +25,9 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private Vector2 resizeDirection;
     private Vector2 lastMousePosition;
 
+    private Texture2D verticalCursorTexture2D;
+    private Texture2D horizontalCursorTexture2D;
+
     static WindowPopupUI()
     {
         Instances.Clear();
@@ -32,6 +36,8 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     private void Awake()
     {
         Instances.Add(this);
+
+        ActiveWindow = this;
 
         quitWindowButton.onClick.RemoveAllListeners();
         quitWindowButton.onClick.AddListener(() => StartCoroutine(QuitWindow()));
@@ -60,12 +66,46 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
 
         // คงขนาดไว้
         windowRect.sizeDelta = size;
+
+        verticalCursorTexture2D = SpriteToTexture(Resources.Load<Sprite>("Sprite/VerticalCursor"));
+        horizontalCursorTexture2D = SpriteToTexture(Resources.Load<Sprite>("Sprite/HorizontalCursor"));
+    }
+
+    // ฟังก์ชันที่แปลง Sprite เป็น Texture2D
+    private Texture2D SpriteToTexture(Sprite sprite)
+    {
+        // ตรวจสอบว่า readable ก่อน
+        if (!sprite.texture.isReadable)
+        {
+            Debug.LogError("Sprite texture is not readable!");
+            return null;
+        }
+
+        int width = (int)sprite.rect.width;
+        int height = (int)sprite.rect.height;
+
+        Texture2D newTex = new Texture2D(width, height, TextureFormat.RGBA32, false);
+
+        // ดึงพิกเซลจากตำแหน่งของ sprite ที่อยู่บน texture ใหญ่
+        Color[] pixels = sprite.texture.GetPixels(
+            (int)sprite.textureRect.x,
+            (int)sprite.textureRect.y,
+            width, height
+        );
+
+        newTex.SetPixels(pixels);
+        newTex.Apply();
+
+        return newTex;
     }
 
     private void Update()
     {
         if (mouseInWindow && Input.GetMouseButtonDown(0))
+        {
+            ActiveWindow = this;
             transform.SetAsLastSibling();
+        }
     }
 
     public void ToggleWindow()
@@ -114,6 +154,11 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         {
             isResizing = true;
             lastMousePosition = eventData.position;
+
+            if (resizeDirection.x != 0)
+                Cursor.SetCursor(horizontalCursorTexture2D, Vector2.zero, CursorMode.Auto);
+            else if (resizeDirection.y != 0)
+                Cursor.SetCursor(verticalCursorTexture2D, Vector2.zero, CursorMode.Auto);
         }
         else if (IsOnHeader(localMousePos))
         {
@@ -126,6 +171,8 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
     {
         isResizing = false;
         isMoving = false;
+
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
     }
 
     public void OnDrag(PointerEventData eventData)
