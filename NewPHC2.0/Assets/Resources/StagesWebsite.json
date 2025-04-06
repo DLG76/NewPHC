@@ -99,6 +99,14 @@
                 {
                     "valueType": "text",
                     "value": "เมื่อสร้างไฟล์ index.html แล้ว น้องลองพิม ! และ กด enter ดูนะ \nส่วนการ link server ใช้โค้ดนี้นะ  \n<link rel=\"stylesheet\" type=\"text/css\" href=\"ชื่อไฟล์ CSS ของเรา\">"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-4_1"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-4_2"
                 }
             ]
         }
@@ -229,6 +237,18 @@
                 {
                     "valueType": "text",
                     "value": "การ Set up CSS มีไว้เพื่อ การ Reset ทุกอย่าง\nโดยใช้ 3 คำสั่งเท่านั้น\n\n*การ Refer ถึง class หรือ tag ทำแบบนี้\n<h1 class=\"Name\">\n      Khaokong\n</h1>\nเมื่อน้อง Refer ถึง text นั้นใน CSS ต้องใช้ว่า .Name { }\n\nไม่เข้าใจตรงไหนลอง Prompt AI ดูนะ"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-10_1"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-10_2"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-10_3"
                 }
             ]
         }
@@ -252,6 +272,10 @@
                 {
                     "valueType": "text",
                     "value": "หลังจากเข้าถึง text ได้แล้ว\n\nจากนั้นลองพิมพ์คำว่า Font หรือ text เพื่อให้มันแสดงคำสั่งที่เกี่ยวข้อง และลองใช้ คำสั่งเหล่านั้นดูนะ\n\nตัวอย่าง https://www.youtube.com/shorts/ycEH25YeGKU"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-11_1"
                 }
             ]
         }
@@ -322,7 +346,15 @@
         ],
         "hint": "...",
         "exampleOutput": "",
-        "npc": null
+        "npc": {
+            "npcPrefabName": "Tiger",
+            "dialog": [
+                {
+                    "valueType": "image",
+                    "value": "Web1-15_1"
+                }
+            ]
+        }
     },
     {
         "_stage": "1-16",

@@ -17975,7 +17975,7 @@ MonoBehaviour:
     m_ColorSpace: -1
     m_NumColorKeys: 8
     m_NumAlphaKeys: 2
-  maxColorComboDamage: 30000
+  maxColorComboDamage: 3000
   resetComboTime: 5
   comboText: {fileID: 1631928054}
   comboTimeSlider: {fileID: 375040198}
