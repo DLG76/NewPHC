@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: Inter SDF
+  m_Name: Inter SDF Outline
   m_EditorClassIdentifier: 
-  hashCode: -1482417003
+  hashCode: -540132459
   material: {fileID: 4634421001259181847}
-  materialHashCode: 950195477
+  materialHashCode: 388174869
   m_Version: 1.1.0
   m_SourceFontFileGUID: b6ef1ea49aa26a746b07881b28c74c83
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: b6ef1ea49aa26a746b07881b28c74c83, type: 3}
@@ -1042,7 +1042,7 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0
+    - _OutlineWidth: 0.2
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
