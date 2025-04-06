@@ -7,7 +7,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "อาวล่ะทุกคนนน พร้อมจะเริ่มทำเกมที่ไม่เหมือนใครในเวลา 3 วันรึยังง"
+        "value": "อาวล่ะทุกคนนน พร้อมจะเริ่มทำเกมที่ไม่เหมือนใครในเวลา 3 วันรึยังง แต่ก่อนอื่นต้องโหลด Unity Hub ก่อนนะ"
       }
     ],
     "hint": "...",
@@ -84,7 +84,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "ก้าวแรกของจริงแล้วว สร้างโปรเจคกัน"
+        "value": "ก้าวแรกของจริงแล้วว สร้างโปรเจค 3D กัน\nดูดีๆถ้าน้องไม่สร้างโปรเจคเป็น Universal 3D พี่จะกินหัวน้อง"
       }
     ],
     "hint": "...",
@@ -468,7 +468,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "wassap homie ขอบคุณที่ช่วยเราออกมา \nดูเหมือนว่า Monster จะกินพระอาทิตย์ไปด้วย! ช่วยเอามันกลับมาหน่อย"
+        "value": "wassap homie ขอบคุณที่ช่วยเราออกมา ดูเหมือนว่า Monster จะกินพระอาทิตย์ไปด้วย! ช่วยเอามันกลับมาหน่อย (จาก 1-14)"
       }
     ],
     "hint": "...",
@@ -552,7 +552,7 @@
       "dialog": [
         {
           "valueType": "text",
-          "value": "Post Processing\nวิธีการ Setup 1. คลืกขวาเเล้ว volume -> global volume\nnew -> add override -> postprocessing effect "
+          "value": "Post Processing\nวิธีการ Setup 1. คลิ๊กขวาเเล้ว volume -> global volume\nnew -> add override -> postprocessing effect "
         },
         {
           "valueType": "image",
@@ -591,7 +591,7 @@
         },
         {
           "valueType": "text",
-          "value": "Fact เฉยๆ : Object ที่อยู่ในไฟล์โปรเจคแบบ Player ตัวนี้เรียกว่า"
+          "value": "Fact เฉยๆ : Object ที่อยู่ในไฟล์โปรเจคแบบ Player ตัวนี้เรียกว่า Prefab"
         }
       ]
     }
@@ -604,7 +604,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "จะบอกว่าจริงๆ Player ตัวนี้ทำอะไรได้หลายอย่างมากเลยนะ ลองไปตั้งค่ามันดูสิ"
+        "value": "จะบอกว่าจริงๆ Player ตัวนี้ทำอะไรได้หลายอย่างมากเลยนะ ลองไปตั้งค่ามันดูสิ\n[Quest] ตั้งค่าให้ Player กระโดดได้ 100 ทีติดต่อกันเป็น Jetpack เลย"
       }
     ],
     "hint": "...",
@@ -751,7 +751,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "ลองหาโมเดลมาทำ Enemy ดูสิ"
+        "value": "ลองหาโมเดลมาทำ Enemy ดูสิ\n[Quest] หา Asset จาก Unity Asset Store มาใส่เป็น Enemy"
       }
     ],
     "hint": "...",
@@ -809,7 +809,7 @@
     "description": [
       {
         "valueType": "text",
-        "value": "ลองหาโมเดลมาใส่ให้ตรงกับ Effectดูนะ"
+        "value": "ลองหาโมเดลมาใส่ให้ตรงกับ Effectดูนะ\n[Quest] หาโมเดลแทรมโปลีนมาใส่ JumpEffect"
       }
     ],
     "hint": "...",
