@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
-public class CrystalBossCombat : BossCombat
+public class MrXBossCombat : BossCombat
 {
     private bool fade2 = false;
     private float throwStoneTime = 0;

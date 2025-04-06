@@ -231,7 +231,7 @@ GameObject:
   - component: {fileID: 69012733149574273}
   - component: {fileID: 6669753869174672448}
   m_Layer: 8
-  m_Name: CrystalBoss
+  m_Name: MrXBoss
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -246,7 +246,7 @@ Transform:
   m_GameObject: {fileID: 1837946915961295954}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 7, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
   m_Children:
@@ -295,12 +295,12 @@ SpriteRenderer:
   m_SortingLayerID: -1907687811
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 849320750, guid: 8625e875b556c3444adb9a910539a8b0, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bec13b5a9dfd75747bc6848f22b3f0bf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1.8, y: 1.34}
+  m_Size: {x: 1.8, y: 1.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -363,7 +363,6 @@ MonoBehaviour:
   dieEffectData:
     effect1Siize: 1.5
     effect2Count: 15
-  reward: {fileID: 11400000, guid: e389006678849e24ca8d7b8cff4d9502, type: 2}
   healthText: {fileID: 986181533423139811}
   nameText: {fileID: 8619051241181982111}
   bossName: Crystal
@@ -402,12 +401,12 @@ PolygonCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 0.18}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.3125, y: 2.1875}
-    newSize: {x: 1.8, y: 1.34}
+    oldSize: {x: 1.8, y: 1.8}
+    newSize: {x: 1.8, y: 1.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
