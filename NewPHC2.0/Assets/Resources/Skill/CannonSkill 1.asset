@@ -23,5 +23,5 @@ MonoBehaviour:
   IsSingle: 0
   IsDefault: 0
   IsRealInstance: 1
-  speedMultiply: 0.5
+  speedMultiply: 0.75
   damageMultiply: 2
