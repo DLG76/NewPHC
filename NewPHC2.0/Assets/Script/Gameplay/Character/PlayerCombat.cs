@@ -90,8 +90,10 @@ public class PlayerCombat : CharacterCombat
     [SerializeField] private float collectRadious = 5;
     [SerializeField] private float impactRadious = 5;
     private bool canAttack = true;
-
+    
+    [Header("Other")]
     [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private Joystick joystick;
 
     protected override void Awake()
     {
@@ -139,10 +141,15 @@ public class PlayerCombat : CharacterCombat
         if (Input.GetKeyDown(KeyCode.Q))
             Dash();
 
-        Vector2 movement = new Vector2(
-            Input.GetAxisRaw("Horizontal"),
-            Input.GetAxisRaw("Vertical")
-        );
+        Vector2 movement;
+
+        if (DeviceCheck.IsMobile())
+            movement = joystick.Direction;
+        else
+            movement = new Vector2(
+                Input.GetAxisRaw("Horizontal"),
+                Input.GetAxisRaw("Vertical")
+            );
 
         if (AudioManager.Instance != null)
             if (movement.magnitude > 0 && !AudioManager.Instance.AudioSourceLoopPlayings.Contains("Footstep"))

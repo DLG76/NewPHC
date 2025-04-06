@@ -7,11 +7,8 @@ using UnityEngine.UI;
 
 public class HotbarCombatUI : Singleton<HotbarCombatUI>
 {
-#if UNITY_WEBGL
-    [DllImport("__Internal")]
-    private static extern int IsMobileDevice();
-#endif
-
+    [SerializeField] private Joystick joystick;
+    [SerializeField] private Transform hotbarUI;
     [SerializeField] private InventorySlot weapon1UI;
     [SerializeField] private InventorySlot weapon2UI;
     [SerializeField] private InventorySlot weapon3UI;
@@ -21,6 +18,20 @@ public class HotbarCombatUI : Singleton<HotbarCombatUI>
 
     private PlayerCombat player;
     private Equipment equipment;
+
+    private void Awake()
+    {
+        if (DeviceCheck.IsMobile())
+        {
+            hotbarUI.localScale = Vector3.one * 2;
+            joystick.gameObject.SetActive(true);
+        }
+        else
+        {
+            hotbarUI.localScale = Vector3.one;
+            joystick.gameObject.SetActive(false);
+        }
+    }
 
     public void ResetPlayerData()
     {
