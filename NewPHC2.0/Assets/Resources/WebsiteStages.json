@@ -1,6 +1,6 @@
 [
     {
-        "_id": "rea2jiud9r4sfwnq9logdmh2",
+        "_id": "vjifa8fb84uyl5vkm3hbhw1w",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -22,7 +22,7 @@
         }
     },
     {
-        "_id": "vjifa8fb84uyl5vkm3hbhw1w",
+        "_id": "lfvy59qejy82xgfepuwm519r",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -44,7 +44,7 @@
         }
     },
     {
-        "_id": "lfvy59qejy82xgfepuwm519r",
+        "_id": "javrtsk9hjk6os1ows0ljm96",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -66,7 +66,7 @@
         }
     },
     {
-        "_id": "javrtsk9hjk6os1ows0ljm96",
+        "_id": "pc2lgti1q4vkigb37yykt716",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -88,7 +88,7 @@
         }
     },
     {
-        "_id": "pc2lgti1q4vkigb37yykt716",
+        "_id": "gtvefsa4iwknz4adwaqt6yj8",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -110,7 +110,7 @@
         }
     },
     {
-        "_id": "gtvefsa4iwknz4adwaqt6yj8",
+        "_id": "kb2h5a47yjvy02lxfbzq3ybh",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -132,7 +132,7 @@
         }
     },
     {
-        "_id": "kb2h5a47yjvy02lxfbzq3ybh",
+        "_id": "l1xndo0anhamv8qy7y1uf1z4",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -154,7 +154,7 @@
         }
     },
     {
-        "_id": "l1xndo0anhamv8qy7y1uf1z4",
+        "_id": "dt5d1ks71id0hn5g112bm1qq",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -170,13 +170,13 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "ให้น้องนึกภาพว่า Object ในแต่ละ tag ของ html คือกล่องสี่เหลี่ยมกล่องนึง\n\nสมมุติว่า  <div class=\"Box\">      <h1>Hello World</h1>\n</div>\n\nclass Box ต่อไปนี้คือ Parent ของ h1 และ h1 คือ child   ดังนั้น h1 จะอยู่ภายในกล่องของ class Box"
+                    "value": "ให้น้องนึกภาพว่า Object ในแต่ละ tag ของ html คือกล่องสี่เหลี่ยมกล่องนึง\n\nสมมุติว่า <div class=\"Box\">      <h1>Hello World</h1>\n</div>\n\nclass Box ต่อไปนี้คือ Parent ของ h1 และ h1 คือ child ดังนั้น h1 จะอยู่ภายในกล่องของ class Box"
                 }
             ]
         }
     },
     {
-        "_id": "dt5d1ks71id0hn5g112bm1qq",
+        "_id": "49z981w859bxiwd286xvyn0a",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -190,7 +190,7 @@
         "npc": null
     },
     {
-        "_id": "49z981w859bxiwd286xvyn0a",
+        "_id": "vq80bevivfq8id46qwmotcpc",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -206,13 +206,13 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "การ Set up CSS มีไว้เพื่อ การ Reset ทุกอย่าง\nโดยใช้ 3 คำสั่งเท่านั้น\n\n*การ Refer ถึง class หรือ tag ทำแบบนี้\n <h1 class=\"Name\">      Khaokong </h1>  เมื่อน้อง Refer ถึง text นั้นใน CSS ต้องใช้ว่า  .Name {  }\n\nไม่เข้าใจตรงไหนลอง Prompt AI ดูนะ"
+                    "value": "การ Set up CSS มีไว้เพื่อ การ Reset ทุกอย่าง\nโดยใช้ 3 คำสั่งเท่านั้น\n\n*การ Refer ถึง class หรือ tag ทำแบบนี้\n<h1 class=\"Name\">\n      Khaokong\n</h1>\nเมื่อน้อง Refer ถึง text นั้นใน CSS ต้องใช้ว่า .Name { }\n\nไม่เข้าใจตรงไหนลอง Prompt AI ดูนะ"
                 }
             ]
         }
     },
     {
-        "_id": "vq80bevivfq8id46qwmotcpc",
+        "_id": "sp13f45ovj9g4uqykv1suj2y",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -228,13 +228,13 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "หลังจากเข้าถึง text ได้แล้ว\n\nจากนั้นลองพิมพ์คำว่า Font หรือ text เพื่อให้มันแสดงคำสั่งที่เกี่ยวข้อง และลองใช้ คำสั่งเหล่านั้นดูนะ\n\nตัวอย่าง https://www.youtube.com/shorts/ycEH25YeGKU"
+                    "value": "หลังจากเข้าถึง text ได้แล้ว\n\nจากนั้นลองพิมพ์คำว่า Font หรือ text เพื่อให้มันแสดงคำสั่งที่เกี่ยวข้อง และลองใช้ คำสั่งเหล่านั้นดูนะ\n\nตัวอย่าง https://www.youtube.com/shorts/ycEH25YeGKU"
                 }
             ]
         }
     },
     {
-        "_id": "sp13f45ovj9g4uqykv1suj2y",
+        "_id": "u9zsm7pwqdq8n04ax6ift81n",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -256,7 +256,7 @@
         }
     },
     {
-        "_id": "u9zsm7pwqdq8n04ax6ift81n",
+        "_id": "v8uul89mxoqhuc4xv7y2nxoy",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -270,7 +270,7 @@
         "npc": null
     },
     {
-        "_id": "v8uul89mxoqhuc4xv7y2nxoy",
+        "_id": "8wu1khvkn0kdsbg865oql2a7",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -284,7 +284,7 @@
         "npc": null
     },
     {
-        "_id": "8wu1khvkn0kdsbg865oql2a7",
+        "_id": "e0mp3shh220c9omdeiv7tvep",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -298,7 +298,7 @@
         "npc": null
     },
     {
-        "_id": "e0mp3shh220c9omdeiv7tvep",
+        "_id": "o54yu4brqkoddj819ld51yyi",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -320,7 +320,7 @@
         }
     },
     {
-        "_id": "o54yu4brqkoddj819ld51yyi",
+        "_id": "19m1mdkx6uurkzmm0zle73zn",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -336,13 +336,13 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "ทำไม่ได้ลองดูคลิปนี้ https://www.youtube.com/shorts/ycEH25YeGKU"
+                    "value": "ทำไม่ได้ลองดูคลิปนี้ https://www.youtube.com/shorts/ycEH25YeGKU"
                 }
             ]
         }
     },
     {
-        "_id": "19m1mdkx6uurkzmm0zle73zn",
+        "_id": "xs2ziepyjhr2l84g0vwdbxdm",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -364,7 +364,7 @@
         }
     },
     {
-        "_id": "xs2ziepyjhr2l84g0vwdbxdm",
+        "_id": "h0mp555dew4ci17pzl1n8yt5",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -386,7 +386,7 @@
         }
     },
     {
-        "_id": "h0mp555dew4ci17pzl1n8yt5",
+        "_id": "zfaodxni5cx39r4ydfrpbzo1",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -408,13 +408,13 @@
         }
     },
     {
-        "_id": "zfaodxni5cx39r4ydfrpbzo1",
+        "_id": "pogy842x21sqen00rwe3rx86",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
             {
                 "valueType": "text",
-                "value": "สร้าง tag h1 และใส่คำคมเข้าไป จากนั้น import ใน JS เลยน้อง (ใช้เว็ปนี้จนจบ JS project เลยนะ)"
+                "value": "สร้าง tag h1 และใส่คำคมเข้าไป จากนั้น import ใน JS เลยน้อง (ใช้เว็ปนี้จนจบ JS project เลยนะ)"
             }
         ],
         "hint": "...",
@@ -430,13 +430,13 @@
         }
     },
     {
-        "_id": "pogy842x21sqen00rwe3rx86",
+        "_id": "hl02pfu2svz7ou1y8vj60y97",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
             {
                 "valueType": "text",
-                "value": "ทำปุ่มกด Show คำคม และกดอีกปุ่ม เพื่อเปลี่ยนสีคำคมเป็นสีตามปุ่มได้\nไม่เข้าใจถามพี่ข้าวกล้อง\nทำแล้วกดผ่าน"
+                "value": "ทำปุ่มกด Show คำคม และกดอีกปุ่ม เพื่อเปลี่ยนสีคำคมเป็นสีตามปุ่มได้\nไม่เข้าใจถามพี่ข้าวกล้อง\nทำแล้วกดผ่าน"
             }
         ],
         "hint": "...",
@@ -446,13 +446,13 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "*ใครมาถึงส่วนต่อจากนี้ ทักมาให้ผมสอนได้ครับ*  ส่วนนี้ค่อนข้าง Advance Level ละน้อง gen AI ก็ได้ แต่ถ้าใครอยากทำเอง\nขั้นตอน\nสร้าง tag Button สำหรับกด และ import ลง js\nสร้าง Function สำหรับกดและเปลี่ยนสี โดยเข้าถึงสไตล์ ตัวอย่าง function Changetheme() {  Name.style.color = \"Black\" }\nเชื่อมฟังชั่นกับการคลิ๊ก โดยใช้  Button.addEventListener(\"click\", Changetheme);\n\nทำตามคลิปนี้ได้ แต่คลิปนี้จะแปลกตรงที่ไม่แยกไฟล์ JS กับ Html และ ไม่แยกเขียนฟังชั่น แต่จะใช้เป็น array ใน addEventListener (ศึกษา array เพิ่มเติมได้)  https://youtu.be/PyDyqirB72A?si=EoXDYbK-CNR20pJm"
+                    "value": "*ใครมาถึงส่วนต่อจากนี้ ทักมาให้ผมสอนได้ครับ* ส่วนนี้ค่อนข้าง Advance Level ละน้อง gen AI ก็ได้ แต่ถ้าใครอยากทำเอง\nขั้นตอน\nสร้าง tag Button สำหรับกด และ import ลง js\nสร้าง Function สำหรับกดและเปลี่ยนสี โดยเข้าถึงสไตล์ ตัวอย่าง function Changetheme() { Name.style.color = \"Black\" }\nเชื่อมฟังชั่นกับการคลิ๊ก โดยใช้ Button.addEventListener(\"click\", Changetheme);\n\nทำตามคลิปนี้ได้ แต่คลิปนี้จะแปลกตรงที่ไม่แยกไฟล์ JS กับ Html และ ไม่แยกเขียนฟังชั่น แต่จะใช้เป็น array ใน addEventListener (ศึกษา array เพิ่มเติมได้) https://youtu.be/PyDyqirB72A?si=EoXDYbK-CNR20pJm"
                 }
             ]
         }
     },
     {
-        "_id": "hl02pfu2svz7ou1y8vj60y97",
+        "_id": "mi43f5fex7zpu5iirpxmrqg6",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -468,29 +468,7 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "ขั้นตอนเหมือน การเปลี่ยนสี แต่แค่เปลี่ยน Function เป็น\n\nName.innerHTML = \"<h1>Khaokong2</h1>\"  ใส่แท็กด้วยนะ*\n\nดูเพิ่มเติม (จะได้รู้ถึงความแตกต่างระหว่าง innerHtml และ innerText) https://youtube.com/shorts/Xddyi6BLKxc?si=1TtJsoHokJKFjrwN"
-                }
-            ]
-        }
-    },
-    {
-        "_id": "mi43f5fex7zpu5iirpxmrqg6",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CodeStage",
-        "description": [
-            {
-                "valueType": "text",
-                "value": "ทำปุ่มสุดท้ายคือกด Pop up และ show มีมปั่นๆ ทำแล้วกดผ่าน"
-            }
-        ],
-        "hint": "...",
-        "exampleOutput": "",
-        "npc": {
-            "npcPrefabName": "Gen",
-            "dialog": [
-                {
-                    "valueType": "text",
-                    "value": "ลองสร้าง tag button และ tag img ดู\nจากนั้นใน css ปรับ tag img ให้ display(การแสดงผล) เป็น none  และใช้ฟังชั่น\nfunction PopUp() {  Img.style.display = \"block\" }\n\nคือการแก้ไข การแสดงผลผ่านการกด\n\nจากนั้น ให้ button ควบคุมการใช้งานฟังชั่น Button.addEventListener(\"click\", PopUp);"
+                    "value": "ขั้นตอนเหมือน การเปลี่ยนสี แต่แค่เปลี่ยน Function เป็น\n\nName.innerHTML = \"<h1>Khaokong2</h1>\" ใส่แท็กด้วยนะ*\n\nดูเพิ่มเติม (จะได้รู้ถึงความแตกต่างระหว่าง innerHtml และ innerText) https://youtube.com/shorts/Xddyi6BLKxc?si=1TtJsoHokJKFjrwN"
                 }
             ]
         }
@@ -502,7 +480,29 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "ใส่ อนิเมชั่นให้มันเท่ๆหน่อยน้อง  (ค่อยๆ Fade มา, มาจากทางซ้ายขวา ได้หมด ตามจินตนาการ)"
+                "value": "ทำปุ่มสุดท้ายคือกด Pop up และ show มีมปั่นๆ ทำแล้วกดผ่าน"
+            }
+        ],
+        "hint": "...",
+        "exampleOutput": "",
+        "npc": {
+            "npcPrefabName": "Gen",
+            "dialog": [
+                {
+                    "valueType": "text",
+                    "value": "ลองสร้าง tag button และ tag img ดู\nจากนั้นใน css ปรับ tag img ให้ display(การแสดงผล) เป็น none และใช้ฟังชั่น\nfunction PopUp() { Img.style.display = \"block\" }\n\nคือการแก้ไข การแสดงผลผ่านการกด\n\nจากนั้น ให้ button ควบคุมการใช้งานฟังชั่น Button.addEventListener(\"click\", PopUp);"
+                }
+            ]
+        }
+    },
+    {
+        "_id": "yn7ztdooko59o1uccl05u6cu",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CodeStage",
+        "description": [
+            {
+                "valueType": "text",
+                "value": "ใส่ อนิเมชั่นให้มันเท่ๆหน่อยน้อง (ค่อยๆ Fade มา, มาจากทางซ้ายขวา ได้หมด ตามจินตนาการ)"
             }
         ],
         "hint": "...",
@@ -518,7 +518,7 @@
         }
     },
     {
-        "_id": "yn7ztdooko59o1uccl05u6cu",
+        "_id": "sdb1qlqd4drhyurxl6shrr61",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -538,41 +538,6 @@
                 }
             ]
         }
-    },
-    {
-        "_id": "sdb1qlqd4drhyurxl6shrr61",
-        "rewardId": "67ef92971d0548cb07bc772f",
-        "type": "CombatStage",
-        "dungeon": {
-            "waves": [
-                {
-                    "enemySpawnDatas": [
-                        {
-                            "enemyPrefabName": "MeleeEnemy",
-                            "count": 1
-                        }
-                    ],
-                    "bossPrefabName": null,
-                    "bossPosition": null
-                },
-                {
-                    "enemySpawnDatas": [
-                        {
-                            "enemyPrefabName": "MeleeEnemy",
-                            "count": 2
-                        },
-                        {
-                            "enemyPrefabName": "RangedEnemy",
-                            "count": 1
-                        }
-                    ],
-                    "bossPrefabName": null,
-                    "bossPosition": null
-                }
-            ]
-        },
-        "lostRewardId": null,
-        "clearTimes": []
     },
     {
         "_id": "emnsptn43kxqnec7sts81mst",
@@ -716,6 +681,41 @@
     },
     {
         "_id": "bpan3ki6yj7ut37a43viefj8",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "80f66926b8a0b8f3053d7759",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CombatStage",
         "dungeon": {
