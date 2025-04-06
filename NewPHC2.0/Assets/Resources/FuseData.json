@@ -15,6 +15,36 @@
     ]
   },
   {
+    "_id": "67e5859effab842e3ec139b5",
+    "item1": "67eff9442f59bb81baf3c0e2",
+    "item2": "67eff9092f59bb81baf3c0df",
+    "results": [
+      {
+        "itemId": "67eff9092f59bb81baf3c0df",
+        "rate": 9
+      },
+      {
+        "itemId": "97ecab9b40d3705172ff9a73",
+        "rate": 1
+      }
+    ]
+  },
+  {
+    "_id": "67e5859effab842e3ec139b5",
+    "item1": "67eff9442f59bb81baf3c0e2",
+    "item2": "67eff9442f59bb81baf3c0e2",
+    "results": [
+      {
+        "itemId": "67eff9092f59bb81baf3c0df",
+        "rate": 3
+      },
+      {
+        "itemId": "97ecab9b40d3705172ff9a73",
+        "rate": 1
+      }
+    ]
+  },
+  {
     "_id": "44f7ae0de2aa94df2cb155bf",
     "item1": "67eff2a69162d2dd53591b80",
     "item2": "67eff2a69162d2dd53591b80",

@@ -134,6 +134,15 @@
     "skills": []
   },
   {
+    "_id": "97ecab9b40d3705172ff9a73",
+    "type": "CoreItem",
+    "name": "Big Egg Core",
+    "description": "ใช้เพิ่มเลือดและพลังป้องกัน",
+    "canStack": false,
+    "health": 50,
+    "armor": 20
+  },
+  {
     "_id": "67eff9442f59bb81baf3c0e2",
     "type": "CoreItem",
     "name": "Egg Core",
