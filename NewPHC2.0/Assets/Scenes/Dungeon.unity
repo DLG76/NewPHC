@@ -3120,7 +3120,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1947391321}
   m_HandleRect: {fileID: 0}
-  m_Direction: 1
+  m_Direction: 0
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
@@ -3893,7 +3893,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: -3777999330005016163, guid: d6e9b5895ab1ebf469563a563dd10d31, type: 2}
   m_audioClip: {fileID: 8300000, guid: 95199623d85efc8499e846c72be42749, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -5004,7 +5004,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.55
+  m_fontSize: 26.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -18876,7 +18876,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 46.05
+  m_fontSize: 50.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
