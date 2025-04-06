@@ -13,7 +13,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -40,7 +40,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -67,7 +67,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "image",
@@ -90,7 +90,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -125,7 +125,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -152,7 +152,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -183,7 +183,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -218,7 +218,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": []
     }
   },
@@ -236,7 +236,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -259,7 +259,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -286,7 +286,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -321,7 +321,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -352,7 +352,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -379,7 +379,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -406,7 +406,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -477,7 +477,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -504,7 +504,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -551,7 +551,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -582,7 +582,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -613,7 +613,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": []
     }
   },
@@ -631,7 +631,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -658,7 +658,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -709,7 +709,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -760,7 +760,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         
       ]
@@ -780,7 +780,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
         {
           "valueType": "text",
@@ -823,7 +823,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
       ]
     }
@@ -842,7 +842,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
       ]
     }
@@ -861,7 +861,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
       ]
     }
@@ -880,7 +880,7 @@
     "hint": "...",
     "exampleOutput": "",
     "npc": {
-      "npcPrefabName": "Gen",
+      "npcPrefabName": "PatriX",
       "dialog": [
       ]
     }
