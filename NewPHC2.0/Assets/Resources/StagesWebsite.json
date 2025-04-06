@@ -1,5 +1,6 @@
 [
     {
+        "_stage": "1-1",
         "_id": "rea2jiud9r4sfwnq9logdmh2",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -22,6 +23,7 @@
         }
     },
     {
+        "_stage": "1-2",
         "_id": "vjifa8fb84uyl5vkm3hbhw1w",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -44,6 +46,7 @@
         }
     },
     {
+        "_stage": "1-3",
         "_id": "lfvy59qejy82xgfepuwm519r",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -66,6 +69,7 @@
         }
     },
     {
+        "_stage": "1-4",
         "_id": "javrtsk9hjk6os1ows0ljm96",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -88,6 +92,7 @@
         }
     },
     {
+        "_stage": "1-5",
         "_id": "pc2lgti1q4vkigb37yykt716",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -110,6 +115,7 @@
         }
     },
     {
+        "_stage": "1-6",
         "_id": "gtvefsa4iwknz4adwaqt6yj8",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -132,6 +138,7 @@
         }
     },
     {
+        "_stage": "1-7",
         "_id": "kb2h5a47yjvy02lxfbzq3ybh",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -154,6 +161,7 @@
         }
     },
     {
+        "_stage": "1-8",
         "_id": "l1xndo0anhamv8qy7y1uf1z4",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -176,6 +184,7 @@
         }
     },
     {
+        "_stage": "1-9",
         "_id": "dt5d1ks71id0hn5g112bm1qq",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -190,6 +199,7 @@
         "npc": null
     },
     {
+        "_stage": "1-10",
         "_id": "49z981w859bxiwd286xvyn0a",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -212,6 +222,7 @@
         }
     },
     {
+        "_stage": "1-11",
         "_id": "vq80bevivfq8id46qwmotcpc",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -234,6 +245,7 @@
         }
     },
     {
+        "_stage": "1-12",
         "_id": "sp13f45ovj9g4uqykv1suj2y",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -256,6 +268,7 @@
         }
     },
     {
+        "_stage": "1-13",
         "_id": "u9zsm7pwqdq8n04ax6ift81n",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -270,6 +283,7 @@
         "npc": null
     },
     {
+        "_stage": "1-14",
         "_id": "v8uul89mxoqhuc4xv7y2nxoy",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -284,6 +298,7 @@
         "npc": null
     },
     {
+        "_stage": "1-15",
         "_id": "8wu1khvkn0kdsbg865oql2a7",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -298,6 +313,7 @@
         "npc": null
     },
     {
+        "_stage": "1-16",
         "_id": "e0mp3shh220c9omdeiv7tvep",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -320,6 +336,7 @@
         }
     },
     {
+        "_stage": "1-17",
         "_id": "o54yu4brqkoddj819ld51yyi",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -342,6 +359,7 @@
         }
     },
     {
+        "_stage": "1-18",
         "_id": "19m1mdkx6uurkzmm0zle73zn",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -364,6 +382,7 @@
         }
     },
     {
+        "_stage": "1-19",
         "_id": "xs2ziepyjhr2l84g0vwdbxdm",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -386,6 +405,7 @@
         }
     },
     {
+        "_stage": "1-20",
         "_id": "h0mp555dew4ci17pzl1n8yt5",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -408,6 +428,7 @@
         }
     },
     {
+        "_stage": "1-21",
         "_id": "zfaodxni5cx39r4ydfrpbzo1",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -430,6 +451,7 @@
         }
     },
     {
+        "_stage": "1-22",
         "_id": "pogy842x21sqen00rwe3rx86",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -452,6 +474,7 @@
         }
     },
     {
+        "_stage": "1-23",
         "_id": "hl02pfu2svz7ou1y8vj60y97",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -474,6 +497,7 @@
         }
     },
     {
+        "_stage": "1-24",
         "_id": "mi43f5fex7zpu5iirpxmrqg6",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -496,6 +520,7 @@
         }
     },
     {
+        "_stage": "1-25",
         "_id": "d7p1xma4h26uf7n12q09ga19",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -518,6 +543,7 @@
         }
     },
     {
+        "_stage": "1-26",
         "_id": "yn7ztdooko59o1uccl05u6cu",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",

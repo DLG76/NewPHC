@@ -1,5 +1,6 @@
 [
     {
+        "_stage": "1-0",
         "_id": "67ebd2f5cf167028e2db009f",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -30,6 +31,7 @@
         }
     },
     {
+        "_stage": "1-1",
         "_id": "67ee182f1a37bb3d36e70012",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -52,6 +54,7 @@
         }
     },
     {
+        "_stage": "1-2",
         "_id": "67ee190c1a37bb3d36e70013",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -98,6 +101,7 @@
         }
     },
     {
+        "_stage": "1-3",
         "_id": "67ee19501a37bb3d36e70014",
         "rewardId": "761e74382eeee37331be3ff9",
         "type": "CodeStage",
@@ -112,6 +116,7 @@
         "npc": null
     },
     {
+        "_stage": "1-4",
         "_id": "67ee19851a37bb3d36e70015",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
@@ -126,6 +131,7 @@
         "npc": null
     },
     {
+        "_stage": "1-5",
         "_id": "67ee19961a37bb3d36e70016",
         "rewardId": "761e74382eeee37331be3ff9",
         "type": "CodeStage",
@@ -140,6 +146,7 @@
         "npc": null
     },
     {
+        "_stage": "1-6",
         "_id": "67ee19ec1a37bb3d36e70017",
         "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
@@ -154,6 +161,7 @@
         "npc": null
     },
     {
+        "_stage": "1-7",
         "_id": "67ee1a091a37bb3d36e70018",
         "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
@@ -168,6 +176,7 @@
         "npc": null
     },
     {
+        "_stage": "1-8",
         "_id": "67ee1a261a37bb3d36e70019",
         "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
@@ -182,6 +191,7 @@
         "npc": null
     },
     {
+        "_stage": "1-9",
         "_id": "67ee1a3a1a37bb3d36e7001a",
         "rewardId": "9dee536685a0b2551b71a042",
         "type": "CodeStage",
@@ -196,6 +206,7 @@
         "npc": null
     },
     {
+        "_stage": "1-10",
         "_id": "67ee1a4c1a37bb3d36e7001b",
         "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
@@ -210,6 +221,7 @@
         "npc": null
     },
     {
+        "_stage": "1-11",
         "_id": "67ee1a721a37bb3d36e7001c",
         "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
@@ -224,6 +236,7 @@
         "npc": null
     },
     {
+        "_stage": "1-12",
         "_id": "67ee1a851a37bb3d36e7001d",
         "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
@@ -238,6 +251,7 @@
         "npc": null
     },
     {
+        "_stage": "1-13",
         "_id": "67ee1a991a37bb3d36e7001e",
         "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
@@ -284,6 +298,7 @@
         }
     },
     {
+        "_stage": "1-14",
         "_id": "67ee1b9c1a37bb3d36e7001f",
         "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
@@ -314,6 +329,7 @@
         }
     },
     {
+        "_stage": "1-15",
         "_id": "67ee1bf41a37bb3d36e70020",
         "rewardId": "e781b45a123b105c63da2162",
         "type": "CodeStage",
@@ -328,6 +344,7 @@
         "npc": null
     },
     {
+        "_stage": "1-16",
         "_id": "67ee1c041a37bb3d36e70021",
         "rewardId": "586c6538703be5a33fe9d4ea",
         "type": "CodeStage",
@@ -342,6 +359,7 @@
         "npc": null
     },
     {
+        "_stage": "1-17",
         "_id": "67ee1c1d1a37bb3d36e70022",
         "rewardId": "851c41e060148f481545ed79",
         "type": "CodeStage",
@@ -356,6 +374,7 @@
         "npc": null
     },
     {
+        "_stage": "1-18",
         "_id": "67ee1c371a37bb3d36e70023",
         "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
@@ -370,6 +389,7 @@
         "npc": null
     },
     {
+        "_stage": "1-19",
         "_id": "67ee1c441a37bb3d36e70024",
         "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
@@ -384,6 +404,7 @@
         "npc": null
     },
     {
+        "_stage": "1-20",
         "_id": "67ee1c711a37bb3d36e70025",
         "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",
@@ -398,6 +419,7 @@
         "npc": null
     },
     {
+        "_stage": "1-21",
         "_id": "67ee1c8e1a37bb3d36e70026",
         "rewardId": "4311994a296b0b589b3b0ce6",
         "type": "CodeStage",

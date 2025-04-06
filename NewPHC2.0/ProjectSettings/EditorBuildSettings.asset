@@ -9,15 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Lobby.unity
     guid: d63821d5c0064f34194edd0bc49551de
   - enabled: 1
-    path: Assets/Scenes/TestOverworld.unity
-    guid: e42629856a6624848a2c0a7a6961a346
-  - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
-    path: Assets/Scenes/TestOverworldBest.unity
-    guid: ff0840c4a97c32b4f8376d7a97548018
-  - enabled: 1
     path: Assets/Scenes/Dungeon.unity
     guid: 9ab7b73f79f56c64387d7195339673e0
   - enabled: 1
