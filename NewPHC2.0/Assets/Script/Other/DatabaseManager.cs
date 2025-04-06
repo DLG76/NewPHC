@@ -17,7 +17,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
     public static string LoginScene = "Lobby";
 
     ///////////////////////////////////////////////////////////////////
-    public static World world = World.Python;
+    public static World world = World.Unity;
     public enum World
     {
         Python,

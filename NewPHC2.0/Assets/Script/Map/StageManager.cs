@@ -126,8 +126,6 @@ public class StageManager : Singleton<StageManager>
 
         stageObjs = stagesParent.GetComponentsInChildren<Stage>();
 
-        Debug.Log(stageObjs.Length);
-
         StartCoroutine(DatabaseManager.Instance.GetStages((success, myClearedStages, stages) =>
         {
             if (!success)

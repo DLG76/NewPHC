@@ -338,7 +338,7 @@ GameObject:
   - component: {fileID: 18483653}
   - component: {fileID: 18483652}
   m_Layer: 0
-  m_Name: C (4)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1588,7 +1588,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 918aad5a0528cc99730ea8fe
   _connectingStages:
   - curve:
@@ -5714,7 +5714,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 2c6af56b7728c2d950b2eb42
   _connectingStages:
   - curve:
@@ -6070,7 +6070,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: a6d6e4de3e1b56e11df36a2d
   _connectingStages:
   - curve:
@@ -8222,7 +8222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: d276f206bb038b8f3f7244f7
   _connectingStages:
   - curve:
@@ -8819,7 +8819,7 @@ GameObject:
   - component: {fileID: 191070646}
   - component: {fileID: 191070645}
   m_Layer: 0
-  m_Name: C (2)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11642,7 +11642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 99d79edc99d2e856e2824f93
   _connectingStages:
   - curve:
@@ -15486,7 +15486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 673ece613ed05079bd21fe69
   _connectingStages:
   - curve:
@@ -19011,7 +19011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: ae7f3782a1502c4e7e41c0fb
   _connectingStages:
   - curve:
@@ -20871,7 +20871,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: fe55463f9f8740c83b5d3775
   _connectingStages:
   - curve:
@@ -21684,7 +21684,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 1c767f8e2a7609d5cc677755
   _connectingStages:
   - curve:
@@ -26150,7 +26150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 489fb5de5db134928a2122be
   _connectingStages:
   - curve:
@@ -27086,7 +27086,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 39759f2edf99a044362c294b
   _connectingStages:
   - curve:
@@ -28533,7 +28533,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 0b8e2108451c06fd0ade6bc4
   _connectingStages:
   - curve:
@@ -30305,7 +30305,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: c4fe0dca84e887589e65a857
   _connectingStages:
   - curve:
@@ -32786,7 +32786,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 3cda761a50ca4e8f7e775ed1
   _connectingStages:
   - curve:
@@ -40672,7 +40672,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: b85abe5a5a4d0d8de9184b42
   _connectingStages:
   - curve:
@@ -47840,7 +47840,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: c9fe55f15b4e34cff3aeefe9
   _connectingStages:
   - curve:
@@ -52477,7 +52477,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: be3b0099b8fd6a4d55d82d0a
   _connectingStages:
   - curve:
@@ -53081,7 +53081,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 63bfc5ddf519f20e4f325827
   _connectingStages:
   - curve:
@@ -53798,7 +53798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 39b593029031d03d284a7111
   _connectingStages:
   - curve:
@@ -55402,7 +55402,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: df326ab560bb34eae55dba78
   _connectingStages:
   - curve:
@@ -56660,7 +56660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 24d10ba4b91533c57eb3a977
   _connectingStages:
   - curve:
@@ -60844,7 +60844,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 80e88e6b67587f91a433b70d
   _connectingStages:
   - curve:
@@ -61267,7 +61267,7 @@ GameObject:
   - component: {fileID: 1568267153}
   - component: {fileID: 1568267154}
   m_Layer: 0
-  m_Name: C (3)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -63340,7 +63340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 03d41adb0d0ec8de30ff0433
   _connectingStages:
   - curve:
@@ -64664,7 +64664,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 59046629000574a3ead78561
   _connectingStages:
   - curve:
@@ -67978,7 +67978,7 @@ GameObject:
   - component: {fileID: 1732114523}
   - component: {fileID: 1732114524}
   m_Layer: 0
-  m_Name: C (1)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -69252,7 +69252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 4583df5aeff11542ecef1f9d
   _connectingStages:
   - curve:
@@ -71113,7 +71113,7 @@ GameObject:
   - component: {fileID: 1820139341}
   - component: {fileID: 1820139340}
   m_Layer: 0
-  m_Name: C (7)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -71991,7 +71991,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: 484c3d8479cf8eb3de20847a
   _connectingStages:
   - curve:
@@ -72707,7 +72707,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: cfb637dc92ab2eb763926143
   _connectingStages:
   - curve:
@@ -75391,7 +75391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e498e05dad8eea04a8d6430d76bb9cbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isStartStage: 1
+  isStartStage: 0
   stageId: a2716b7a2f03dbec60cfd6d6
   _connectingStages:
   - curve:
@@ -75977,7 +75977,7 @@ GameObject:
   - component: {fileID: 1945947665}
   - component: {fileID: 1945947664}
   m_Layer: 0
-  m_Name: C (6)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -77723,7 +77723,7 @@ GameObject:
   - component: {fileID: 1997421765}
   - component: {fileID: 1997421764}
   m_Layer: 0
-  m_Name: C (5)
+  m_Name: C
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
