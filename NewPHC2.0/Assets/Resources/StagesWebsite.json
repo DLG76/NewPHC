@@ -30,7 +30,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Setup Extension\nน้องชายคิดว่า Extension Live Server มีความสำคัญยังไง?"
+                "value": "ติดตั้ง Extension Live Server\nทำไม่เป็นถามพี่ๆได้เลย"
             }
         ],
         "hint": "...",
@@ -53,7 +53,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Web Structure\nน้องชายพี่ นายคิดว่า Front-end และ Back-end ต่างกันยังไง บอกพี่สิ"
+                "value": "น้องชายคิดว่า Front-End และ Back-End ต่างกันยังไง?"
             }
         ],
         "hint": "...",
@@ -76,7 +76,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Setup html and css\nน้องชาย พี่เป็นมือใหม่อะ พี่ขอ โค้ด Setup Html ทั้งหมดหน่อย"
+                "value": "Set Up Html และ เชื่อม CSS ในเว็ปของน้องได้เลย\nแก้ตัวช่วย : เมื่อสร้างไฟล์ index.html แล้ว น้องลองพิม ! และ กด enter ดูนะ \nส่วนการ link server ใช้โค้ดนี้นะ  \n<link rel=\"stylesheet\" type=\"text/css\" href=\"ชื่อไฟล์ CSS ของเรา\">"
             }
         ],
         "hint": "...",
