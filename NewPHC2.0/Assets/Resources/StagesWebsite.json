@@ -18,6 +18,10 @@
                 {
                     "valueType": "text",
                     "value": "https://code.visualstudio.com/download"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-1_1"
                 }
             ]
         }
@@ -41,6 +45,10 @@
                 {
                     "valueType": "text",
                     "value": "กด ช่องที่ 5 แถบซ้ายสุด (Extension) พิมพ์ Live Server"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-2_1"
                 }
             ]
         }
@@ -64,6 +72,10 @@
                 {
                     "valueType": "text",
                     "value": "ให้น้องมองว่าการสร้างเว็ป คือการสร้างบ้านหลังนึง\n\nโดย HTML คือ ส่วนของโครงสร้างบ้าน\n       CSS คือ การตกแต่งบ้าน\n       JavaScript คือ เฟอร์นิเจอร์\n\nโดยเว็ปจะมีส่วน Front-end และ Back-end ต้องทำงานร่วมกัน\n\nดูเพิ่มเติม  https://youtu.be/uKtBapOGs5A?si=k2dixfKqVBVK3JxT"
+                },
+                {
+                    "valueType": "image",
+                    "value": "Web1-3_1"
                 }
             ]
         }
@@ -76,7 +88,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Set Up Html และ เชื่อม CSS ในเว็ปของน้องได้เลย\nแก้ตัวช่วย : เมื่อสร้างไฟล์ index.html แล้ว น้องลองพิม ! และ กด enter ดูนะ \nส่วนการ link server ใช้โค้ดนี้นะ  \n<link rel=\"stylesheet\" type=\"text/css\" href=\"ชื่อไฟล์ CSS ของเรา\">"
+                "value": "Set Up Html และ เชื่อม CSS ในเว็ปของน้องได้เลย"
             }
         ],
         "hint": "...",
@@ -86,7 +98,7 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "DOCTYPE And Link CSS\nเมื่อเปิด VScode ลองพิม ! และกด enter ดูสิ! อย่าลืมว่าต้อง Link CSS ด้วยนะ"
+                    "value": "เมื่อสร้างไฟล์ index.html แล้ว น้องลองพิม ! และ กด enter ดูนะ \nส่วนการ link server ใช้โค้ดนี้นะ  \n<link rel=\"stylesheet\" type=\"text/css\" href=\"ชื่อไฟล์ CSS ของเรา\">"
                 }
             ]
         }
@@ -99,7 +111,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Text (h1,h2,p)\nถ้าพี่จะทำหัวข้อ\nพี่ควรใช้ tag อะไร\nหรอน้องชายย"
+                "value": "ถ้าพี่จะทำหัวข้อ\nพี่ควรใช้ tag อะไร\nหรอน้องชายย"
             }
         ],
         "hint": "...",
@@ -122,7 +134,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Object (div)\nน้องๆคิดว่า tag Div มีความสำคัญแค่ไหน ทำไม?"
+                "value": "น้องๆคิดว่า tag Div มีความสำคัญแค่ไหน ทำไม?"
             }
         ],
         "hint": "...",
@@ -145,7 +157,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Class,ID\nClass มีหน้าที่ยังไง ใน CSS"
+                "value": "Class และ ID มีหน้าที่อะไร"
             }
         ],
         "hint": "...",
@@ -168,7 +180,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Parent,Child\nน้องชายช่วยพี่ด้วย พี่แมกหายไปในดง div หา tag ของ class ของพี่แมกให้หน่อย ว่ามันคืออะไร\n\n<div class=\"this is parent\">\n <div class=\"Pmax1\">\n  <div class=\"PmaxFake\">\n         <h1 class=\"Pmax\"></h1>\n  </div>\n </div>\n</div>"
+                "value": "น้องชายช่วยพี่ด้วย พี่แมกหายไปในดง div หา tag ของ class ของพี่แมกให้หน่อย ว่ามันคืออะไร\n\n<div class=\"this is parent\">\n <div class=\"Pmax1\">\n  <div class=\"PmaxFake\">\n         <h1 class=\"Pmax\"></h1>\n  </div>\n </div>\n</div>"
             }
         ],
         "hint": "...",
@@ -206,7 +218,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Setup CSS / Refering\nช่วยพี่ด้วยน้อง พี่ทำ CSS ไม่เป็นช่วย setup css ให้พี่หน่อยย"
+                "value": "Set Up CSS ในเว็ปของน้องได้เลย"
             }
         ],
         "hint": "...",
@@ -229,7 +241,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Font\nน้องๆคิดว่าฟอนต์ มีประโยชน์แค่ไหน ในการทำเว็ป"
+                "value": "น้องลองเปลี่ยน Font ในเว็ปได้เลย"
             }
         ],
         "hint": "...",
@@ -252,7 +264,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "หาฟอนต์เท่ๆจาก Google font และวิธีลง ใน Html"
+                "value": "ลองหาฟอนต์เท่ๆจากใน Google Font และเอามาใส่ในเว็ปดูนะ"
             }
         ],
         "hint": "...",
@@ -262,7 +274,7 @@
             "dialog": [
                 {
                     "valueType": "text",
-                    "value": "https://fonts.google.com/"
+                    "value": "https://fonts.google.com/ ลิ้งนี้ลองเข้าดูพอเจอ Font ที่ถูกใจ\n1.กดเข้าไปในฟอนต์\n2.Get Font\n3.Get Embed code\n4.Copy font html ไปใส่ในส่วน Head\n5.Copy Detail ใน Font-family ไปใส่ในโค้ดตัวเอง (แค่ Font-family นะ)"
                 }
             ]
         }
@@ -275,7 +287,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "font-size\nน้องคิดว่า เว็ปที่ทำตอนนี้ text ไหนควรจะใหญ่ที่สุด\nเพราะอะไร"
+                "value": "น้องคิดว่า เว็ปที่ทำตอนนี้ text ไหนควรจะใหญ่ที่สุด\nเพราะอะไร"
             }
         ],
         "hint": "...",
@@ -290,7 +302,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "font-weight\nหัวข้อ และ รายละเอียดเล็กๆ เราควรใช้อันไหน เป็น\nFont-weight : Bold;"
+                "value": "ระหว่างหัวข้อและ รายละเอียด เราควรใช้อันไหนเป็น Font-weight : Bold; เพราะอะไร?"
             }
         ],
         "hint": "...",
@@ -305,7 +317,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Margin\nสร้างระยะห่าง 30px ระหว่าง ชื่อ คำคม สถานะ คอนแทก ไม่เข้าใจถามพี่ข้าวกล้องได้เลยน้อง"
+                "value": "สร้างระยะห่าง 15px ระหว่าง ชื่อ สถานะ คำคม Contact\nทำไม่ได้ถามพี่ๆได้เลย"
             }
         ],
         "hint": "...",
@@ -343,7 +355,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "color\nน้องลอง เปลี่ยนสี Text ของตัวเองดู สีจ๊าบๆ แล้ว กดผ่านได้เลย"
+                "value": "น้องลอง เปลี่ยนสี Text ของตัวเองดู สีจ๊าบๆ แล้ว กดผ่านได้เลย"
             }
         ],
         "hint": "...",
@@ -366,7 +378,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "Background-color\nเปลี่ยนสีพื้นหลังให้ ไม่กลบ Object ด้วยนะ ทำแล้วกดผ่านเลย"
+                "value": "เปลี่ยนสีพื้นหลังให้ ไม่กลบ Object ด้วยนะ ทำแล้วกดผ่านเลย"
             }
         ],
         "hint": "...",
@@ -412,7 +424,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "น้องชาย พี่อยากเชื่อม html กับ Js อะ ช่วยพี่หน่อยยย เชื่อมยังไง"
+                "value": "ให้น้องลองเชื่อม Html กับ CSS ได้เลย"
             }
         ],
         "hint": "...",
@@ -527,7 +539,7 @@
         "description": [
             {
                 "valueType": "text",
-                "value": "ใส่ อนิเมชั่นให้มันเท่ๆหน่อยน้อง (ค่อยๆ Fade มา, มาจากทางซ้ายขวา ได้หมด ตามจินตนาการ)"
+                "value": "ทำอนิเมชั่นการ Pop Up ให้มันเท่ๆหน่อยน้อง ทำแล้วกดผ่านเอามาโชว์พี่เลย! ไม่เข้าใจถามพี่ๆได้เลย"
             }
         ],
         "hint": "...",
