@@ -234,6 +234,7 @@
         }
     },
     {
+        "_stage": "1-12",
         "_id": "sp13f45ovj9g4uqykv1suj2y",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
