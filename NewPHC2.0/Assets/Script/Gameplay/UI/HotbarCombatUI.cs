@@ -1,11 +1,17 @@
 using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class HotbarCombatUI : Singleton<HotbarCombatUI>
 {
+#if UNITY_WEBGL
+    [DllImport("__Internal")]
+    private static extern int IsMobileDevice();
+#endif
+
     [SerializeField] private InventorySlot weapon1UI;
     [SerializeField] private InventorySlot weapon2UI;
     [SerializeField] private InventorySlot weapon3UI;

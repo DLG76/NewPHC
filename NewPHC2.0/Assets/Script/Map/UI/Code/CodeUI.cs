@@ -249,7 +249,7 @@ public class CodeUI : Singleton<CodeUI>
 
     private string GetText(string defaultText)
     {
-        var textSplit = defaultText.Split(" ");
+        var textSplit = Regex.Split(defaultText, @"\s+|\r+|\n+");
 
         for (int i = 0; i < textSplit.Length; i++)
             if (textSplit[i].StartsWith("http"))
