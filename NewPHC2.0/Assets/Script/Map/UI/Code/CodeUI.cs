@@ -25,6 +25,7 @@ public class CodeUI : Singleton<CodeUI>
 
     [Header("Npc UI")]
     [SerializeField] private Image npcImage;
+    [SerializeField] private TMP_Text npcNameText;
     [SerializeField] private Transform npcDialogContent;
 
     [Header("Image UI")]
@@ -180,6 +181,7 @@ public class CodeUI : Singleton<CodeUI>
             {
                 npcImage.sprite = npcSprite;
                 npcImage.GetComponent<AspectRatioFitter>().aspectRatio = npcSprite.rect.height / npcSprite.rect.width;
+                npcNameText.text = npcData["npcPrefabName"]?.ToString();
                 npcImage.gameObject.SetActive(true);
 
                 foreach (Transform c in npcDialogContent)

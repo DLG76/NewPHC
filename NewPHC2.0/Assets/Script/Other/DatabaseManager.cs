@@ -64,13 +64,13 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         loadingCanvas.SetActive(false);
     }
 
-    private void Update()
-    {
-        if (Input.GetKey(KeyCode.E))
-        {
-            LocalUserManager.AddItem("67eff2a69162d2dd53591b80");
-        }
-    }
+    //private void Update()
+    //{
+    //    if (Input.GetKey(KeyCode.E))
+    //    {
+    //        LocalUserManager.AddItem("67eff2a69162d2dd53591b80");
+    //    }
+    //}
 
     private void ShowLoading()
     {

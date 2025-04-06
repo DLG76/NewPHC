@@ -11,8 +11,9 @@ using UnityEngine.UIElements;
 
 public class StageManager : Singleton<StageManager>
 {
-    [Header("Profile Panel")]
+    [Header("UI Panel")]
     [SerializeField] private GameObject profilePanel;
+    [SerializeField] private GameObject storyPanel;
     [Header("Stage Data")]
     [SerializeField] private Transform pythonStagesParent;
     [SerializeField] private Transform blenderStagesParent;
@@ -189,10 +190,10 @@ public class StageManager : Singleton<StageManager>
 
     public bool CanEnterStage()
     {
-        if (profilePanel == null)
+        if (profilePanel == null || storyPanel == null)
             return true;
 
-        return !profilePanel.activeSelf;
+        return !profilePanel.activeSelf && !storyPanel.activeSelf;
     }
 
     private void UnlockConnectingStages(Stage stageObj)
