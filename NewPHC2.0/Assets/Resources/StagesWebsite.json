@@ -1,6 +1,6 @@
 [
     {
-        "_id": "vjifa8fb84uyl5vkm3hbhw1w",
+        "_id": "rea2jiud9r4sfwnq9logdmh2",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -22,7 +22,7 @@
         }
     },
     {
-        "_id": "lfvy59qejy82xgfepuwm519r",
+        "_id": "vjifa8fb84uyl5vkm3hbhw1w",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -44,7 +44,7 @@
         }
     },
     {
-        "_id": "javrtsk9hjk6os1ows0ljm96",
+        "_id": "lfvy59qejy82xgfepuwm519r",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -66,7 +66,7 @@
         }
     },
     {
-        "_id": "pc2lgti1q4vkigb37yykt716",
+        "_id": "javrtsk9hjk6os1ows0ljm96",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -88,7 +88,7 @@
         }
     },
     {
-        "_id": "gtvefsa4iwknz4adwaqt6yj8",
+        "_id": "pc2lgti1q4vkigb37yykt716",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -110,7 +110,7 @@
         }
     },
     {
-        "_id": "kb2h5a47yjvy02lxfbzq3ybh",
+        "_id": "gtvefsa4iwknz4adwaqt6yj8",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -132,7 +132,7 @@
         }
     },
     {
-        "_id": "l1xndo0anhamv8qy7y1uf1z4",
+        "_id": "kb2h5a47yjvy02lxfbzq3ybh",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -154,7 +154,7 @@
         }
     },
     {
-        "_id": "dt5d1ks71id0hn5g112bm1qq",
+        "_id": "l1xndo0anhamv8qy7y1uf1z4",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -176,7 +176,7 @@
         }
     },
     {
-        "_id": "49z981w859bxiwd286xvyn0a",
+        "_id": "dt5d1ks71id0hn5g112bm1qq",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -190,7 +190,7 @@
         "npc": null
     },
     {
-        "_id": "vq80bevivfq8id46qwmotcpc",
+        "_id": "49z981w859bxiwd286xvyn0a",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -212,7 +212,7 @@
         }
     },
     {
-        "_id": "sp13f45ovj9g4uqykv1suj2y",
+        "_id": "vq80bevivfq8id46qwmotcpc",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -234,7 +234,7 @@
         }
     },
     {
-        "_id": "u9zsm7pwqdq8n04ax6ift81n",
+        "_id": "sp13f45ovj9g4uqykv1suj2y",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -256,7 +256,7 @@
         }
     },
     {
-        "_id": "v8uul89mxoqhuc4xv7y2nxoy",
+        "_id": "u9zsm7pwqdq8n04ax6ift81n",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -270,7 +270,7 @@
         "npc": null
     },
     {
-        "_id": "8wu1khvkn0kdsbg865oql2a7",
+        "_id": "v8uul89mxoqhuc4xv7y2nxoy",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -284,7 +284,7 @@
         "npc": null
     },
     {
-        "_id": "e0mp3shh220c9omdeiv7tvep",
+        "_id": "8wu1khvkn0kdsbg865oql2a7",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -298,7 +298,7 @@
         "npc": null
     },
     {
-        "_id": "o54yu4brqkoddj819ld51yyi",
+        "_id": "e0mp3shh220c9omdeiv7tvep",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -320,7 +320,7 @@
         }
     },
     {
-        "_id": "19m1mdkx6uurkzmm0zle73zn",
+        "_id": "o54yu4brqkoddj819ld51yyi",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -342,7 +342,7 @@
         }
     },
     {
-        "_id": "xs2ziepyjhr2l84g0vwdbxdm",
+        "_id": "19m1mdkx6uurkzmm0zle73zn",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -364,7 +364,7 @@
         }
     },
     {
-        "_id": "h0mp555dew4ci17pzl1n8yt5",
+        "_id": "xs2ziepyjhr2l84g0vwdbxdm",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -386,7 +386,7 @@
         }
     },
     {
-        "_id": "zfaodxni5cx39r4ydfrpbzo1",
+        "_id": "h0mp555dew4ci17pzl1n8yt5",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -408,7 +408,7 @@
         }
     },
     {
-        "_id": "pogy842x21sqen00rwe3rx86",
+        "_id": "zfaodxni5cx39r4ydfrpbzo1",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -430,7 +430,7 @@
         }
     },
     {
-        "_id": "hl02pfu2svz7ou1y8vj60y97",
+        "_id": "pogy842x21sqen00rwe3rx86",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -452,7 +452,7 @@
         }
     },
     {
-        "_id": "mi43f5fex7zpu5iirpxmrqg6",
+        "_id": "hl02pfu2svz7ou1y8vj60y97",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -474,7 +474,7 @@
         }
     },
     {
-        "_id": "d7p1xma4h26uf7n12q09ga19",
+        "_id": "mi43f5fex7zpu5iirpxmrqg6",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -496,7 +496,7 @@
         }
     },
     {
-        "_id": "yn7ztdooko59o1uccl05u6cu",
+        "_id": "d7p1xma4h26uf7n12q09ga19",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -518,7 +518,7 @@
         }
     },
     {
-        "_id": "sdb1qlqd4drhyurxl6shrr61",
+        "_id": "yn7ztdooko59o1uccl05u6cu",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CodeStage",
         "description": [
@@ -538,6 +538,41 @@
                 }
             ]
         }
+    },
+    {
+        "_id": "sdb1qlqd4drhyurxl6shrr61",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
     },
     {
         "_id": "emnsptn43kxqnec7sts81mst",
@@ -715,7 +750,42 @@
         "clearTimes": []
     },
     {
-        "_id": "80f66926b8a0b8f3053d7759",
+        "_id": "b6fe228dd0c4362e1b199ae9",
+        "rewardId": "67ef92971d0548cb07bc772f",
+        "type": "CombatStage",
+        "dungeon": {
+            "waves": [
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                },
+                {
+                    "enemySpawnDatas": [
+                        {
+                            "enemyPrefabName": "MeleeEnemy",
+                            "count": 2
+                        },
+                        {
+                            "enemyPrefabName": "RangedEnemy",
+                            "count": 1
+                        }
+                    ],
+                    "bossPrefabName": null,
+                    "bossPosition": null
+                }
+            ]
+        },
+        "lostRewardId": null,
+        "clearTimes": []
+    },
+    {
+        "_id": "a8adeaf5eaaae0370112e8bd",
         "rewardId": "67ef92971d0548cb07bc772f",
         "type": "CombatStage",
         "dungeon": {

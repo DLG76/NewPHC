@@ -10249,7 +10249,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: 0e179b0eff495b76d2b26ea4
   _connectingStages: []
   lineSize: {x: 0.25, y: 0.1}
   gapSize: 0.1
@@ -18161,7 +18161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: de8ac9db81b31cbd6a781020
   _connectingStages:
   - curve:
       serializedVersion: 2
@@ -20673,7 +20673,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: 69366072ced7ddbef3d482ff
   _connectingStages: []
   lineSize: {x: 0.25, y: 0.1}
   gapSize: 0.1
@@ -22441,7 +22441,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: 33eb2e3ccbf906ed2399a685
   _connectingStages:
   - curve:
       serializedVersion: 2
@@ -22766,7 +22766,7 @@ Transform:
   m_GameObject: {fileID: 1315639427}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.275645, y: -1.39982, z: 0}
+  m_LocalPosition: {x: -6.2715592, y: -1.39982, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -23102,7 +23102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: ef7e834149a104836e7a6304
   _connectingStages:
   - curve:
       serializedVersion: 2
@@ -24865,7 +24865,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: 60b582b044f1d7426df48208
   _connectingStages:
   - curve:
       serializedVersion: 2
@@ -28404,7 +28404,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15955e6abf2f7104d9ffa64ed3c629d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stagesFile: {fileID: 4900000, guid: 8c9de03940fa9554aa5f31a53a91506f, type: 3}
 --- !u!1 &1622417362
 GameObject:
   m_ObjectHideFlags: 0
@@ -29316,7 +29315,7 @@ GameObject:
   - component: {fileID: 1666707346}
   - component: {fileID: 1666707345}
   m_Layer: 0
-  m_Name: 0
+  m_Name: 1-0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33427,7 +33426,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   profilePanel: {fileID: 880919086}
-  stagesParent: {fileID: 1831451904}
+  pythonStagesParent: {fileID: 0}
+  blenderStagesParent: {fileID: 0}
+  websiteStagesParent: {fileID: 0}
+  unityStagesParent: {fileID: 0}
   player: {fileID: 2120548035}
   playerMoveTime: 0.75
   fadeCanvas: {fileID: 1975558643}
@@ -35268,7 +35270,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: 61395b74f4837ce1947592dd
   _connectingStages:
   - curve:
       serializedVersion: 2
@@ -37331,7 +37333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStartStage: 0
-  stageId: 67ee3d9b45892a5866e750d6
+  stageId: b7830cd7d005c4b1c51bb6a0
   _connectingStages: []
   lineSize: {x: 0.25, y: 0.1}
   gapSize: 0.1

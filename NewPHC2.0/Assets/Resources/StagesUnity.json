@@ -887,7 +887,259 @@
   },
   {
     "_stage": "C",
-    "_id": "67ee3d9b45892a5866e750d6",
+    "_id": "61395b74f4837ce1947592dd",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "69366072ced7ddbef3d482ff",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "de8ac9db81b31cbd6a781020",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "b7830cd7d005c4b1c51bb6a0",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "0e179b0eff495b76d2b26ea4",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "33eb2e3ccbf906ed2399a685",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "60b582b044f1d7426df48208",
+    "rewardId": "67ef92971d0548cb07bc772f",
+    "type": "CombatStage",
+    "dungeon": {
+      "waves": [
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        },
+        {
+          "enemySpawnDatas": [
+            {
+              "enemyPrefabName": "MeleeEnemy",
+              "count": 2
+            },
+            {
+              "enemyPrefabName": "RangedEnemy",
+              "count": 1
+            }
+          ],
+          "bossPrefabName": null,
+          "bossPosition": null
+        }
+      ]
+    },
+    "lostRewardId": null,
+    "clearTimes": []
+  },
+  {
+    "_stage": "C",
+    "_id": "ef7e834149a104836e7a6304",
     "rewardId": "67ef92971d0548cb07bc772f",
     "type": "CombatStage",
     "dungeon": {

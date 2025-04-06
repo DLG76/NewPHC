@@ -18,6 +18,7 @@ public class StageManager : Singleton<StageManager>
     [SerializeField] private Transform blenderStagesParent;
     [SerializeField] private Transform websiteStagesParent;
     [SerializeField] private Transform unityStagesParent;
+    [Header("Player Data")]
     [SerializeField] private Transform player;
     [SerializeField] private float playerMoveTime = 0.75f;
     [SerializeField] private FadeCanvas fadeCanvas;
@@ -105,11 +106,15 @@ public class StageManager : Singleton<StageManager>
             case DatabaseManager.World.Unity:
                 stagesParent = unityStagesParent;
                 break;
+            default:
+                Debug.Log(DatabaseManager.world);
+                break;
         }
 
         if (stagesParent == null)
         {
             Debug.LogError("stagesParent is null");
+            stageObjs = new Stage[0];
             return;
         }
 
@@ -119,7 +124,9 @@ public class StageManager : Singleton<StageManager>
         unityStagesParent?.gameObject.SetActive(false);
         stagesParent.gameObject.SetActive(true);
 
-        Stage[] stageObjs = stagesParent.GetComponentsInChildren<Stage>();
+        stageObjs = stagesParent.GetComponentsInChildren<Stage>();
+
+        Debug.Log(stageObjs.Length);
 
         StartCoroutine(DatabaseManager.Instance.GetStages((success, myClearedStages, stages) =>
         {

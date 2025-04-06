@@ -33,13 +33,13 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             switch (world)
             {
                 case World.Python:
-                    return Resources.Load<TextAsset>("PythonStages");
+                    return Resources.Load<TextAsset>("StagesPython");
                 case World.Blender:
-                    return Resources.Load<TextAsset>("BlenderStages");
+                    return Resources.Load<TextAsset>("StagesBlender");
                 case World.Website:
-                    return Resources.Load<TextAsset>("WebsiteStages");
+                    return Resources.Load<TextAsset>("StagesWebsite");
                 case World.Unity:
-                    return Resources.Load<TextAsset>("UnityStages");
+                    return Resources.Load<TextAsset>("StagesUnity");
                 default:
                     return null;
             }
