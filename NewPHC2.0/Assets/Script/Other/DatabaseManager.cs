@@ -656,6 +656,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
         var fuseFile = Resources.Load<TextAsset>("FuseData");
         var fuseDatas = JsonConvert.DeserializeObject<List<JObject>>(fuseFile.text);
 
+        bool canFuse = false;
+
         foreach (var fuseData in fuseDatas)
         {
             if ((fuseData["item1"]?.ToString() == item1.id && fuseData["item2"]?.ToString() == item2.id) ||
@@ -679,6 +681,8 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                             inventoryItem["itemId"] = LocalItemManager.GetItem(inventoryItem["itemId"]?.ToString());
 
                         callback?.Invoke(true, item, inventory);
+
+                        canFuse = true;
                         break;
                     }
                 }
@@ -686,6 +690,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
                 break;
             }
         }
+
+        if (!canFuse)
+            callback?.Invoke(false, null, null);
 
         HideLoading();
 

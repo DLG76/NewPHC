@@ -149,7 +149,7 @@ public class LoginUI : MonoBehaviour
             yield break;
         }
 
-        yield return new WaitForSeconds(0.5f);
+        yield return new WaitForSeconds(1);
 
         string loginScene = SceneManager.GetActiveScene().name;
         DatabaseManager.LoginScene = loginScene;
