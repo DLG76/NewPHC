@@ -139,13 +139,17 @@ public class LoginUI : MonoBehaviour
         }));
     }
 
-    private void GoToOverworld()
+    private void GoToOverworld() => StartCoroutine(GoToOverworldIE());
+
+    private IEnumerator GoToOverworldIE()
     {
         if (string.IsNullOrEmpty(nextScene))
         {
             Debug.LogError("Next scene is not set.");
-            return;
+            yield break;
         }
+
+        yield return new WaitForSeconds(0.5f);
 
         string loginScene = SceneManager.GetActiveScene().name;
         DatabaseManager.LoginScene = loginScene;
