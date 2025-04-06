@@ -268,8 +268,14 @@ public class CodeUI : Singleton<CodeUI>
                 // เก็บช่องว่างและ newline ตามเดิม
                 result.Add(token.Replace("\r\n", "\n").Replace("\r", "\n")); // Normalize ให้หมดเป็น \n
             }
+            else
+            {
+                // เพิ่มคำที่ไม่ใช่ URL หรือช่องว่าง
+                result.Add(token);
+            }
         }
 
+        // รวมคำทั้งหมด
         return string.Concat(result);
     }
 
