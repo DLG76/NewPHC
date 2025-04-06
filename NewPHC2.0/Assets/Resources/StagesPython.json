@@ -26,6 +26,10 @@
                 {
                     "valueType": "text",
                     "value": "ดูเพิ่มเติมได้ใน https://www.w3schools.com/python/python_datatypes.asp"
+                },
+                {
+                    "valueType": "text",
+                    "value": "เมื่อสร้างไฟล์ index.html แล้ว น้องลองพิม ! และ กด enter ดูนะ\nส่วนการ link server ใช้โค้ดนี้นะ \n<link rel=\"stylesheet\" type=\"text/css\" href=\"ชื่อไฟล์ CSS ของเรา\">"
                 }
             ]
         }

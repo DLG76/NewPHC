@@ -21,8 +21,6 @@ public class ComboText : Singleton<ComboText>
 
     private void Awake()
     {
-        
-
         comboDamage = 0;
 
         childs = new List<GameObject>();

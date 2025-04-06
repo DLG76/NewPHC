@@ -249,13 +249,28 @@ public class CodeUI : Singleton<CodeUI>
 
     private string GetText(string defaultText)
     {
-        var textSplit = Regex.Split(defaultText, @"\s+|\r+|\n+");
+        // Match คำหรือ delimiter (space หรือ newline)
+        var matches = Regex.Matches(defaultText, @"[^\s\r\n]+|[\r\n]+|[ ]+");
+        var result = new List<string>();
 
-        for (int i = 0; i < textSplit.Length; i++)
-            if (textSplit[i].StartsWith("http"))
-                textSplit[i] = $"<link=\"{textSplit[i]}\"><color=#05C2FF><u>{textSplit[i]}</u></color></link>";
+        foreach (Match match in matches)
+        {
+            string token = match.Value;
 
-        return string.Join(" ", textSplit);
+            if (token.StartsWith("http"))
+            {
+                // Rich link: ไม่มีการ escape
+                var url = token;
+                result.Add($"<link=\"{url}\"><color=#05C2FF><u>{url}</u></color></link>");
+            }
+            else if (token == " " || token == "\r" || token == "\n" || Regex.IsMatch(token, @"^[\r\n ]+$"))
+            {
+                // เก็บช่องว่างและ newline ตามเดิม
+                result.Add(token.Replace("\r\n", "\n").Replace("\r", "\n")); // Normalize ให้หมดเป็น \n
+            }
+        }
+
+        return string.Concat(result);
     }
 
     public void ExitQuest()
