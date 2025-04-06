@@ -754,7 +754,7 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             var equipment = PlayerPrefs.GetString("equipment", null);
 
             userJson["stats"]["level"] = PlayerPrefs.GetFloat("level", 1);
-            userJson["stats"]["maxExp"] = ((1.35 * (PlayerPrefs.GetFloat("level", 1) - 1)) + 1) * 100;
+            userJson["stats"]["maxExp"] = Mathf.Pow(1.35f, (PlayerPrefs.GetFloat("level", 1) - 1)) * 100;
             userJson["stats"]["exp"] = PlayerPrefs.GetFloat("exp", 0);
 
             userJson["stats"]["maxHealth"] = ((PlayerPrefs.GetFloat("level", 1) - 1) * 20) + 100;
@@ -867,9 +867,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             double nowExp = User.me.exp + (reward["exp"]?.ToObject<double>() ?? 0);
             rewardClamed["exp"] = reward["exp"];
 
-            while (nowExp > ((1.35 * (User.me.level - 1)) + 1) * 100)
+            while (nowExp >= Mathf.Pow(1.35f, (PlayerPrefs.GetFloat("level", 1) - 1)) * 100)
             {
-                nowExp -= ((1.35 * (User.me.level - 1)) + 1) * 100;
+                nowExp -= Mathf.Pow(1.35f, (PlayerPrefs.GetFloat("level", 1) - 1)) * 100;
                 User.me.level += 1;
                 changedLevel = true;
             }
@@ -878,8 +878,10 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             {
                 User.me.maxHealth = ((User.me.level - 1) * 20) + 100;
                 User.me.health = User.me.maxHealth;
-                User.me.maxExp = ((1.35 * (User.me.level - 1)) + 1) * 100;
+                User.me.maxExp = Mathf.Pow(1.35f, (PlayerPrefs.GetFloat("level", 1) - 1)) * 100;
             }
+
+            User.me.exp = nowExp;
 
             SaveData();
 
