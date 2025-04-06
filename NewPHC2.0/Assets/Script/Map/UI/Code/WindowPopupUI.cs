@@ -67,36 +67,8 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         // คงขนาดไว้
         windowRect.sizeDelta = size;
 
-        verticalCursorTexture2D = SpriteToTexture(Resources.Load<Sprite>("Sprite/VerticalCursor"));
-        horizontalCursorTexture2D = SpriteToTexture(Resources.Load<Sprite>("Sprite/HorizontalCursor"));
-    }
-
-    // ฟังก์ชันที่แปลง Sprite เป็น Texture2D
-    private Texture2D SpriteToTexture(Sprite sprite)
-    {
-        // ตรวจสอบว่า readable ก่อน
-        if (!sprite.texture.isReadable)
-        {
-            Debug.LogError("Sprite texture is not readable!");
-            return null;
-        }
-
-        int width = (int)sprite.rect.width;
-        int height = (int)sprite.rect.height;
-
-        Texture2D newTex = new Texture2D(width, height, TextureFormat.RGBA32, false);
-
-        // ดึงพิกเซลจากตำแหน่งของ sprite ที่อยู่บน texture ใหญ่
-        Color[] pixels = sprite.texture.GetPixels(
-            (int)sprite.textureRect.x,
-            (int)sprite.textureRect.y,
-            width, height
-        );
-
-        newTex.SetPixels(pixels);
-        newTex.Apply();
-
-        return newTex;
+        verticalCursorTexture2D = Resources.Load<Texture2D>("Sprite/VerticalCursor");
+        horizontalCursorTexture2D = Resources.Load<Texture2D>("Sprite/HorizontalCursor");
     }
 
     private void Update()
@@ -156,9 +128,9 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
             lastMousePosition = eventData.position;
 
             if (resizeDirection.x != 0)
-                Cursor.SetCursor(horizontalCursorTexture2D, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(horizontalCursorTexture2D, Vector2.one * ((float)(verticalCursorTexture2D.width + verticalCursorTexture2D.height) / 4), CursorMode.Auto);
             else if (resizeDirection.y != 0)
-                Cursor.SetCursor(verticalCursorTexture2D, Vector2.zero, CursorMode.Auto);
+                Cursor.SetCursor(verticalCursorTexture2D, Vector2.one * ((float)(verticalCursorTexture2D.width + verticalCursorTexture2D.height) / 4), CursorMode.Auto);
         }
         else if (IsOnHeader(localMousePos))
         {
