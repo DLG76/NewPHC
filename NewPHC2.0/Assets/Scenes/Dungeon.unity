@@ -722,6 +722,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: StarEffect
       objectReference: {fileID: 0}
+    - target: {fileID: 6066019806288447989, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7847357565383991959, guid: b4d62e584288cb446a05fe75a871c567, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.01871875
@@ -2240,7 +2244,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 31.5
+  m_fontSize: 20
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2317,7 +2321,7 @@ Transform:
   m_GameObject: {fileID: 293955725}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -15, y: 0, z: 0}
+  m_LocalPosition: {x: -13.3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2447,7 +2451,7 @@ Transform:
   m_GameObject: {fileID: 294809633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalPosition: {x: 0, y: 13.1, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2933,7 +2937,7 @@ Transform:
   m_GameObject: {fileID: 368805144}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 15, y: 0, z: 0}
+  m_LocalPosition: {x: 13.2, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5000,7 +5004,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50.8
+  m_fontSize: 23.55
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -5257,7 +5261,7 @@ MonoBehaviour:
   priority: 0
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: da8e7638f1afb854083d75023e6ba2f2, type: 2}
+  sharedProfile: {fileID: 11400000, guid: 33d8eccb096cdc5459cd1f8f383cefbd, type: 2}
 --- !u!1 &770888764
 GameObject:
   m_ObjectHideFlags: 0
@@ -16987,7 +16991,7 @@ Transform:
   m_GameObject: {fileID: 1344371086}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: -13.5, z: 0}
+  m_LocalPosition: {x: 0, y: -11.3, z: 0}
   m_LocalScale: {x: 1, y: 30, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -17255,10 +17259,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 14.5, y: 14.5}
-      - {x: 14.5, y: -14.5}
-      - {x: -14.5, y: -14.5}
-      - {x: -14.5, y: 14.5}
+    - - {x: 12.380641, y: 12.582485}
+      - {x: 12.380642, y: -10.463126}
+      - {x: -12.532022, y: -10.513586}
+      - {x: -12.431104, y: 12.683407}
   m_UseDelaunayMesh: 0
 --- !u!1 &1367275107
 GameObject:
@@ -18872,7 +18876,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 87
+  m_fontSize: 46.05
   m_fontSizeBase: 36
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -20500,10 +20504,10 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 14.5, y: 14.5}
-      - {x: 14.5, y: -14.5}
-      - {x: -14.5, y: -14.5}
-      - {x: -14.5, y: 14.5}
+    - - {x: 13.508126, y: 14.949823}
+      - {x: 13.31713, y: -12.627122}
+      - {x: -13.415702, y: -12.725695}
+      - {x: -13.535845, y: 14.885116}
   m_UseDelaunayMesh: 0
 --- !u!1 &1997471022
 GameObject:
