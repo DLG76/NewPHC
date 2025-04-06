@@ -12,7 +12,7 @@
         "hint": "...",
         "exampleOutput": "Hello World!",
         "npc": {
-            "npcPrefabName": "Gen",
+            "npcPrefabName": "Mark",
             "dialog": [
                 {
                     "valueType": "text",
@@ -42,7 +42,7 @@
         "hint": "...",
         "exampleOutput": "พูดอะไรดีนะ",
         "npc": {
-            "npcPrefabName": "Gen",
+            "npcPrefabName": "Mark",
             "dialog": [
                 {
                     "valueType": "text",
@@ -64,7 +64,7 @@
         "hint": "...",
         "exampleOutput": "กี่ชิ้นน้าาา",
         "npc": {
-            "npcPrefabName": "Gen",
+            "npcPrefabName": "Mark",
             "dialog": [
                 {
                     "valueType": "text",
@@ -250,7 +250,7 @@
         "hint": "...",
         "exampleOutput": "ตัวอย่าง : x = 2",
         "npc": {
-            "npcPrefabName": "Gen",
+            "npcPrefabName": "Mark",
             "dialog": [
                 {
                     "valueType": "text",
@@ -296,7 +296,7 @@
         "hint": "...",
         "exampleOutput": "x + y = 11",
         "npc": {
-            "npcPrefabName": "Gen",
+            "npcPrefabName": "Mark",
             "dialog": [
                 {
                     "valueType": "text",
