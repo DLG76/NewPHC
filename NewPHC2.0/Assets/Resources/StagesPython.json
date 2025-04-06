@@ -426,20 +426,6 @@
                     ],
                     "bossPrefabName": null,
                     "bossPosition": null
-                },
-                {
-                    "enemySpawnDatas": [
-                        {
-                            "enemyPrefabName": "MeleeEnemy",
-                            "count": 2
-                        },
-                        {
-                            "enemyPrefabName": "RangedEnemy",
-                            "count": 1
-                        }
-                    ],
-                    "bossPrefabName": null,
-                    "bossPosition": null
                 }
             ]
         },
@@ -460,7 +446,7 @@
                         },
                         {
                             "enemyPrefabName": "ChargeEnemy",
-                            "count": 2
+                            "count": 1
                         }
                     ],
                     "bossPrefabName": null,
@@ -470,7 +456,7 @@
                     "enemySpawnDatas": [
                         {
                             "enemyPrefabName": "RangedEnemy",
-                            "count": 3
+                            "count": 2
                         }
                     ],
                     "bossPrefabName": null,
@@ -505,7 +491,7 @@
                     "enemySpawnDatas": [
                         {
                             "enemyPrefabName": "MeleeEnemy",
-                            "count": 5
+                            "count": 3
                         }
                     ],
                     "bossPrefabName": null,
@@ -515,7 +501,7 @@
                     "enemySpawnDatas": [
                         {
                             "enemyPrefabName": "RangedEnemy",
-                            "count": 7
+                            "count": 5
                         }
                     ],
                     "bossPrefabName": null,

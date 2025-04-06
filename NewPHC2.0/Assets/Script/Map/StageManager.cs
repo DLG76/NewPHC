@@ -14,6 +14,7 @@ public class StageManager : Singleton<StageManager>
     [Header("UI Panel")]
     [SerializeField] private GameObject profilePanel;
     [SerializeField] private GameObject storyPanel;
+    [SerializeField] private GameObject startOverworldTimeline;
     [Header("Stage Data")]
     [SerializeField] private Transform pythonStagesParent;
     [SerializeField] private Transform blenderStagesParent;
@@ -29,12 +30,12 @@ public class StageManager : Singleton<StageManager>
 
     private void Awake()
     {
+        StartCoroutine(fadeCanvas.EnterFade());
+
         if (FadeCanvas.HaveBox)
-            StartCoroutine(fadeCanvas.EnterFade());
+            Destroy(startOverworldTimeline);
         else
-            Destroy(Instantiate(Resources.Load<GameObject>("Timeline Starter")), 10);
-
-
+            Destroy(startOverworldTimeline, 3);
     }
 
     private void Start()
@@ -256,13 +257,18 @@ public class StageManager : Singleton<StageManager>
         direction.Normalize();
 
         if (direction.x > 0)
-            player.GetComponent<SpriteRenderer>().flipX = true;
+            player.GetComponentInChildren<SpriteRenderer>().flipX = true;
         else if (direction.x < 0)
-            player.GetComponent<SpriteRenderer>().flipX = false;
+            player.GetComponentInChildren<SpriteRenderer>().flipX = false;
 
         Stage.currentStage = stage.stageId;
 
-        yield return player.DOMove(stage.transform.position, time).WaitForCompletion();
+        var playerAnimator = player.GetComponent<Animator>();
+        playerAnimator.SetBool("Walk", true);
+
+        yield return player.DOMove(stage.transform.position, time).SetEase(Ease.Linear).WaitForCompletion();
+
+        playerAnimator.SetBool("Walk", false);
     }
 
     public void PlayCombat(Dungeon dungeon)

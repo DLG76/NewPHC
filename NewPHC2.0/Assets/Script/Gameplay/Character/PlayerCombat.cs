@@ -103,7 +103,7 @@ public class PlayerCombat : CharacterCombat
 
         trail.widthMultiplier = 0;
 
-        VoidHotbarUI.Instance.Setup(this);
+        HotbarCombatUI.Instance.Setup(this);
 
         _maxHealth = User.me.maxHealth;
         _health = User.me.health;
@@ -244,7 +244,7 @@ public class PlayerCombat : CharacterCombat
             yield break;
         }
 
-        VoidHotbarUI.Instance.RemoveItem(voidSelected);
+        HotbarCombatUI.Instance.RemoveItem(voidSelected);
         voidSelected = null;
 
         CameraController.Instance.StopLerpCameraSize();

@@ -753,6 +753,13 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             var inventory = PlayerPrefs.GetString("inventory", null);
             var equipment = PlayerPrefs.GetString("equipment", null);
 
+            userJson["stats"]["level"] = PlayerPrefs.GetFloat("level", 1);
+            userJson["stats"]["maxExp"] = ((1.35 * (PlayerPrefs.GetFloat("level", 1) - 1)) + 1) * 100;
+            userJson["stats"]["exp"] = PlayerPrefs.GetFloat("exp", 0);
+
+            userJson["stats"]["maxHealth"] = ((PlayerPrefs.GetFloat("level", 1) - 1) * 20) + 100;
+            userJson["stats"]["health"] = userJson["stats"]["maxHealth"];
+
             if (!string.IsNullOrEmpty(inventory) && !string.IsNullOrEmpty(equipment))
             {
                 var inventoryIdJson = JArray.Parse(inventory);
@@ -809,6 +816,10 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
 
             PlayerPrefs.SetString("inventory", JsonConvert.SerializeObject(inventoryJson));
             PlayerPrefs.SetString("equipment", JsonConvert.SerializeObject(equipmentJson));
+
+            PlayerPrefs.SetFloat("level", User.me.level);
+            PlayerPrefs.SetFloat("exp", (float)User.me.exp);
+
             PlayerPrefs.Save();
 
             CheckByteSize();
@@ -856,9 +867,9 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             double nowExp = User.me.exp + (reward["exp"]?.ToObject<double>() ?? 0);
             rewardClamed["exp"] = reward["exp"];
 
-            while (nowExp > (1.35 * (User.me.level - 1)) * 100)
+            while (nowExp > ((1.35 * (User.me.level - 1)) + 1) * 100)
             {
-                nowExp -= (1.35 * (User.me.level - 1)) * 100;
+                nowExp -= ((1.35 * (User.me.level - 1)) + 1) * 100;
                 User.me.level += 1;
                 changedLevel = true;
             }
@@ -867,8 +878,10 @@ public class DatabaseManager : SingletonPersistent<DatabaseManager>
             {
                 User.me.maxHealth = ((User.me.level - 1) * 20) + 100;
                 User.me.health = User.me.maxHealth;
-                User.me.maxExp = (1.35 * (User.me.level - 1)) * 100;
+                User.me.maxExp = ((1.35 * (User.me.level - 1)) + 1) * 100;
             }
+
+            SaveData();
 
             return rewardClamed;
         }

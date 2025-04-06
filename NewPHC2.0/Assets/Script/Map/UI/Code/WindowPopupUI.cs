@@ -43,9 +43,23 @@ public class WindowPopupUI : MonoBehaviour, IPointerDownHandler, IPointerUpHandl
         backgroundCanvasGroup.alpha = 0;
         transform.localScale = Vector2.zero;
 
+        // เก็บ world position เดิมไว้ก่อน
+        Vector3 worldPos = windowRect.position;
+        Vector2 size = windowRect.rect.size;
+
+        // เปลี่ยน anchor และ pivot
+        windowRect.anchorMin = new Vector2(0, 1);
+        windowRect.anchorMax = new Vector2(0, 1);
+
         var oldPivot = windowRect.pivot;
-        windowRect.anchoredPosition -= new Vector2(windowRect.rect.width * oldPivot.x, windowRect.rect.height * (oldPivot.y - 1));
         windowRect.pivot = new Vector2(0, 1);
+
+        // เซ็ตตำแหน่ง world กลับให้เหมือนเดิม (ใช้หลังเปลี่ยน anchor/pivot)
+        windowRect.position = worldPos;
+        windowRect.anchoredPosition -= new Vector2(windowRect.rect.width * oldPivot.x, windowRect.rect.height * (oldPivot.y - 1));
+
+        // คงขนาดไว้
+        windowRect.sizeDelta = size;
     }
 
     private void Update()

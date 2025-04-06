@@ -218,7 +218,7 @@ public class CameraController : MonoBehaviour
                 cameraOffset.m_Offset = Vector3.Lerp(endPos, firstPos, endShake / currentCameraShakeData.shakeDuration);
 
                 // Reset rotation
-                cinemachine.transform.rotation = Quaternion.Lerp(cinemachine.transform.rotation, firstRot, endShake / currentCameraShakeData.shakeDuration);
+                cinemachine.transform.rotation = Quaternion.Lerp(cinemachine.transform.rotation, Quaternion.identity, endShake / currentCameraShakeData.shakeDuration);
 
                 if (endShake > currentCameraShakeData.shakeDuration) break;
             }

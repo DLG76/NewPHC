@@ -18,7 +18,7 @@ MonoBehaviour:
   CanBuy: 0
   PriceBuy: 0
   PriceSell: 0
-  Level: 1
+  Level: 3
   skillType: 2
   IsSingle: 0
   IsDefault: 0

@@ -72,21 +72,15 @@ public class DungeonManager : Singleton<DungeonManager>
         var voidObjects = GameObject.FindGameObjectsWithTag("Void").Select(v => v.GetComponent<VoidObject>());
 
         foreach (var voidObject in voidObjects)
-        {
             if (voidObject != null)
-            {
-                var voidItemDropObj = new GameObject();
-                voidItemDropObj.transform.position = voidObject.transform.position;
-                var voidItemDrop = voidItemDropObj.AddComponent<VoidItemDrop>();
-                voidItemDrop.Setup(voidObject.Item);
                 Destroy(voidObject.gameObject);
-            }
-        }
 
         var voidItemDrops = FindObjectsOfType<VoidItemDrop>();
 
         foreach (var voidItemDrop in voidItemDrops)
-            voidItemDrop.Collect();
+            Destroy(voidItemDrop.gameObject);
+
+        HotbarCombatUI.Instance.ResetPlayerData();
 
         foreach (var cha in ServerManager.Characters)
             cha.enabled = false;
